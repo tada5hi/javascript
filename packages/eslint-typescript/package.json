@@ -1,0 +1,15 @@
+{
+    "name": "@tada5hi/eslint-typescript",
+    "version": "0.0.1",
+    "description": "",
+    "license": "MIT",
+    "main": "index.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@typescript-eslint/eslint-plugin": "^3.5.0",
+        "@typescript-eslint/parser": "^3.5.0",
+        "eslint-import-resolver-typescript": "^2.0.0"
+    }
+}
