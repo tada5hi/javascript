@@ -11,7 +11,7 @@ module.exports =  {
         sourceType:  'module',  // Allows for the use of imports
     },
     plugins: [
-        '@typescript-eslint',
+        '@typescript-eslint'
     ],
     rules:  {
         "no-unused-vars": "error",
@@ -22,7 +22,9 @@ module.exports =  {
             "ignoreMemberSort": false,
             "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
         }],
-        "sort-keys": ["error", "asc", {"caseSensitive": true, "minKeys": 2, "natural": false}],
+        "sort-keys": ["error", "asc", {
+            "caseSensitive": true, "minKeys": 2, "natural": false
+        }],
         "@typescript-eslint/no-explicit-any": "off"
     },
     settings: {
