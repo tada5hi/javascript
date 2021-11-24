@@ -27,13 +27,13 @@ module.exports = {
             "ignoreMemberSort": false,
             "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
         }],
-        "sort-keys": ["error", "asc", {
-            "caseSensitive": true, "minKeys": 2, "natural": false
-        }],
 
         "no-bitwise": "off",
         "import/prefer-default-export": "off",
+        "no-param-reassign": "off",
+        "sort-keys": "off",
 
+        "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/indent": baseStyleRules['indent'],
         "@typescript-eslint/object-curly-spacing": "off"
