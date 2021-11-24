@@ -1,4 +1,9 @@
-module.exports =  {
+const { rules: baseStyleRules } = require('eslint-config-airbnb-base/rules/style');
+
+// set tab size to 4 ;)
+baseStyleRules['indent'][1] = 4;
+
+module.exports = {
     extends:  [
         'airbnb-base',
         'airbnb-typescript/base',
@@ -25,7 +30,13 @@ module.exports =  {
         "sort-keys": ["error", "asc", {
             "caseSensitive": true, "minKeys": 2, "natural": false
         }],
-        "@typescript-eslint/no-explicit-any": "off"
+
+        "no-bitwise": "off",
+        "import/prefer-default-export": "off",
+
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/indent": baseStyleRules['indent'],
+        "@typescript-eslint/object-curly-spacing": "off"
     },
     settings: {
         "import/resolver": {
