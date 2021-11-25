@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-config-vue-typescript",
-    "version": "0.0.14",
+    "version": "0.0.15",
     "description": "",
     "license": "MIT",
     "main": "index.js",
@@ -9,9 +9,9 @@
     },
     "dependencies": {
         "@tada5hi/eslint-config-vue": "^0.0.12",
-        "eslint-plugin-vue": "^7.20.0",
         "@typescript-eslint/eslint-plugin": "^5.1.0",
         "@typescript-eslint/parser": "^5.1.0",
-        "eslint-import-resolver-typescript": "^2.5.0"
+        "eslint-import-resolver-typescript": "^2.5.0",
+        "eslint-plugin-vue": "^7.20.0"
     }
 }
