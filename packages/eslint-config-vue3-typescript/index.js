@@ -3,5 +3,8 @@ module.exports = {
         "plugin:vue/vue3-recommended",
         "@vue/typescript/recommended",
         '@tada5hi/eslint-config-typescript'
+    ],
+    plugins: [
+        'vue'
     ]
 };
