@@ -5,7 +5,6 @@ baseStyleRules['indent'][1] = 4;
 
 module.exports = {
     extends:  [
-        'airbnb-base',
         'airbnb-typescript/base',
         'plugin:@typescript-eslint/recommended',
         'plugin:import/typescript',
@@ -19,26 +18,14 @@ module.exports = {
         '@typescript-eslint'
     ],
     rules:  {
-        "no-unused-vars": "error",
-        "quotes": ["error", "single"],
-        "sort-imports": ["error", {
-            "ignoreCase": false,
-            "ignoreDeclarationSort": true,
-            "ignoreMemberSort": false,
-            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
-        }],
-        "sort-keys": ["error", "asc", {
-            "caseSensitive": true, "minKeys": 2, "natural": false
-        }],
-
-        "no-bitwise": "off",
-        "import/prefer-default-export": "off",
-
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/indent": baseStyleRules['indent'],
         "@typescript-eslint/object-curly-spacing": "off"
     },
     settings: {
+        "import/parsers": {
+            '@typescript-eslint/parser': ['.ts', '.tsx']
+        },
         "import/resolver": {
             "typescript": {}
         }
