@@ -14,6 +14,9 @@ module.exports = {
         ecmaVersion:  2020,  // Allows for the parsing of modern ECMAScript features
         sourceType:  'module',  // Allows for the use of imports
     },
+    plugins: [
+        "import"
+    ],
     rules:  {
         "quotes": ["error", "single"],
         "sort-imports": ["error", {
@@ -27,7 +30,6 @@ module.exports = {
         "sort-keys": "off",
 
         "indent": baseStyleRules['indent'],
-
         "import/prefer-default-export": "off",
         "import/no-unresolved": "off",
 
