@@ -18,6 +18,8 @@ module.exports = {
         '@typescript-eslint'
     ],
     rules:  {
+
+        "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/indent": baseStyleRules['indent'],
         "@typescript-eslint/object-curly-spacing": "off"
