@@ -8,6 +8,7 @@ module.exports = {
         'airbnb-typescript/base',
         'plugin:@typescript-eslint/recommended',
         'plugin:import/typescript',
+        '@tada5hi/eslint-config'
     ],
     parser:  '@typescript-eslint/parser',  // Specifies the ESLint parser
     parserOptions:  {
