@@ -1,8 +1,3 @@
-const { rules: baseStyleRules } = require('eslint-config-airbnb-base/rules/style');
-
-// set tab size to 4 ;)
-baseStyleRules['indent'][1] = 4;
-
 module.exports = {
     extends:  [
         'plugin:vue/recommended',

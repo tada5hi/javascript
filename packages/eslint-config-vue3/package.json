@@ -1,0 +1,14 @@
+{
+    "name": "@tada5hi/eslint-config-vue3",
+    "version": "0.0.2",
+    "description": "",
+    "license": "MIT",
+    "main": "index.js",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@tada5hi/eslint-config": "^0.0.2",
+        "eslint-plugin-vue": "^7.20.0"
+    }
+}
