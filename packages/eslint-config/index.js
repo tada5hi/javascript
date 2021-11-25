@@ -15,7 +15,6 @@ module.exports = {
         sourceType:  'module',  // Allows for the use of imports
     },
     rules:  {
-
         "quotes": ["error", "single"],
         "sort-imports": ["error", {
             "ignoreCase": false,
@@ -29,7 +28,6 @@ module.exports = {
 
         "indent": baseStyleRules['indent'],
 
-        "import/extensions": "off",
         "import/prefer-default-export": "off",
         "import/no-unresolved": "off",
 
