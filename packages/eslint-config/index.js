@@ -27,6 +27,15 @@ module.exports = {
         "sort-keys": "off",
 
         "indent": baseStyleRules['indent'],
+
+        "import/extensions": ["error", "ignorePackages", {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never",
+            "mjs": "never",
+            "": "never"
+        }],
         "import/prefer-default-export": "off",
         "import/no-unresolved": "off",
 
