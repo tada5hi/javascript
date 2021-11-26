@@ -48,7 +48,6 @@ module.exports = {
         "no-await-in-loop": "off",
         "no-param-reassign": "off",
         "no-plusplus": "off",
-        "no-unused-vars": "error",
     },
     settings: {
         "import/resolver": {
