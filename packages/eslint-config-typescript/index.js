@@ -6,9 +6,9 @@ baseStyleRules['indent'][1] = 4;
 module.exports = {
     extends:  [
         'airbnb-typescript/base',
-        'plugin:@typescript-eslint/recommended',
         'plugin:import/typescript',
-        '@tada5hi/eslint-config'
+        '@tada5hi/eslint-config',
+        'plugin:@typescript-eslint/recommended'
     ],
     parser:  '@typescript-eslint/parser',  // Specifies the ESLint parser
     parserOptions:  {
