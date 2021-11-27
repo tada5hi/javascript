@@ -13,6 +13,6 @@
         "@typescript-eslint/eslint-plugin": "^5.1.0",
         "@typescript-eslint/parser": "^5.1.0",
         "eslint-import-resolver-typescript": "^2.5.0",
-        "eslint-plugin-vue": "^7.20.0"
+        "eslint-plugin-vue": "^8.1.1"
     }
 }
