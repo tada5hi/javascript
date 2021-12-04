@@ -18,16 +18,8 @@ module.exports = {
         "import"
     ],
     rules:  {
-        "quotes": ["error", "single"],
-        "sort-imports": ["error", {
-            "ignoreCase": false,
-            "ignoreDeclarationSort": true,
-            "ignoreMemberSort": false,
-            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
-        }],
-
+        "default-case": "off",
         "guard-for-in": "off",
-        "sort-keys": "off",
 
         "indent": baseStyleRules['indent'],
 
@@ -48,6 +40,16 @@ module.exports = {
         "no-await-in-loop": "off",
         "no-param-reassign": "off",
         "no-plusplus": "off",
+
+        "quotes": ["error", "single"],
+
+        "sort-imports": ["error", {
+            "ignoreCase": false,
+            "ignoreDeclarationSort": true,
+            "ignoreMemberSort": false,
+            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+        }],
+        "sort-keys": "off"
     },
     settings: {
         "import/resolver": {

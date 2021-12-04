@@ -16,6 +16,7 @@ module.exports = {
             "closeBracket": 0,
             "alignAttributesVertically": true,
             "ignores": []
-        }]
+        }],
+        "vue/require-default-prop": "off"
     }
 };

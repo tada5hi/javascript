@@ -19,9 +19,10 @@ module.exports = {
         '@typescript-eslint'
     ],
     rules:  {
+        "@typescript-eslint/indent": baseStyleRules['indent'],
         "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/indent": baseStyleRules['indent'],
+        "@typescript-eslint/no-shadow": "off",
         "@typescript-eslint/object-curly-spacing": "off"
     },
     settings: {
