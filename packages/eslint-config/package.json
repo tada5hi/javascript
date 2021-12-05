@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-config",
-    "version": "0.0.15",
+    "version": "0.0.16",
     "description": "",
     "license": "MIT",
     "main": "index.js",
