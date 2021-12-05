@@ -41,6 +41,12 @@ module.exports = {
         "no-param-reassign": "off",
         "no-plusplus": "off",
 
+        "operator-linebreak": ["error", "after", {
+            overrides: {
+                "=": 'none'
+            }
+        }],
+
         "quotes": ["error", "single"],
 
         "sort-imports": ["error", {
