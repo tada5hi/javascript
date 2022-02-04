@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-config-typescript",
-    "version": "0.0.24",
+    "version": "0.0.25",
     "description": "",
     "license": "MIT",
     "main": "index.js",
@@ -8,7 +8,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@tada5hi/eslint-config": "^0.0.16",
+        "@tada5hi/eslint-config": "^0.0.17",
         "@typescript-eslint/eslint-plugin": "^5.10.2",
         "@typescript-eslint/parser": "^5.10.2",
         "eslint-config-airbnb-typescript": "^16.1.0",

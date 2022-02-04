@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-config-nuxt-typescript",
-    "version": "0.0.19",
+    "version": "0.0.20",
     "description": "",
     "license": "MIT",
     "main": "index.js",
@@ -9,6 +9,6 @@
     },
     "dependencies": {
         "@nuxtjs/eslint-config-typescript": "^8.0.0",
-        "@tada5hi/eslint-config-typescript": "^0.0.24"
+        "@tada5hi/eslint-config-typescript": "^0.0.25"
     }
 }
