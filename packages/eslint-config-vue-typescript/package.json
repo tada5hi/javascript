@@ -10,7 +10,7 @@
     "dependencies": {
         "@tada5hi/eslint-config-typescript": "^0.0.24",
         "@tada5hi/eslint-config-vue": "^0.0.17",
-        "@typescript-eslint/eslint-plugin": "^5.10.1",
+        "@typescript-eslint/eslint-plugin": "^5.10.2",
         "@typescript-eslint/parser": "^5.10.1",
         "eslint-import-resolver-typescript": "^2.5.0",
         "eslint-plugin-vue": "^8.4.0"
