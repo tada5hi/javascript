@@ -10,6 +10,6 @@
     "dependencies": {
         "@tada5hi/eslint-config-typescript": "^0.0.24",
         "@vue/eslint-config-typescript": "^10.0.0",
-        "eslint-plugin-vue": "^8.4.0"
+        "eslint-plugin-vue": "^8.4.1"
     }
 }
