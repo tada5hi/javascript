@@ -1,5 +1,5 @@
-# Javascript - Modules/Libraries 📚
-This mono repository contains different standalone packages for `linting` and `prettifying` JavaScript as well TypeScript source code.
+# JavaScript - Modules/Libraries 📚
+This mono repository contains different standalone packages for `linting` and `prettifying` JavaScript & TypeScript source code.
 
 **Table of Contents**
 

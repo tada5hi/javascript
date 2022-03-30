@@ -1,6 +1,19 @@
 {
     "name": "root",
     "private": true,
+    "author": {
+        "name": "Peter Placzek",
+        "email": "contact@tada5hi.net",
+        "url": "https://tada5hi.net"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tada5hi/javascript.git"
+    },
+    "bugs": {
+        "url": "https://github.com/tada5hi/javascript/issues"
+    },
+    "homepage": "https://github.com/tada5hi/javascript#readme",
     "devDependencies": {
         "lerna": "^4.0.0"
     },
