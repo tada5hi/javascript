@@ -40,6 +40,6 @@
         "@typescript-eslint/eslint-plugin": "^5.19.0",
         "@typescript-eslint/parser": "^5.17.0",
         "eslint-import-resolver-typescript": "^2.7.1",
-        "eslint-plugin-vue": "^8.5.0"
+        "eslint-plugin-vue": "^8.6.0"
     }
 }
