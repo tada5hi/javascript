@@ -9,6 +9,8 @@ module.exports = {
         parser: '@typescript-eslint/parser'
     },
     rules: {
+        "@typescript-eslint/no-this-alias": "off",
+
         "vue/multi-word-component-names": "off",
         "vue/html-indent": ["error", 4, {
             "attribute": 1,
