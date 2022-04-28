@@ -26,7 +26,7 @@ module.exports = {
         "@typescript-eslint/no-shadow": "off",
         "@typescript-eslint/object-curly-spacing": "off",
 
-        "deprecation/deprecation": "warn",
+        "deprecation/deprecation": "warn"
     },
     settings: {
         "import/parsers": {
