@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-config-vue",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "",
     "license": "MIT",
     "main": "index.js",

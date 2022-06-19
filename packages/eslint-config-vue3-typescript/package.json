@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-config-vue3-typescript",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "",
     "license": "MIT",
     "main": "index.js",
@@ -35,7 +35,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@tada5hi/eslint-config-typescript": "^1.0.3",
+        "@tada5hi/eslint-config-typescript": "^1.0.4",
         "@vue/eslint-config-typescript": "^11.0.0",
         "eslint-plugin-vue": "^9.1.1"
     }
