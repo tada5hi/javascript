@@ -37,6 +37,6 @@
     "dependencies": {
         "@tada5hi/eslint-config-typescript": "^1.0.4",
         "@vue/eslint-config-typescript": "^11.0.0",
-        "eslint-plugin-vue": "^9.1.1"
+        "eslint-plugin-vue": "^9.2.0"
     }
 }
