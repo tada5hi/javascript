@@ -7,4 +7,4 @@ This mono repository contains different standalone packages for `linting` and `p
 
 ## Usage
 
-Please follow the `README.md` instructions in the perspective package folder.
+Please follow the `README.md` instructions in the respective package folder.

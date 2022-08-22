@@ -37,6 +37,7 @@ module.exports = {
         "max-len": baseStyleRules['max-len'],
 
         "no-bitwise": "off",
+        "no-continue": "off",
         "no-await-in-loop": "off",
         "no-param-reassign": "off",
         "no-plusplus": "off",
