@@ -16,17 +16,14 @@ module.exports = {
         sourceType:  'module',  // Allows for the use of imports
     },
     plugins: [
-        '@typescript-eslint',
-        'deprecation'
+        '@typescript-eslint'
     ],
     rules:  {
         "@typescript-eslint/indent": baseStyleRules['indent'],
         "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-shadow": "off",
-        "@typescript-eslint/object-curly-spacing": "off",
-
-        "deprecation/deprecation": "warn"
+        "@typescript-eslint/object-curly-spacing": "off"
     },
     settings: {
         "import/parsers": {
