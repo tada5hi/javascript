@@ -8,6 +8,7 @@ This package provides ESLint rules for TypeScript, including Vue.js & ECMAScript
   - [Basic](#basic)
   - [Parser](#parser)
   - [Run](#run)
+- [License](#license)
 
 ## Installation
 
@@ -53,3 +54,9 @@ Open a terminal to the root of your project, and run the following command:
 ```shell
 eslint --ext .ts,.js,.vue
 ```
+
+## License
+
+Made with 💚
+
+Published under [MIT License](./LICENSE).

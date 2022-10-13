@@ -4,7 +4,14 @@ This mono repository contains different standalone packages for `linting` and `p
 **Table of Contents**
 
 - [Usage](#usage)
+- [License](#license)
 
 ## Usage
 
 Please follow the `README.md` instructions in the respective package folder.
+
+## License
+
+Made with 💚
+
+Published under [MIT License](./LICENSE).

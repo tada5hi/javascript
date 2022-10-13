@@ -7,6 +7,7 @@ This package provides ESLint rules for JavaScript, including ECMAScript 6+.
 - [Usage](#usage)
     - [Basic](#basic)
     - [Run](#run)
+- [License](#license)
 
 ## Installation
 
@@ -35,3 +36,9 @@ Open a terminal to the root of your project, and run the following command:
 ```shell
 eslint --ext .js
 ```
+
+## License
+
+Made with 💚
+
+Published under [MIT License](./LICENSE).

@@ -15,14 +15,24 @@
     },
     "homepage": "https://github.com/tada5hi/javascript#readme",
     "devDependencies": {
-        "lerna": "^6.0.0"
+        "@commitlint/cli": "^17.1.2",
+        "@commitlint/config-angular": "^17.1.0",
+        "@commitlint/config-conventional": "^17.1.0",
+        "@commitlint/cz-commitlint": "^17.1.2",
+        "lerna": "^6.0.0",
+        "husky": "^8.0.1"
     },
     "workspaces": ["packages/*"],
     "scripts": {
-        "bootstrap": "lerna bootstrap",
-        "clean": "lerna run clean",
+        "commit": "npx git-cz",
         "build": "lerna run build",
         "test": "lerna run test",
+        "prepare": "husky install",
         "pub": "lerna publish"
+    },
+    "config": {
+        "commitizen": {
+            "path": "@commitlint/cz-commitlint"
+        }
     }
 }

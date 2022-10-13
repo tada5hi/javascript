@@ -6,6 +6,7 @@ This package provides Prettier rules .
 - [Installation](#installation)
 - [Usage](#usage)
     - [Basic](#basic)
+- [License](#license)
 
 ## Installation
 
@@ -24,3 +25,9 @@ Add the following line to the Prettier config file:
 ```diff
 + '@tada5hi/prettier-config'
 ```
+
+## License
+
+Made with 💚
+
+Published under [MIT License](./LICENSE).
