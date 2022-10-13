@@ -1,13 +1,30 @@
 {
-  "packages": [
-    "packages/*"
-  ],
-  "command": {
-    "publish": {
-      "ignoreChanges": ["ignored-file", "*.md"],
-      "message": "chore(release): publish"
+    "packages": [
+        "packages/*"
+    ],
+    "command": {
+        "publish": {
+            "ignoreChanges": ["ignored-file", "*.md"]
+        },
+        "version": {
+            "message": "build(release): publish"
+        }
+    },
+    "version": "independent",
+    "useWorkspaces": true,
+    "conventionalCommits": true,
+    "changelog": {
+        "labels": {
+            "build": "Build",
+            "ci": "Continuous Integration",
+            "docs": "Documentation",
+            "feat": "New Feature",
+            "fix": "Bug Fix",
+            "perf": "Performance",
+            "refactor": "Refactor",
+            "revert": "Revert",
+            "style": "Style",
+            "test": "Test"
+        }
     }
-  },
-  "version": "independent",
-  "useWorkspaces": true
 }
