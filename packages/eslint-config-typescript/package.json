@@ -1,42 +1,42 @@
 {
-  "name": "@tada5hi/eslint-config-typescript",
-  "version": "1.0.8",
-  "description": "",
-  "license": "MIT",
-  "main": "index.js",
-  "keywords": [
-    "eslint",
-    "config",
-    "eslintconfig",
-    "javascript",
-    "styleguide",
-    "es2015",
-    "es2016",
-    "es2017",
-    "es2018",
-    "typescript"
-  ],
-  "author": {
-    "name": "Peter Placzek",
-    "email": "contact@tada5hi.net",
-    "url": "https://tada5hi.net"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tada5hi/javascript.git"
-  },
-  "bugs": {
-    "url": "https://github.com/tada5hi/javascript/issues"
-  },
-  "homepage": "https://github.com/tada5hi/javascript#readme",
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@tada5hi/eslint-config": "^1.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.40.1",
-    "@typescript-eslint/parser": "^5.40.1",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-import-resolver-typescript": "^3.5.2"
-  }
+    "name": "@tada5hi/eslint-config-typescript",
+    "version": "1.0.8",
+    "description": "",
+    "license": "MIT",
+    "main": "index.js",
+    "keywords": [
+        "eslint",
+        "config",
+        "eslintconfig",
+        "javascript",
+        "styleguide",
+        "es2015",
+        "es2016",
+        "es2017",
+        "es2018",
+        "typescript"
+    ],
+    "author": {
+        "name": "Peter Placzek",
+        "email": "contact@tada5hi.net",
+        "url": "https://tada5hi.net"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tada5hi/javascript.git"
+    },
+    "bugs": {
+        "url": "https://github.com/tada5hi/javascript/issues"
+    },
+    "homepage": "https://github.com/tada5hi/javascript#readme",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@tada5hi/eslint-config": "^1.0.3",
+        "@typescript-eslint/eslint-plugin": "^5.40.1",
+        "@typescript-eslint/parser": "^5.40.1",
+        "eslint-config-airbnb-typescript": "^17.0.0",
+        "eslint-import-resolver-typescript": "^3.5.2"
+    }
 }

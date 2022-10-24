@@ -1,40 +1,40 @@
 {
-  "name": "@tada5hi/eslint-config-nuxt",
-  "version": "1.0.5",
-  "description": "",
-  "license": "MIT",
-  "main": "index.js",
-  "keywords": [
-    "eslint",
-    "config",
-    "eslintconfig",
-    "javascript",
-    "styleguide",
-    "es2015",
-    "es2016",
-    "es2017",
-    "es2018",
-    "nuxt",
-    "nuxt.js"
-  ],
-  "author": {
-    "name": "Peter Placzek",
-    "email": "contact@tada5hi.net",
-    "url": "https://tada5hi.net"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tada5hi/javascript.git"
-  },
-  "bugs": {
-    "url": "https://github.com/tada5hi/javascript/issues"
-  },
-  "homepage": "https://github.com/tada5hi/javascript#readme",
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@nuxtjs/eslint-config": "^11.0.0",
-    "@tada5hi/eslint-config": "^1.0.3"
-  }
+    "name": "@tada5hi/eslint-config-nuxt",
+    "version": "1.0.5",
+    "description": "",
+    "license": "MIT",
+    "main": "index.js",
+    "keywords": [
+        "eslint",
+        "config",
+        "eslintconfig",
+        "javascript",
+        "styleguide",
+        "es2015",
+        "es2016",
+        "es2017",
+        "es2018",
+        "nuxt",
+        "nuxt.js"
+    ],
+    "author": {
+        "name": "Peter Placzek",
+        "email": "contact@tada5hi.net",
+        "url": "https://tada5hi.net"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tada5hi/javascript.git"
+    },
+    "bugs": {
+        "url": "https://github.com/tada5hi/javascript/issues"
+    },
+    "homepage": "https://github.com/tada5hi/javascript#readme",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@nuxtjs/eslint-config": "^11.0.0",
+        "@tada5hi/eslint-config": "^1.0.3"
+    }
 }
