@@ -20,7 +20,7 @@
         "@commitlint/config-conventional": "^17.1.0",
         "@commitlint/cz-commitlint": "^17.2.0",
         "lerna": "^6.0.1",
-        "husky": "^8.0.1"
+        "husky": "^8.0.2"
     },
     "workspaces": ["packages/*"],
     "scripts": {
