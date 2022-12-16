@@ -38,7 +38,7 @@
     "@tada5hi/eslint-config-typescript": "^1.0.10",
     "@tada5hi/eslint-config-vue": "^1.0.8",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
-    "@typescript-eslint/parser": "^5.43.0",
+    "@typescript-eslint/parser": "^5.46.1",
     "eslint-import-resolver-typescript": "^3.5.2",
     "eslint-plugin-vue": "^9.8.0"
   }
