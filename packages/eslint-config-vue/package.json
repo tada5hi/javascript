@@ -35,6 +35,6 @@
   },
   "dependencies": {
     "@tada5hi/eslint-config": "^1.0.4",
-    "eslint-plugin-vue": "^9.7.0"
+    "eslint-plugin-vue": "^9.8.0"
   }
 }
