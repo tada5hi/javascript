@@ -16,7 +16,7 @@
     "homepage": "https://github.com/tada5hi/javascript#readme",
     "devDependencies": {
         "@commitlint/cli": "^17.3.0",
-        "@commitlint/config-angular": "^17.2.0",
+        "@commitlint/config-angular": "^17.3.0",
         "@commitlint/config-conventional": "^17.3.0",
         "@commitlint/cz-commitlint": "^17.3.0",
         "lerna": "^6.1.0",
