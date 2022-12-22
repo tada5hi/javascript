@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.11](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-vue-typescript@1.0.10...@tada5hi/eslint-config-vue-typescript@1.0.11) (2022-12-22)
+
+
+### Bug Fixes
+
+* **deps:** bump @typescript-eslint/eslint-plugin from 5.42.1 to 5.43.0 ([797c207](https://github.com/tada5hi/javascript/commit/797c207c5b2b2e5ace1879fa6f6e56c82d1f32bc))
+* **deps:** bump @typescript-eslint/eslint-plugin from 5.43.0 to 5.46.1 ([5279116](https://github.com/tada5hi/javascript/commit/5279116f3530e0b69540061d1fc1cadd3c9ed95c))
+* **deps:** bump @typescript-eslint/eslint-plugin from 5.46.1 to 5.47.0 ([e4028cf](https://github.com/tada5hi/javascript/commit/e4028cf30338cb56aafcac8494c145c25f1d5abb))
+* **deps:** bump @typescript-eslint/parser from 5.42.1 to 5.43.0 ([ec31ce7](https://github.com/tada5hi/javascript/commit/ec31ce7d3da99f6b4df3a3c8ef36fed236a8bccb))
+* **deps:** bump @typescript-eslint/parser from 5.43.0 to 5.46.1 ([d2157e6](https://github.com/tada5hi/javascript/commit/d2157e6db3cb41dac5d039f5f0de54b417a83567))
+* **deps:** bump @typescript-eslint/parser from 5.46.1 to 5.47.0 ([f4c9fdd](https://github.com/tada5hi/javascript/commit/f4c9fddab5f232082a2d235997d7a97982731332))
+* **deps:** bump eslint-plugin-vue from 9.6.0 to 9.7.0 ([923bc4b](https://github.com/tada5hi/javascript/commit/923bc4b5024b34af52319b90c643a5fe583a3fe3))
+* **deps:** bump eslint-plugin-vue from 9.7.0 to 9.8.0 ([575e72b](https://github.com/tada5hi/javascript/commit/575e72b03b6a8a5c348d469907811be66a6f6a89))
+
+
+
+
+
 ## [1.0.10](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-vue-typescript@1.0.9...@tada5hi/eslint-config-vue-typescript@1.0.10) (2022-11-12)
 
 ### Bug Fixes

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.7](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-nuxt@1.0.6...@tada5hi/eslint-config-nuxt@1.0.7) (2022-12-22)
+
+
+### Bug Fixes
+
+* **deps:** bump @nuxtjs/eslint-config from 11.0.0 to 12.0.0 ([630fc62](https://github.com/tada5hi/javascript/commit/630fc624130aa71eef28f71e1b18e772c62bb1b9))
+
+
+
+
+
 ## [1.0.6](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-nuxt@1.0.5...@tada5hi/eslint-config-nuxt@1.0.6) (2022-10-24)
 
 ### Bug Fixes
