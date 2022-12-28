@@ -1,21 +1,18 @@
 {
-    "name": "@tada5hi/eslint-config-vue3",
-    "version": "1.0.9",
+    "name": "@tada5hi/tsconfig",
+    "version": "0.0.0",
     "description": "",
     "license": "MIT",
-    "main": "index.js",
+    "main": "tsconfig.json",
+    "files": [
+        "tsconfig.json"
+    ],
     "keywords": [
-        "eslint",
         "config",
-        "eslintconfig",
-        "javascript",
-        "styleguide",
-        "es2015",
-        "es2016",
-        "es2017",
-        "es2018",
-        "vue3",
-        "vue.js"
+        "configuration",
+        "ts",
+        "typescript",
+        "tsconfig"
     ],
     "author": {
         "name": "Peter Placzek",
@@ -25,7 +22,7 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/tada5hi/javascript.git",
-        "directory": "packages/eslint-config-vue3"
+        "directory": "packages/tsconfig"
     },
     "bugs": {
         "url": "https://github.com/tada5hi/javascript/issues"
@@ -33,9 +30,5 @@
     "homepage": "https://github.com/tada5hi/javascript#readme",
     "publishConfig": {
         "access": "public"
-    },
-    "dependencies": {
-        "@tada5hi/eslint-config": "^1.0.5",
-        "eslint-plugin-vue": "^9.8.0"
     }
 }

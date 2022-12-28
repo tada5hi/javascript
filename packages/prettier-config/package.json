@@ -1,32 +1,33 @@
 {
-  "name": "@tada5hi/prettier-config",
-  "version": "1.0.5",
-  "description": "",
-  "license": "MIT",
-  "main": "index.js",
-  "keywords": [
-    "prettier",
-    "config",
-    "javascript",
-    "styleguide"
-  ],
-  "author": {
-    "name": "Peter Placzek",
-    "email": "contact@tada5hi.net",
-    "url": "https://tada5hi.net"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tada5hi/javascript.git"
-  },
-  "bugs": {
-    "url": "https://github.com/tada5hi/javascript/issues"
-  },
-  "homepage": "https://github.com/tada5hi/javascript#readme",
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "prettier": "^2.8.1"
-  }
+    "name": "@tada5hi/prettier-config",
+    "version": "1.0.5",
+    "description": "",
+    "license": "MIT",
+    "main": "index.js",
+    "keywords": [
+        "prettier",
+        "config",
+        "javascript",
+        "styleguide"
+    ],
+    "author": {
+        "name": "Peter Placzek",
+        "email": "contact@tada5hi.net",
+        "url": "https://tada5hi.net"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tada5hi/javascript.git",
+        "directory": "packages/prettier-config"
+    },
+    "bugs": {
+        "url": "https://github.com/tada5hi/javascript/issues"
+    },
+    "homepage": "https://github.com/tada5hi/javascript#readme",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "prettier": "^2.8.1"
+    }
 }
