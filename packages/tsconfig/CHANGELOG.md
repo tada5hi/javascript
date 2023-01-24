@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/tada5hi/javascript/compare/@tada5hi/tsconfig@0.2.0...@tada5hi/tsconfig@0.3.0) (2023-01-24)
+
+
+### Features
+
+* **tsconfig:** use es2020 for target ([8e25ea1](https://github.com/tada5hi/javascript/commit/8e25ea13f381e7f40a9636c70f116a59d16d37a6))
+
+
+
+
+
 # [0.2.0](https://github.com/tada5hi/javascript/compare/@tada5hi/tsconfig@0.1.0...@tada5hi/tsconfig@0.2.0) (2023-01-24)
 
 
