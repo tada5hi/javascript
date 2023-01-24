@@ -12,6 +12,7 @@
         ],
         "allowSyntheticDefaultImports": true,
         "declaration": true,
+        "esModuleInterop": true,
         "pretty": true,
         "newLine": "LF",
         "noImplicitAny": true,
