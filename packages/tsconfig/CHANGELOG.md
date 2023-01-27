@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/tada5hi/javascript/compare/@tada5hi/tsconfig@0.3.0...@tada5hi/tsconfig@0.4.0) (2023-01-27)
+
+
+### Features
+
+* **tsconfig:** updated index-access + property-access rule ([e2bbcac](https://github.com/tada5hi/javascript/commit/e2bbcac3a0fe576f4a940a25704a28b7bffd84f8))
+
+
+
+
+
 # [0.3.0](https://github.com/tada5hi/javascript/compare/@tada5hi/tsconfig@0.2.0...@tada5hi/tsconfig@0.3.0) (2023-01-24)
 
 
