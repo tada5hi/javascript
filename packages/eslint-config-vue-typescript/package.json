@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-config-vue-typescript",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "",
     "license": "MIT",
     "main": "index.js",
