@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-vue3-typescript@1.1.3...@tada5hi/eslint-config-vue3-typescript@1.2.0) (2023-02-11)
+
+
+### Features
+
+* simplified and reduced deps for linting presets ([2eabe19](https://github.com/tada5hi/javascript/commit/2eabe19a634375fc854e8de852a5cfee3100c92d))
+
+
+
+
+
 ## [1.1.3](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-vue3-typescript@1.1.2...@tada5hi/eslint-config-vue3-typescript@1.1.3) (2023-02-11)
 
 
