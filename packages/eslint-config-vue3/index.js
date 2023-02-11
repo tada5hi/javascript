@@ -6,6 +6,7 @@ module.exports = {
     plugins: [
         'vue'
     ],
+    parser: 'vue-eslint-parser',
     rules: {
         "vue/multi-word-component-names": "off",
         "vue/html-indent": ["error", 4, {

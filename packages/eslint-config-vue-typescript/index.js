@@ -4,7 +4,6 @@ module.exports = {
         "@tada5hi/eslint-config-typescript"
     ],
     plugins: ['@typescript-eslint'],
-    parser: 'vue-eslint-parser',
     parserOptions: {
         parser: '@typescript-eslint/parser'
     },

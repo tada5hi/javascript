@@ -6,6 +6,7 @@ module.exports = {
     plugins: [
         'vue'
     ],
+    parser: 'vue-eslint-parser',
     settings: {
         "import/resolver": {
             "node": {
