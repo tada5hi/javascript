@@ -4,12 +4,7 @@ module.exports = {
         '@tada5hi/eslint-config-typescript'
     ],
     parserOptions: {
-        parser: {
-            'js': 'espree',
-            'jsx': 'espree',
-            'ts': '@typescript-eslint/parser',
-            'tsx': '@typescript-eslint/parser',
-        },
+        parser: '@typescript-eslint/parser',
         extraFileExtensions: ['.vue'],
         ecmaFeatures: {
             jsx: true
