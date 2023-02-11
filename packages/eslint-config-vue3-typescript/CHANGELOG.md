@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-vue3-typescript@1.1.2...@tada5hi/eslint-config-vue3-typescript@1.1.3) (2023-02-11)
+
+
+### Bug Fixes
+
+* eslint rules for vue3 extension ([9a0add8](https://github.com/tada5hi/javascript/commit/9a0add80011374647ea7c2a05ca4d21d6d6a166c))
+
+
+
+
+
 ## [1.1.2](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-vue3-typescript@1.1.1...@tada5hi/eslint-config-vue3-typescript@1.1.2) (2023-02-08)
 
 **Note:** Version bump only for package @tada5hi/eslint-config-vue3-typescript
