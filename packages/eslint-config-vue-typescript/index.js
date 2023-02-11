@@ -15,6 +15,7 @@ module.exports = {
             jsx: true
         }
     },
+    parser: 'vue-eslint-parser',
     rules: {
         "@typescript-eslint/no-this-alias": "off",
 

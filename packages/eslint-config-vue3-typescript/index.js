@@ -15,4 +15,5 @@ module.exports = {
             jsx: true
         }
     },
+    parser: 'vue-eslint-parser',
 };
