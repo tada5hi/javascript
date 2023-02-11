@@ -37,9 +37,6 @@
     },
     "dependencies": {
         "@tada5hi/eslint-config-typescript": "^1.1.2",
-        "@typescript-eslint/eslint-plugin": "^5.51.0",
-        "@typescript-eslint/parser": "^5.51.0",
-        "@vue/eslint-config-typescript": "^11.0.2",
-        "eslint-import-resolver-typescript": "^3.5.3"
+        "@tada5hi/eslint-config-vue3": "^1.1.3"
     }
 }

@@ -3,9 +3,17 @@ module.exports = {
         '@tada5hi/eslint-config-vue',
         "@tada5hi/eslint-config-typescript"
     ],
-    plugins: ['@typescript-eslint'],
     parserOptions: {
-        parser: '@typescript-eslint/parser'
+        parser: {
+            'js': 'espree',
+            'jsx': 'espree',
+            'ts': '@typescript-eslint/parser',
+            'tsx': '@typescript-eslint/parser',
+        },
+        extraFileExtensions: ['.vue'],
+        ecmaFeatures: {
+            jsx: true
+        }
     },
     rules: {
         "@typescript-eslint/no-this-alias": "off",
