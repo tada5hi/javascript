@@ -19,7 +19,7 @@
         "@commitlint/config-angular": "^17.4.2",
         "@commitlint/config-conventional": "^17.4.2",
         "@commitlint/cz-commitlint": "^17.4.2",
-        "lerna": "^6.4.1",
+        "lerna": "^6.5.0",
         "husky": "^8.0.3"
     },
     "workspaces": ["packages/*"],
