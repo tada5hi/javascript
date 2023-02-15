@@ -19,6 +19,10 @@ module.exports = {
         '@typescript-eslint'
     ],
     rules:  {
+        "@typescript-eslint/consistent-type-imports": ["warn",{
+            "prefer": "type-imports",
+            "fixStyle": "separate-type-imports"
+        }],
         "@typescript-eslint/indent": baseStyleRules['indent'],
         "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/no-explicit-any": "off",
