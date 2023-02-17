@@ -18,7 +18,7 @@
         "@commitlint/cli": "^17.4.4",
         "@commitlint/config-angular": "^17.4.3",
         "@commitlint/config-conventional": "^17.4.4",
-        "@commitlint/cz-commitlint": "^17.4.2",
+        "@commitlint/cz-commitlint": "^17.4.4",
         "lerna": "^6.5.1",
         "husky": "^8.0.3"
     },
