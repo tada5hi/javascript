@@ -1,0 +1,44 @@
+{
+    "name": "@tada5hi/commitlint-config",
+    "version": "1.0.0-alpha.0",
+    "description": "",
+    "license": "MIT",
+    "main": "index.js",
+    "files": [
+        "index.js"
+    ],
+    "keywords": [
+        "config",
+        "configuration",
+        "commits",
+        "commitlint",
+        "conventional",
+        "conventional-commits"
+    ],
+    "author": {
+        "name": "Peter Placzek",
+        "email": "contact@tada5hi.net",
+        "url": "https://tada5hi.net"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tada5hi/javascript.git",
+        "directory": "packages/commitlint-config"
+    },
+    "bugs": {
+        "url": "https://github.com/tada5hi/javascript/issues"
+    },
+    "homepage": "https://github.com/tada5hi/javascript#readme",
+    "publishConfig": {
+        "access": "public"
+    },
+    "dependencies": {
+        "@commitlint/config-conventional": "^17.4.4"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.4.4"
+    },
+    "peerDependencies": {
+        "@commitlint/cli": "^17.x"
+    }
+}

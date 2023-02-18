@@ -15,10 +15,6 @@
     },
     "homepage": "https://github.com/tada5hi/javascript#readme",
     "devDependencies": {
-        "@commitlint/cli": "^17.4.4",
-        "@commitlint/config-angular": "^17.4.4",
-        "@commitlint/config-conventional": "^17.4.4",
-        "@commitlint/cz-commitlint": "^17.4.4",
         "lerna": "^6.5.1",
         "husky": "^8.0.3"
     },
@@ -29,10 +25,5 @@
         "test": "lerna run test",
         "prepare": "husky install",
         "pub": "lerna publish"
-    },
-    "config": {
-        "commitizen": {
-            "path": "@commitlint/cz-commitlint"
-        }
     }
 }
