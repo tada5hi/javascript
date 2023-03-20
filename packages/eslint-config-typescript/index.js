@@ -19,6 +19,7 @@ module.exports = {
         '@typescript-eslint'
     ],
     rules:  {
+        "no-shadow": "off",
         "@typescript-eslint/consistent-type-imports": "warn",
         "@typescript-eslint/indent": baseStyleRules['indent'],
         "@typescript-eslint/no-empty-interface": "off",
