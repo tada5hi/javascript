@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/tada5hi/javascript/compare/@tada5hi/prettier-config@1.1.2...@tada5hi/prettier-config@1.1.3) (2023-03-26)
+
+
+### Bug Fixes
+
+* **deps:** bump prettier from 2.8.4 to 2.8.5 ([#289](https://github.com/tada5hi/javascript/issues/289)) ([4065dda](https://github.com/tada5hi/javascript/commit/4065dda1baab33aaa29ef3d258aac87a0d28f44e))
+* **deps:** bump prettier from 2.8.5 to 2.8.6 ([#290](https://github.com/tada5hi/javascript/issues/290)) ([3bb8fc4](https://github.com/tada5hi/javascript/commit/3bb8fc44a439b83576b0a8a8787afe3c22759245))
+* **deps:** bump prettier from 2.8.6 to 2.8.7 ([#295](https://github.com/tada5hi/javascript/issues/295)) ([e1c7498](https://github.com/tada5hi/javascript/commit/e1c7498bf9ce6fa4c8ff6279a2d06a60fb0cbe2a))
+
+
+
+
+
 ## [1.1.2](https://github.com/tada5hi/javascript/compare/@tada5hi/prettier-config@1.1.1...@tada5hi/prettier-config@1.1.2) (2023-02-11)
 
 

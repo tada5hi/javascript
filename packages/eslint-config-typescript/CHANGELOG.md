@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.6](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-typescript@1.1.5...@tada5hi/eslint-config-typescript@1.1.6) (2023-03-26)
+
+
+### Bug Fixes
+
+* **deps:** bump @typescript-eslint/eslint-plugin from 5.54.1 to 5.55.0 ([#285](https://github.com/tada5hi/javascript/issues/285)) ([2cbbbfe](https://github.com/tada5hi/javascript/commit/2cbbbfeacb81414eb8b4c412c5671eac3d6487ed))
+* **deps:** bump @typescript-eslint/eslint-plugin from 5.55.0 to 5.56.0 ([#287](https://github.com/tada5hi/javascript/issues/287)) ([1b961b5](https://github.com/tada5hi/javascript/commit/1b961b58bfc680dfe9ff061d34fd2e560eee8848))
+* **deps:** bump @typescript-eslint/parser from 5.54.1 to 5.55.0 ([#286](https://github.com/tada5hi/javascript/issues/286)) ([177bbc4](https://github.com/tada5hi/javascript/commit/177bbc4f96ba3dad49abbe6a457f9f53e8651245))
+* **deps:** bump @typescript-eslint/parser from 5.55.0 to 5.56.0 ([#288](https://github.com/tada5hi/javascript/issues/288)) ([86714e8](https://github.com/tada5hi/javascript/commit/86714e8f4ce5f2c1e389c37d1f83832b36bab3f1))
+* disable no-shadow for typescript linter preset ([b227ab7](https://github.com/tada5hi/javascript/commit/b227ab7e3babb6135eb4cac03dcd4bd00cc755b1))
+
+
+
+
+
 ## [1.1.5](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-typescript@1.1.4...@tada5hi/eslint-config-typescript@1.1.5) (2023-03-13)
 
 
