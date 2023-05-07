@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.6](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-nuxt@1.1.5...@tada5hi/eslint-config-nuxt@1.1.6) (2023-05-07)
+
+**Note:** Version bump only for package @tada5hi/eslint-config-nuxt
+
+
+
+
+
 ## [1.1.5](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-nuxt@1.1.4...@tada5hi/eslint-config-nuxt@1.1.5) (2023-03-26)
 
 **Note:** Version bump only for package @tada5hi/eslint-config-nuxt

@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-config-nuxt",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "description": "",
     "license": "MIT",
     "main": "index.js",
@@ -36,6 +36,6 @@
     },
     "dependencies": {
         "@nuxtjs/eslint-config": "^12.0.0",
-        "@tada5hi/eslint-config": "^1.1.5"
+        "@tada5hi/eslint-config": "^1.1.6"
     }
 }
