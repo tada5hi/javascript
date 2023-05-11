@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/semantic-release",
-    "version": "0.0.0",
+    "version": "0.1.0",
     "description": "This package provides a sharable semantic-release configuration.",
     "license": "MIT",
     "main": "release.config.js",
