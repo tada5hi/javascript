@@ -1,0 +1,42 @@
+{
+    "name": "@tada5hi/semantic-release",
+    "version": "0.0.0",
+    "description": "This package provides a sharable semantic-release configuration.",
+    "license": "MIT",
+    "main": "release.config.js",
+    "files": [
+        "release.config.js"
+    ],
+    "keywords": [
+        "config",
+        "configuration",
+        "semantic-release",
+        "publish",
+        "release",
+        "workflow"
+    ],
+    "author": {
+        "name": "Peter Placzek",
+        "email": "contact@tada5hi.net",
+        "url": "https://tada5hi.net"
+    },
+    "dependencies": {
+        "@semantic-release/changelog": "^6.0.3",
+        "@semantic-release/git": "^10.0.1"
+    },
+    "peerDependencies": {
+        "semantic-release": "19.x || 20.x || 21.x"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tada5hi/javascript.git",
+        "directory": "packages/semantic-release"
+    },
+    "bugs": {
+        "url": "https://github.com/tada5hi/javascript/issues"
+    },
+    "homepage": "https://github.com/tada5hi/javascript#readme",
+    "publishConfig": {
+        "access": "public"
+    }
+}
