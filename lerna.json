@@ -1,7 +1,6 @@
 {
-    "packages": [
-        "packages/*"
-    ],
+    "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+    "packages": ["packages/*"],
     "command": {
         "publish": {
             "ignoreChanges": ["ignored-file", "*.md"]
@@ -11,20 +10,5 @@
         }
     },
     "version": "independent",
-    "useWorkspaces": true,
-    "conventionalCommits": true,
-    "changelog": {
-        "labels": {
-            "build": "Build",
-            "ci": "Continuous Integration",
-            "docs": "Documentation",
-            "feat": "New Feature",
-            "fix": "Bug Fix",
-            "perf": "Performance",
-            "refactor": "Refactor",
-            "revert": "Revert",
-            "style": "Style",
-            "test": "Test"
-        }
-    }
+    "conventionalCommits": true
 }
