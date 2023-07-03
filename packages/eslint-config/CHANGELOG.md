@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.9](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config@1.1.8...@tada5hi/eslint-config@1.1.9) (2023-07-03)
+
+**Note:** Version bump only for package @tada5hi/eslint-config
+
+
+
+
+
 ## [1.1.8](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config@1.1.7...@tada5hi/eslint-config@1.1.8) (2023-06-14)
 
 **Note:** Version bump only for package @tada5hi/eslint-config
