@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-vue@1.1.11...@tada5hi/eslint-config-vue@1.2.0) (2023-07-03)
+
+**Note:** Version bump only for package @tada5hi/eslint-config-vue
+
+
+
+
+
 ## [1.1.11](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-vue@1.1.10...@tada5hi/eslint-config-vue@1.1.11) (2023-07-03)
 
 
