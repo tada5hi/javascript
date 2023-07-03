@@ -22,7 +22,6 @@
         "packages/*"
     ],
     "scripts": {
-        "commit": "npx git-cz",
         "build": "lerna run build",
         "test": "lerna run test",
         "prepare": "husky install",

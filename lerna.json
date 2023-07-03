@@ -3,10 +3,11 @@
     "packages": ["packages/*"],
     "command": {
         "publish": {
-            "ignoreChanges": ["ignored-file", "*.md"]
+            "ignoreChanges": ["*.md"]
         },
         "version": {
-            "message": "build(release): publish"
+            "message": "build(release): publish",
+            "ignoreChanges": ["*.md"]
         }
     },
     "version": "independent",
