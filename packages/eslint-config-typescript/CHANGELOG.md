@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-typescript@1.2.0...@tada5hi/eslint-config-typescript@1.2.1) (2023-07-18)
+
+
+### Bug Fixes
+
+* **deps:** bump @typescript-eslint/eslint-plugin from 5.61.0 to 5.62.0 ([#366](https://github.com/tada5hi/javascript/issues/366)) ([334adfa](https://github.com/tada5hi/javascript/commit/334adfa54c934eb441bc7f6cf9a605cca0c372c2))
+* **deps:** bump @typescript-eslint/eslint-plugin from 5.62.0 to 6.0.0 ([#368](https://github.com/tada5hi/javascript/issues/368)) ([ac7ebeb](https://github.com/tada5hi/javascript/commit/ac7ebebb0fcb00f12ca74445067397d560dbe21f))
+* **deps:** bump @typescript-eslint/parser from 5.61.0 to 5.62.0 ([#367](https://github.com/tada5hi/javascript/issues/367)) ([5c29eaa](https://github.com/tada5hi/javascript/commit/5c29eaae8edce17da11fb8f4770ce26a1e952701))
+* **deps:** bump @typescript-eslint/parser from 5.62.0 to 6.0.0 ([#372](https://github.com/tada5hi/javascript/issues/372)) ([0d2b275](https://github.com/tada5hi/javascript/commit/0d2b275b9d53871cd919f7ce3dd1cdc5ab79a175))
+* **deps:** bump eslint-config-airbnb-typescript from 17.0.0 to 17.1.0 ([#370](https://github.com/tada5hi/javascript/issues/370)) ([45b3494](https://github.com/tada5hi/javascript/commit/45b3494b4b1042c37d7c193b54648f0b998c4d7a))
+
+
+
+
+
 # [1.2.0](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-typescript@1.1.11...@tada5hi/eslint-config-typescript@1.2.0) (2023-07-03)
 
 **Note:** Version bump only for package @tada5hi/eslint-config-typescript
