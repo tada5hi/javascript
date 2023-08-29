@@ -15,7 +15,7 @@
     },
     "homepage": "https://github.com/tada5hi/javascript#readme",
     "devDependencies": {
-        "lerna": "^7.1.5",
+        "lerna": "^7.2.0",
         "husky": "^8.0.3"
     },
     "workspaces": [
