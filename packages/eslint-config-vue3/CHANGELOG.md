@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-vue3@1.2.2...@tada5hi/eslint-config-vue3@1.2.3) (2023-09-15)
+
+
+### Bug Fixes
+
+* **deps:** bump eslint-plugin-vue from 9.16.1 to 9.17.0 ([#389](https://github.com/tada5hi/javascript/issues/389)) ([58ae39e](https://github.com/tada5hi/javascript/commit/58ae39ee2488a5a324d9035c63c7087aa2c610ee))
+
+
+
+
+
 ## [1.2.2](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-vue3@1.2.1...@tada5hi/eslint-config-vue3@1.2.2) (2023-08-04)
 
 

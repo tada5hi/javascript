@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.4](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-nuxt-typescript@1.2.3...@tada5hi/eslint-config-nuxt-typescript@1.2.4) (2023-09-15)
+
+
+### Bug Fixes
+
+* **deps:** bump @nuxtjs/eslint-config-typescript from 12.0.0 to 12.1.0 ([#407](https://github.com/tada5hi/javascript/issues/407)) ([4ab4c62](https://github.com/tada5hi/javascript/commit/4ab4c6258b6de465821d82a6ac8bd27ca10e6974))
+
+
+
+
+
 ## [1.2.3](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-nuxt-typescript@1.2.2...@tada5hi/eslint-config-nuxt-typescript@1.2.3) (2023-08-04)
 
 **Note:** Version bump only for package @tada5hi/eslint-config-nuxt-typescript
