@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/tada5hi/javascript/compare/@tada5hi/semantic-release@0.2.0...@tada5hi/semantic-release@0.3.0) (2023-09-28)
+
+
+### Features
+
+* support semantic-release v22.x ([dd6e116](https://github.com/tada5hi/javascript/commit/dd6e1164e551ddc5c509eac06b93d1253ea6d619))
+
+
+
+
+
 # [0.2.0](https://github.com/tada5hi/javascript/compare/@tada5hi/semantic-release@0.1.0...@tada5hi/semantic-release@0.2.0) (2023-07-03)
 
 **Note:** Version bump only for package @tada5hi/semantic-release
