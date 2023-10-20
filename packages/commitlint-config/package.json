@@ -33,7 +33,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@commitlint/config-conventional": "^17.8.0"
+        "@commitlint/config-conventional": "^18.0.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^17.8.0"
