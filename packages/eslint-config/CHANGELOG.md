@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.5](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config@1.2.4...@tada5hi/eslint-config@1.2.5) (2023-10-24)
+
+
+### Bug Fixes
+
+* **deps:** bump eslint-plugin-import from 2.28.1 to 2.29.0 ([#438](https://github.com/tada5hi/javascript/issues/438)) ([aada15e](https://github.com/tada5hi/javascript/commit/aada15efb471dab6786f280d8c82c8459b30330c))
+
+
+
+
+
 ## [1.2.4](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config@1.2.3...@tada5hi/eslint-config@1.2.4) (2023-09-28)
 
 **Note:** Version bump only for package @tada5hi/eslint-config
