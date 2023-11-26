@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.7](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-typescript@1.2.6...@tada5hi/eslint-config-typescript@1.2.7) (2023-11-26)
+
+
+### Bug Fixes
+
+* **deps:** bump @typescript-eslint/eslint-plugin from 6.10.0 to 6.11.0 ([#453](https://github.com/tada5hi/javascript/issues/453)) ([bfaf125](https://github.com/tada5hi/javascript/commit/bfaf1251cc7be4d09c02bef4813c30bd50410a3e))
+* **deps:** bump @typescript-eslint/eslint-plugin from 6.11.0 to 6.12.0 ([#460](https://github.com/tada5hi/javascript/issues/460)) ([a0e7221](https://github.com/tada5hi/javascript/commit/a0e722103d1746d2b7c25661a1c5a9d9cb1c73c7))
+* **deps:** bump @typescript-eslint/eslint-plugin from 6.9.0 to 6.9.1 ([#447](https://github.com/tada5hi/javascript/issues/447)) ([a389e0a](https://github.com/tada5hi/javascript/commit/a389e0aabd9198381e1bd1c4ce8204e029c7afe8))
+* **deps:** bump @typescript-eslint/eslint-plugin from 6.9.1 to 6.10.0 ([#448](https://github.com/tada5hi/javascript/issues/448)) ([7a0d99c](https://github.com/tada5hi/javascript/commit/7a0d99cb632ea1c484b9f0884f007bad3bb54ba6))
+* **deps:** bump @typescript-eslint/parser from 6.10.0 to 6.11.0 ([#454](https://github.com/tada5hi/javascript/issues/454)) ([56b0d71](https://github.com/tada5hi/javascript/commit/56b0d71f61f06f697b1845da69481c7a7dbcca91))
+* **deps:** bump @typescript-eslint/parser from 6.11.0 to 6.12.0 ([#459](https://github.com/tada5hi/javascript/issues/459)) ([9863ddd](https://github.com/tada5hi/javascript/commit/9863ddde46bc6da6db5ee78594ccde1079df78f0))
+* **deps:** bump @typescript-eslint/parser from 6.9.0 to 6.9.1 ([#446](https://github.com/tada5hi/javascript/issues/446)) ([7ec4d9d](https://github.com/tada5hi/javascript/commit/7ec4d9d47f26eaa9deb7a0597cba390b82a73fb9))
+* **deps:** bump @typescript-eslint/parser from 6.9.1 to 6.10.0 ([#450](https://github.com/tada5hi/javascript/issues/450)) ([1694ab1](https://github.com/tada5hi/javascript/commit/1694ab17f1812d3baa2e36e12fc6d83ccb568e57))
+
+
+
+
+
 ## [1.2.6](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-typescript@1.2.5...@tada5hi/eslint-config-typescript@1.2.6) (2023-10-24)
 
 
