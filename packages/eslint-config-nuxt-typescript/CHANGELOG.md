@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config-typescript bumped from ^1.2.7 to ^1.2.8
+
 ## [1.2.7](https://github.com/tada5hi/javascript/compare/@tada5hi/eslint-config-nuxt-typescript@1.2.6...@tada5hi/eslint-config-nuxt-typescript@1.2.7) (2023-11-26)
 
 **Note:** Version bump only for package @tada5hi/eslint-config-nuxt-typescript
