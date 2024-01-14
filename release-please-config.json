@@ -1,0 +1,28 @@
+{
+    "bootstrap-sha": "c7eb6b79731295a2757effbac263a23f28410e4b",
+    "include-component-in-tag": true,
+    "release-type": "node",
+    "bump-minor-pre-major": true,
+    "bump-patch-for-minor-pre-major": true,
+    "packages": {
+        "packages/commitlint-config": {},
+        "packages/eslint-config-nuxt-typescript": {},
+        "packages/eslint-config-nuxt": {},
+        "packages/eslint-config-typescript": {},
+        "packages/eslint-config-vue-typescript": {},
+        "packages/eslint-config-vue": {},
+        "packages/eslint-config-vue3-typescript": {},
+        "packages/eslint-config-vue3": {},
+        "packages/eslint-config": {},
+        "packages/prettier-config": {},
+        "packages/semantic-release": {},
+        "packages/tsconfig": {}
+    },
+    "plugins": [
+        {
+            "type": "node-workspace",
+            "updatePeerDependencies": true
+        }
+    ],
+    "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
+}
