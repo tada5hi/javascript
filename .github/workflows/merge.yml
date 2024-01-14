@@ -3,6 +3,16 @@ on:
     pull_request:
         branches:
             - master
+
+
+env:
+    NODE_VERSION: 18
+
+
+defaults:
+    run:
+        shell: bash
+
 jobs:
     merge:
         runs-on: ubuntu-latest
@@ -11,10 +21,13 @@ jobs:
             pull-requests: write
             contents: write
         steps:
-            - name: "Checkout"
-              uses: actions/checkout@v4
-            - name: "Install"
-              uses: ./.github/actions/install
-              with:
-                node-version: ${{ env.PRIMARY_NODE_VERSION }}
-            - uses: fastify/github-action-merge-dependabot@v3
+            -   name: Checkout
+                uses: actions/checkout@v4
+
+            -   name: Install
+                if: steps.release.outputs.releases_created == 'true'
+                uses: ./.github/actions/install
+                with:
+                    node-version: ${{ env.NODE_VERSION }}
+
+            -   uses: fastify/github-action-merge-dependabot@v3

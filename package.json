@@ -16,16 +16,12 @@
     "homepage": "https://github.com/tada5hi/javascript#readme",
     "devDependencies": {
         "husky": "^8.0.3",
-        "lerna": "^8.0.2",
         "workspaces-publish": "^1.4.1"
     },
     "workspaces": [
         "packages/*"
     ],
     "scripts": {
-        "build": "lerna run build",
-        "test": "lerna run test",
-        "prepare": "husky install",
-        "pub": "lerna publish"
+        "prepare": "husky install"
     }
 }
