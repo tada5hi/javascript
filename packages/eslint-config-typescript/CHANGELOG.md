@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.9](https://github.com/tada5hi/javascript/compare/eslint-config-typescript-v1.2.8...eslint-config-typescript-v1.2.9) (2024-01-26)
+
+
+### Bug Fixes
+
+* **deps:** bump @typescript-eslint/eslint-plugin from 6.18.1 to 6.19.0 ([#498](https://github.com/tada5hi/javascript/issues/498)) ([03bf426](https://github.com/tada5hi/javascript/commit/03bf42603b179aaa7069d72c04e5de0eeb772dc8))
+* **deps:** bump @typescript-eslint/eslint-plugin from 6.19.0 to 6.19.1 ([#504](https://github.com/tada5hi/javascript/issues/504)) ([af48abc](https://github.com/tada5hi/javascript/commit/af48abcb21ed8ffe5c6acd2da751248ca8ca1e54))
+* **deps:** bump @typescript-eslint/parser from 6.18.1 to 6.19.0 ([#499](https://github.com/tada5hi/javascript/issues/499)) ([85157bc](https://github.com/tada5hi/javascript/commit/85157bc668894533c0cd43598c1d43fb2701bf93))
+* **deps:** bump @typescript-eslint/parser from 6.19.0 to 6.19.1 ([#503](https://github.com/tada5hi/javascript/issues/503)) ([0671eef](https://github.com/tada5hi/javascript/commit/0671eef687c93f5d554fedf9a57d73423bb1722e))
+
 ## [1.2.8](https://github.com/tada5hi/javascript/compare/eslint-config-typescript-v1.2.7...eslint-config-typescript-v1.2.8) (2024-01-14)
 
 
