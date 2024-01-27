@@ -39,6 +39,6 @@
         "@commitlint/cli": "^18.6.0"
     },
     "peerDependencies": {
-        "@commitlint/cli": "^17.x"
+        "@commitlint/cli": "^18.6.0"
     }
 }
