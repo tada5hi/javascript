@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.7](https://github.com/tada5hi/javascript/compare/commitlint-config-v1.1.6...commitlint-config-v1.1.7) (2024-01-27)
+
+
+### Bug Fixes
+
+* set commitlint/cli to min version of 18.6.0 ([976b1dc](https://github.com/tada5hi/javascript/commit/976b1dc2633b5db26747c391958a0f489fa36514))
+
 ## [1.1.6](https://github.com/tada5hi/javascript/compare/commitlint-config-v1.1.5...commitlint-config-v1.1.6) (2024-01-26)
 
 
