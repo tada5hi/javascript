@@ -36,9 +36,9 @@
         "@commitlint/config-conventional": "^18.6.2"
     },
     "devDependencies": {
-        "@commitlint/cli": "^18.6.1"
+        "@commitlint/cli": "^19.0.1"
     },
     "peerDependencies": {
-        "@commitlint/cli": "^18.6.1"
+        "@commitlint/cli": "^19.0.1"
     }
 }
