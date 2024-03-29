@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.0](https://github.com/tada5hi/javascript/compare/commitlint-config-v1.1.8...commitlint-config-v1.2.0) (2024-03-29)
+
+
+### Features
+
+* disable boddy & footer max line length ([f1b311e](https://github.com/tada5hi/javascript/commit/f1b311e08259165a835a3fae02f316befa879450))
+
 ## [1.1.8](https://github.com/tada5hi/javascript/compare/commitlint-config-v1.1.7...commitlint-config-v1.1.8) (2024-03-29)
 
 

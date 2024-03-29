@@ -1,5 +1,5 @@
 {
-    "packages/commitlint-config": "1.1.8",
+    "packages/commitlint-config": "1.2.0",
     "packages/eslint-config-nuxt-typescript": "1.2.10",
     "packages/eslint-config-nuxt": "1.2.7",
     "packages/eslint-config-typescript": "1.2.10",
