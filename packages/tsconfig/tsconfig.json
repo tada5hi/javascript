@@ -4,11 +4,11 @@
         "moduleResolution": "Node",
         "moduleDetection": "force",
 
-        "target": "ES2020",
+        "target": "ES2022",
         "lib": [
             "DOM",
             "DOM.Iterable",
-            "ES2020"
+            "ES2022"
         ],
         "allowSyntheticDefaultImports": true,
         "declaration": true,
