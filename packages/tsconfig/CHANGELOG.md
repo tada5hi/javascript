@@ -1,9 +1,18 @@
-# Change Log
+# Changelog
+
+## [0.5.1](https://github.com/tada5hi/javascript/compare/tsconfig-v0.5.0...tsconfig-v0.5.1) (2024-03-29)
+
+
+### Features
+
+* set tsconfig target to es2022 ([a24afca](https://github.com/tada5hi/javascript/commit/a24afca1b72d28b230510a2ca19a3ab045764f84))
+
+## Change Log
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.5.0](https://github.com/tada5hi/javascript/compare/@tada5hi/tsconfig@0.4.0...@tada5hi/tsconfig@0.5.0) (2023-07-03)
+## [0.5.0](https://github.com/tada5hi/javascript/compare/@tada5hi/tsconfig@0.4.0...@tada5hi/tsconfig@0.5.0) (2023-07-03)
 
 **Note:** Version bump only for package @tada5hi/tsconfig
 
@@ -11,7 +20,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.4.0](https://github.com/tada5hi/javascript/compare/@tada5hi/tsconfig@0.3.0...@tada5hi/tsconfig@0.4.0) (2023-01-27)
+## [0.4.0](https://github.com/tada5hi/javascript/compare/@tada5hi/tsconfig@0.3.0...@tada5hi/tsconfig@0.4.0) (2023-01-27)
 
 
 ### Features
@@ -22,7 +31,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.3.0](https://github.com/tada5hi/javascript/compare/@tada5hi/tsconfig@0.2.0...@tada5hi/tsconfig@0.3.0) (2023-01-24)
+## [0.3.0](https://github.com/tada5hi/javascript/compare/@tada5hi/tsconfig@0.2.0...@tada5hi/tsconfig@0.3.0) (2023-01-24)
 
 
 ### Features
@@ -33,7 +42,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# [0.2.0](https://github.com/tada5hi/javascript/compare/@tada5hi/tsconfig@0.1.0...@tada5hi/tsconfig@0.2.0) (2023-01-24)
+## [0.2.0](https://github.com/tada5hi/javascript/compare/@tada5hi/tsconfig@0.1.0...@tada5hi/tsconfig@0.2.0) (2023-01-24)
 
 
 ### Features
@@ -44,7 +53,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-# 0.1.0 (2022-12-28)
+## 0.1.0 (2022-12-28)
 
 
 ### Features
