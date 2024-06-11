@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/tada5hi/javascript/compare/commitlint-config-v1.2.0...commitlint-config-v1.2.1) (2024-06-11)
+
+
+### Bug Fixes
+
+* **deps:** bump @commitlint/config-conventional from 19.1.0 to 19.2.2 ([#564](https://github.com/tada5hi/javascript/issues/564)) ([538e3b9](https://github.com/tada5hi/javascript/commit/538e3b91392d6a909ef74caa1420a118d022ad76))
+
 ## [1.2.0](https://github.com/tada5hi/javascript/compare/commitlint-config-v1.1.8...commitlint-config-v1.2.0) (2024-03-29)
 
 

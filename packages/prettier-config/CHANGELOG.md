@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.8](https://github.com/tada5hi/javascript/compare/prettier-config-v1.2.7...prettier-config-v1.2.8) (2024-06-11)
+
+
+### Bug Fixes
+
+* **deps:** bump prettier from 3.2.5 to 3.3.0 ([#578](https://github.com/tada5hi/javascript/issues/578)) ([db1acfa](https://github.com/tada5hi/javascript/commit/db1acfa69a87df2be27a3f1a47a94583ca7d7f27))
+* **deps:** bump prettier from 3.3.0 to 3.3.1 ([#581](https://github.com/tada5hi/javascript/issues/581)) ([81c4fd7](https://github.com/tada5hi/javascript/commit/81c4fd70665e6701b900bfb09659609b61dd2808))
+
 ## [1.2.7](https://github.com/tada5hi/javascript/compare/prettier-config-v1.2.6...prettier-config-v1.2.7) (2024-03-29)
 
 
