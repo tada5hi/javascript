@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.6.0](https://github.com/tada5hi/javascript/compare/tsconfig-v0.5.1...tsconfig-v0.6.0) (2024-11-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* target esm version changed
+
+### Features
+
+* change target in tsconfig to ESNEXT ([f97171a](https://github.com/tada5hi/javascript/commit/f97171a432fb80b42a99303e2b57f6a3eb818935))
+
 ## [0.5.1](https://github.com/tada5hi/javascript/compare/tsconfig-v0.5.0...tsconfig-v0.5.1) (2024-03-29)
 
 

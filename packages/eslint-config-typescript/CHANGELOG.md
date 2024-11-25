@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.13](https://github.com/tada5hi/javascript/compare/eslint-config-typescript-v1.2.12...eslint-config-typescript-v1.2.13) (2024-11-25)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^1.2.7 to ^1.2.8
+
 ## [1.2.12](https://github.com/tada5hi/javascript/compare/eslint-config-typescript-v1.2.11...eslint-config-typescript-v1.2.12) (2024-08-30)
 
 
