@@ -16,7 +16,7 @@
     "homepage": "https://github.com/tada5hi/javascript#readme",
     "devDependencies": {
         "husky": "^9.1.7",
-        "workspaces-publish": "^1.4.4"
+        "workspaces-publish": "^1.4.5"
     },
     "workspaces": [
         "packages/*"
