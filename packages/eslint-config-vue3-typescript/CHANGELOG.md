@@ -16,6 +16,16 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
   * dependencies
     * @tada5hi/eslint-config-typescript bumped from ^1.2.8 to ^1.2.9
 
+## [1.3.14](https://github.com/tada5hi/javascript/compare/eslint-config-vue3-typescript-v1.3.13...eslint-config-vue3-typescript-v1.3.14) (2025-02-27)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config-typescript bumped from ^1.2.13 to ^1.2.14
+    * @tada5hi/eslint-config-vue3 bumped from ^1.2.11 to ^1.2.12
+
 ## [1.3.13](https://github.com/tada5hi/javascript/compare/eslint-config-vue3-typescript-v1.3.12...eslint-config-vue3-typescript-v1.3.13) (2024-11-25)
 
 
