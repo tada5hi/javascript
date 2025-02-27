@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.14](https://github.com/tada5hi/javascript/compare/eslint-config-typescript-v1.2.13...eslint-config-typescript-v1.2.14) (2025-02-27)
+
+
+### Bug Fixes
+
+* **deps:** bump @typescript-eslint/eslint-plugin from 7.18.0 to 8.21.0 ([#634](https://github.com/tada5hi/javascript/issues/634)) ([42738a0](https://github.com/tada5hi/javascript/commit/42738a0b8d5d2217065e4203ae1e3d27716af4ca))
+* **deps:** bump @typescript-eslint/eslint-plugin from 8.21.0 to 8.22.0 ([#637](https://github.com/tada5hi/javascript/issues/637)) ([cd5ebf6](https://github.com/tada5hi/javascript/commit/cd5ebf613de9d2bcc2220c28d37479f6b00fe7a1))
+* **deps:** bump @typescript-eslint/eslint-plugin from 8.22.0 to 8.23.0 ([#642](https://github.com/tada5hi/javascript/issues/642)) ([1d525be](https://github.com/tada5hi/javascript/commit/1d525bec7cd75909142f622f31e14676546e7f91))
+* **deps:** bump @typescript-eslint/eslint-plugin from 8.24.0 to 8.24.1 ([#653](https://github.com/tada5hi/javascript/issues/653)) ([283b749](https://github.com/tada5hi/javascript/commit/283b749768dd3a6375088b8d647532fbda72f7d4))
+* **deps:** bump @typescript-eslint/parser from 7.18.0 to 8.21.0 ([#635](https://github.com/tada5hi/javascript/issues/635)) ([3f7b4db](https://github.com/tada5hi/javascript/commit/3f7b4dbf10e6ed6fe9cbee593e00a6f07913ae15))
+* **deps:** bump @typescript-eslint/parser from 8.21.0 to 8.22.0 ([#638](https://github.com/tada5hi/javascript/issues/638)) ([427ad37](https://github.com/tada5hi/javascript/commit/427ad37093cfd00c360958da9ced9eaccf821b6d))
+* **deps:** bump @typescript-eslint/parser from 8.24.0 to 8.24.1 ([#651](https://github.com/tada5hi/javascript/issues/651)) ([ecde7d0](https://github.com/tada5hi/javascript/commit/ecde7d01800cd6f8d9808430dcab9e38e17f5206))
+* **deps:** bump eslint-import-resolver-typescript from 3.6.3 to 3.7.0 ([#628](https://github.com/tada5hi/javascript/issues/628)) ([438a54a](https://github.com/tada5hi/javascript/commit/438a54afec2d00ec38afc6d2a37d9fc691e0a4fb))
+* **deps:** bump eslint-import-resolver-typescript from 3.7.0 to 3.8.0 ([#650](https://github.com/tada5hi/javascript/issues/650)) ([aff3c39](https://github.com/tada5hi/javascript/commit/aff3c392cff8319a424ce7dc5c0f9f715ddad8c7))
+* **deps:** bump eslint-import-resolver-typescript from 3.8.0 to 3.8.1 ([#652](https://github.com/tada5hi/javascript/issues/652)) ([7ab605d](https://github.com/tada5hi/javascript/commit/7ab605d39ed2320685a1ba84f9cd2570b9bf71e8))
+* **deps:** bump eslint-import-resolver-typescript from 3.8.1 to 3.8.2 ([#654](https://github.com/tada5hi/javascript/issues/654)) ([f61d930](https://github.com/tada5hi/javascript/commit/f61d930843e489c26bd4732d7452f2494f80d8de))
+* **deps:** bump eslint-import-resolver-typescript from 3.8.2 to 3.8.3 ([#655](https://github.com/tada5hi/javascript/issues/655)) ([ff40cdf](https://github.com/tada5hi/javascript/commit/ff40cdff113ea8733bac9d0be341e0e8ce7fc3ba))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^1.2.8 to ^1.2.9
+
 ## [1.2.13](https://github.com/tada5hi/javascript/compare/eslint-config-typescript-v1.2.12...eslint-config-typescript-v1.2.13) (2024-11-25)
 
 
