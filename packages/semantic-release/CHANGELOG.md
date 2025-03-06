@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.2](https://github.com/tada5hi/javascript/compare/semantic-release-v0.3.1...semantic-release-v0.3.2) (2025-03-06)
+
+
+### Bug Fixes
+
+* permit semantic release v24.x ([2fdbf70](https://github.com/tada5hi/javascript/commit/2fdbf709d6ede7d7648e345f1019f129b47bffe0))
+
 ## [0.3.1](https://github.com/tada5hi/javascript/compare/semantic-release-v0.3.0...semantic-release-v0.3.1) (2024-01-14)
 
 
