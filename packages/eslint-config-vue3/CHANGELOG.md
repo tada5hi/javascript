@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.14](https://github.com/tada5hi/javascript/compare/eslint-config-vue3-v1.2.13...eslint-config-vue3-v1.2.14) (2025-04-17)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^1.2.9 to ^1.2.10
+
 ## [1.2.13](https://github.com/tada5hi/javascript/compare/eslint-config-vue3-v1.2.12...eslint-config-vue3-v1.2.13) (2025-03-06)
 
 

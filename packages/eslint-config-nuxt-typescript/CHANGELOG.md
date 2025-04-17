@@ -15,6 +15,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
   * dependencies
     * @tada5hi/eslint-config-typescript bumped from ^1.2.8 to ^1.2.9
 
+## [1.2.16](https://github.com/tada5hi/javascript/compare/eslint-config-nuxt-typescript-v1.2.15...eslint-config-nuxt-typescript-v1.2.16) (2025-04-17)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config-typescript bumped from ^1.2.15 to ^1.2.16
+
 ## [1.2.15](https://github.com/tada5hi/javascript/compare/eslint-config-nuxt-typescript-v1.2.14...eslint-config-nuxt-typescript-v1.2.15) (2025-03-06)
 
 
