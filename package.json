@@ -6,6 +6,9 @@
         "email": "contact@tada5hi.net",
         "url": "https://tada5hi.net"
     },
+    "engines": {
+        "node": ">=22.0.0"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/tada5hi/javascript.git"
