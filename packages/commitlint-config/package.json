@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/commitlint-config",
-    "version": "1.2.6",
+    "version": "1.2.7",
     "description": "",
     "license": "MIT",
     "main": "index.js",
