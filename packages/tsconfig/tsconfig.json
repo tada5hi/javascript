@@ -1,10 +1,13 @@
 {
     "compilerOptions": {
-        "module": "Node16",
-        "moduleResolution": "Node",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
         "moduleDetection": "force",
 
+        // Specify allowed/compiled syntax
         "target": "ESNext",
+
+        // Specify allowed API(s)
         "lib": [
             "DOM",
             "DOM.Iterable",
