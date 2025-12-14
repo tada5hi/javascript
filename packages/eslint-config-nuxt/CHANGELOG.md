@@ -9,6 +9,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
   * dependencies
     * @tada5hi/eslint-config bumped from ^1.2.6 to ^1.2.7
 
+## [1.2.12](https://github.com/tada5hi/javascript/compare/eslint-config-nuxt-v1.2.11...eslint-config-nuxt-v1.2.12) (2025-12-14)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^1.2.11 to ^1.2.12
+
 ## [1.2.11](https://github.com/tada5hi/javascript/compare/eslint-config-nuxt-v1.2.10...eslint-config-nuxt-v1.2.11) (2025-06-25)
 
 

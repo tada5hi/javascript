@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/prettier-config",
-    "version": "1.2.12",
+    "version": "1.2.13",
     "description": "",
     "license": "MIT",
     "main": "index.js",
