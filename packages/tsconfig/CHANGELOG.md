@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.0](https://github.com/tada5hi/javascript/compare/tsconfig-v0.6.0...tsconfig-v0.7.0) (2025-12-14)
+
+
+### Features
+
+* strict node cjs/esm rules ([dc49932](https://github.com/tada5hi/javascript/commit/dc4993289ea9e0c3c5f59abf63429646806f5902))
+
 ## [0.6.0](https://github.com/tada5hi/javascript/compare/tsconfig-v0.5.1...tsconfig-v0.6.0) (2024-11-25)
 
 

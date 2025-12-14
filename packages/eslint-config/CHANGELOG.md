@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.12](https://github.com/tada5hi/javascript/compare/eslint-config-v1.2.11...eslint-config-v1.2.12) (2025-12-14)
+
+
+### Bug Fixes
+
+* **deps:** bump eslint-config-prettier from 10.1.5 to 10.1.7 ([#753](https://github.com/tada5hi/javascript/issues/753)) ([09e3b9e](https://github.com/tada5hi/javascript/commit/09e3b9e09c341c13a0aa5aac609791c0349c5f99))
+* **deps:** bump eslint-config-prettier from 10.1.7 to 10.1.8 ([#754](https://github.com/tada5hi/javascript/issues/754)) ([1abcc3e](https://github.com/tada5hi/javascript/commit/1abcc3efb74e65e61febb92491a4a3d89dae4ed4))
+
 ## [1.2.11](https://github.com/tada5hi/javascript/compare/eslint-config-v1.2.10...eslint-config-v1.2.11) (2025-06-25)
 
 

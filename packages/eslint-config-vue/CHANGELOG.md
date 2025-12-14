@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.16](https://github.com/tada5hi/javascript/compare/eslint-config-vue-v1.2.15...eslint-config-vue-v1.2.16) (2025-12-14)
+
+
+### Bug Fixes
+
+* **deps:** bump eslint-plugin-vue from 10.2.0 to 10.3.0 ([#746](https://github.com/tada5hi/javascript/issues/746)) ([edd4955](https://github.com/tada5hi/javascript/commit/edd49556c4500e08b2de4bb4c36fb920b5163e2e))
+* **deps:** bump eslint-plugin-vue from 10.3.0 to 10.4.0 ([#758](https://github.com/tada5hi/javascript/issues/758)) ([2cc1e55](https://github.com/tada5hi/javascript/commit/2cc1e5522d81236e07ac84f3e551242b0cbd6c83))
+* **deps:** bump eslint-plugin-vue from 10.4.0 to 10.5.0 ([#778](https://github.com/tada5hi/javascript/issues/778)) ([78bdf19](https://github.com/tada5hi/javascript/commit/78bdf198b9951f21a308b2516a0129248dc89623))
+* **deps:** bump eslint-plugin-vue from 10.5.0 to 10.5.1 ([#792](https://github.com/tada5hi/javascript/issues/792)) ([41b5793](https://github.com/tada5hi/javascript/commit/41b5793b05de70d6a9915ee7918d5dd5e9414471))
+* **deps:** bump eslint-plugin-vue from 10.5.1 to 10.6.0 ([#807](https://github.com/tada5hi/javascript/issues/807)) ([8d0ffb2](https://github.com/tada5hi/javascript/commit/8d0ffb25e9327284f343aff7714d680a5c2df7a3))
+* **deps:** bump eslint-plugin-vue from 10.6.0 to 10.6.1 ([#808](https://github.com/tada5hi/javascript/issues/808)) ([2c8f199](https://github.com/tada5hi/javascript/commit/2c8f199e835d205bfb62fc057b8792228a70be26))
+* **deps:** bump eslint-plugin-vue from 10.6.1 to 10.6.2 ([#810](https://github.com/tada5hi/javascript/issues/810)) ([4c2c266](https://github.com/tada5hi/javascript/commit/4c2c266d9126931095067debe8be4fd683f21a83))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^1.2.11 to ^1.2.12
+
 ## [1.2.15](https://github.com/tada5hi/javascript/compare/eslint-config-vue-v1.2.14...eslint-config-vue-v1.2.15) (2025-06-25)
 
 
