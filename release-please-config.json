@@ -8,8 +8,6 @@
         "packages/eslint-config-typescript": {},
         "packages/eslint-config-vue-typescript": {},
         "packages/eslint-config-vue": {},
-        "packages/eslint-config-vue3-typescript": {},
-        "packages/eslint-config-vue3": {},
         "packages/eslint-config": {},
         "packages/prettier-config": {},
         "packages/semantic-release": {},
