@@ -39,7 +39,7 @@
         "eslint-plugin-node": "^11.1.0"
     },
     "devDependencies": {
-        "eslint": "^9.39.2"
+        "eslint": "^10.0.0"
     },
     "peerDependencies": {
         "eslint": "^8.x"
