@@ -1,17 +1,9 @@
-module.exports = {
-    extends:  [
-        'plugin:vue/recommended',
-        '@tada5hi/eslint-config'
-    ],
-    plugins: [
-        'vue'
-    ],
-    parser: 'vue-eslint-parser',
-    settings: {
-        "import/resolver": {
-            "node": {
-                extensions: ['.js', '.mjs']
-            }
-        }
-    }
-};
+import vue from 'eslint-plugin-vue';
+import eslintConfig from '@tada5hi/eslint-config';
+
+export default function eslintConfigVue() {
+    return [
+        ...eslintConfig(),
+        ...vue.configs['flat/recommended'],
+    ];
+}

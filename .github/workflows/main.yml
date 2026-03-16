@@ -1,0 +1,45 @@
+name: CI
+
+on:
+    push:
+        branches: [master]
+    pull_request:
+        types: [opened, synchronize]
+
+env:
+    NODE_VERSION: 22
+
+permissions:
+    contents: read
+
+defaults:
+    run:
+        shell: bash
+
+jobs:
+    install:
+        name: Checkout and Install
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v6
+            -   name: Install
+                uses: ./.github/actions/install
+                with:
+                    node-version: ${{ env.NODE_VERSION }}
+
+    tests:
+        name: Test Packages
+        needs: [install]
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v6
+
+            -   name: Install
+                uses: ./.github/actions/install
+                with:
+                    node-version: ${{ env.NODE_VERSION }}
+
+            -   name: Run tests
+                run: npm test

@@ -12,23 +12,13 @@ runs:
     using: 'composite'
     steps:
         -   name: Use Node.js ${{ inputs.node-version }}
-            uses: actions/setup-node@v3
+            uses: actions/setup-node@v4
             with:
                 node-version: ${{ inputs.node-version }}
                 registry-url: ${{ inputs.registry-url }}
+                cache: npm
 
-        -   name: Use cache
-            id: install-cache
-            uses: actions/cache@v3
-            with:
-                path: |
-                    node_modules
-                    */*/node_modules
-                key: ${{ runner.os }}-install-${{ hashFiles('**/package.json') }}
-                restore-keys: |
-                    ${{ runner.os }}-install-
-
-        - name: Install
-          shell: bash
-          run: |
-              npm ci
+        -   name: Install
+            shell: bash
+            run: |
+                npm ci

@@ -1,13 +1,12 @@
 name: Merge
+
 on:
     pull_request:
         branches:
             - master
 
-
 env:
-    NODE_VERSION: 18
-
+    NODE_VERSION: 22
 
 defaults:
     run:
@@ -20,14 +19,9 @@ jobs:
         permissions:
             pull-requests: write
             contents: write
+
         steps:
             -   name: Checkout
                 uses: actions/checkout@v6
-
-            -   name: Install
-                if: steps.release.outputs.releases_created == 'true'
-                uses: ./.github/actions/install
-                with:
-                    node-version: ${{ env.NODE_VERSION }}
 
             -   uses: fastify/github-action-merge-dependabot@v3

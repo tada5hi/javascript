@@ -1,19 +1,18 @@
 {
     "name": "@tada5hi/eslint-config-typescript",
     "version": "1.2.18",
-    "description": "",
+    "description": "Shared ESLint flat config for TypeScript projects",
     "license": "MIT",
+    "type": "module",
+    "exports": {
+        ".": "./index.js"
+    },
     "main": "index.js",
     "keywords": [
         "eslint",
         "config",
         "eslintconfig",
-        "javascript",
-        "styleguide",
-        "es2015",
-        "es2016",
-        "es2017",
-        "es2018",
+        "flat-config",
         "typescript"
     ],
     "author": {
@@ -30,14 +29,17 @@
         "url": "https://github.com/tada5hi/javascript/issues"
     },
     "homepage": "https://github.com/tada5hi/javascript#readme",
+    "scripts": {
+        "test": "vitest run -c test/vitest.config.ts"
+    },
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
         "@tada5hi/eslint-config": "^1.2.12",
-        "@typescript-eslint/eslint-plugin": "^8.54.0",
-        "@typescript-eslint/parser": "^8.57.0",
-        "eslint-config-airbnb-typescript": "^18.0.0",
-        "eslint-import-resolver-typescript": "^4.4.4"
+        "typescript-eslint": "^8.0.0"
+    },
+    "peerDependencies": {
+        "eslint": ">=9.0.0"
     }
 }
