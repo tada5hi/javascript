@@ -14,23 +14,13 @@ and semantic-release configuration.
 
 ## Packages
 
-### ESLint (Flat Config, ESLint >= 9)
-
 | Package | Description |
 |---------|-------------|
-| [`@tada5hi/eslint-config`](packages/eslint-config) | Unified ESLint flat config with optional TypeScript and Vue support |
-| [`@tada5hi/eslint-config-typescript`](packages/eslint-config-typescript) | *Deprecated* — use `@tada5hi/eslint-config` with `{ typescript: true }` |
-| [`@tada5hi/eslint-config-vue`](packages/eslint-config-vue) | *Deprecated* — use `@tada5hi/eslint-config` with `{ vue: true }` |
-| [`@tada5hi/eslint-config-vue-typescript`](packages/eslint-config-vue-typescript) | *Deprecated* — use `@tada5hi/eslint-config` with `{ typescript: true, vue: true }` |
-
-### Other
-
-| Package | Description |
-|---------|-------------|
-| [`@tada5hi/prettier-config`](packages/prettier-config) | Shared Prettier configuration |
-| [`@tada5hi/tsconfig`](packages/tsconfig) | Shared TypeScript compiler configuration |
-| [`@tada5hi/commitlint-config`](packages/commitlint-config) | Shared commitlint configuration |
-| [`@tada5hi/semantic-release`](packages/semantic-release) | Shared semantic-release configuration |
+| [`@tada5hi/eslint-config`](packages/eslint-config) | ESLint flat config with optional TypeScript and Vue support |
+| [`@tada5hi/prettier-config`](packages/prettier-config) | Prettier configuration |
+| [`@tada5hi/tsconfig`](packages/tsconfig) | TypeScript compiler configuration |
+| [`@tada5hi/commitlint-config`](packages/commitlint-config) | Commitlint configuration |
+| [`@tada5hi/semantic-release`](packages/semantic-release) | Semantic-release configuration |
 
 ## Usage
 
