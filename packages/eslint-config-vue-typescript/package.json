@@ -5,9 +5,17 @@
     "license": "MIT",
     "type": "module",
     "exports": {
-        ".": "./index.js"
+        "./package.json": "./package.json",
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.mjs"
+        }
     },
-    "main": "index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
     "keywords": [
         "eslint",
         "config",
@@ -32,6 +40,9 @@
     },
     "homepage": "https://github.com/tada5hi/javascript#readme",
     "scripts": {
+        "build:types": "tsc --emitDeclarationOnly -p tsconfig.build.json",
+        "build:js": "rollup -c",
+        "build": "rimraf ./dist && cross-env NODE_ENV=production npm run build:js && npm run build:types",
         "test": "vitest run -c test/vitest.config.ts"
     },
     "publishConfig": {

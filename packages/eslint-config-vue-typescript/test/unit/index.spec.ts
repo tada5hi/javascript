@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import eslintConfigVueTypescript from '../../index.js';
+import eslintConfigVueTypescript from '../../src/index.ts';
 
 describe('eslint-config-vue-typescript', () => {
     it('should return a valid flat config array', () => {

@@ -1,10 +1,11 @@
+import type { Linter } from 'eslint';
 import js from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import importXPlugin from 'eslint-plugin-import-x';
 import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 
-export default function eslintConfig() {
+export default function eslintConfig(): Linter.Config[] {
     return [
         js.configs.recommended,
         {

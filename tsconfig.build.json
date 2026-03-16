@@ -1,0 +1,16 @@
+{
+    "extends": "./packages/tsconfig/tsconfig.json",
+    "compilerOptions": {
+        "sourceMap": true,
+        "declarationMap": true,
+
+        "moduleResolution": "bundler",
+        "module": "ESNext",
+
+        "allowImportingTsExtensions": true
+    },
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
