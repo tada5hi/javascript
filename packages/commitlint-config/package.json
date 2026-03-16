@@ -8,10 +8,10 @@
         "./package.json": "./package.json",
         ".": {
             "types": "./dist/index.d.ts",
-            "import": "./dist/index.mjs"
+            "import": "./dist/index.js"
         }
     },
-    "module": "./dist/index.mjs",
+    "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
     "files": [
         "dist"
@@ -39,9 +39,7 @@
     },
     "homepage": "https://github.com/tada5hi/javascript#readme",
     "scripts": {
-        "build:types": "tsc --emitDeclarationOnly -p tsconfig.build.json",
-        "build:js": "rollup -c",
-        "build": "rimraf ./dist && cross-env NODE_ENV=production npm run build:js && npm run build:types"
+        "build": "tsc --noEmit -p tsconfig.build.json && tsdown"
     },
     "publishConfig": {
         "access": "public"

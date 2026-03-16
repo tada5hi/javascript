@@ -7,7 +7,8 @@
         "moduleResolution": "bundler",
         "module": "ESNext",
 
-        "allowImportingTsExtensions": true
+        "allowImportingTsExtensions": true,
+        "rewriteRelativeImportExtensions": true
     },
     "exclude": [
         "node_modules",
