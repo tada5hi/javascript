@@ -8,7 +8,8 @@
         "module": "ESNext",
 
         "allowImportingTsExtensions": true,
-        "rewriteRelativeImportExtensions": true
+        "rewriteRelativeImportExtensions": true,
+        "noEmit": true
     },
     "exclude": [
         "node_modules",
