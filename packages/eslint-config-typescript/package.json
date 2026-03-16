@@ -45,10 +45,12 @@
         "access": "public"
     },
     "dependencies": {
-        "@tada5hi/eslint-config": "^1.2.12",
-        "typescript-eslint": "^8.0.0"
+        "@tada5hi/eslint-config": "^1.2.12"
     },
     "peerDependencies": {
         "eslint": ">=9.0.0"
+    },
+    "devDependencies": {
+        "typescript-eslint": "^8.57.0"
     }
 }

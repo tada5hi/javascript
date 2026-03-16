@@ -13,3 +13,15 @@ export function isPackageExists(name: string): boolean {
         return false;
     }
 }
+
+export async function ensurePackages(packages: string[]): Promise<void> {
+    const missing = packages.filter((pkg) => !isPackageExists(pkg));
+
+    if (missing.length === 0) {
+        return;
+    }
+
+    const { installPackage } = await import('@antfu/install-pkg');
+
+    await installPackage(missing, { dev: true });
+}

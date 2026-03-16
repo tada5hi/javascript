@@ -7,9 +7,12 @@
 
 import type { Linter } from 'eslint';
 import type { TypeScriptOptions } from './types.ts';
+import { ensurePackages } from '../../utils.ts';
 
 export async function typescript(options: TypeScriptOptions = {}): Promise<Linter.Config[]> {
     const { project } = options;
+
+    await ensurePackages(['typescript-eslint']);
 
     const tseslint = await import('typescript-eslint');
 
