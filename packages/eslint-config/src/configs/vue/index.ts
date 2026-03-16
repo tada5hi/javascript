@@ -5,10 +5,5 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import { defineConfig } from 'vitest/config';
-
-export default defineConfig({
-    test: {
-        include: ['test/unit/**/*.spec.ts'],
-    },
-});
+export { vue } from './module.ts';
+export type { VueOptions } from './types.ts';

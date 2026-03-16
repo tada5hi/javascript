@@ -1,10 +1,9 @@
 import type { Linter } from 'eslint';
-import vue from 'eslint-plugin-vue';
 import eslintConfig from '@tada5hi/eslint-config';
 
-export default function eslintConfigVue(): Linter.Config[] {
-    return [
-        ...eslintConfig(),
-        ...vue.configs['flat/recommended'] as Linter.Config[],
-    ];
+/**
+ * @deprecated Use `@tada5hi/eslint-config` with `{ vue: true }` instead.
+ */
+export default function eslintConfigVue(): Promise<Linter.Config[]> {
+    return eslintConfig({ typescript: false, vue: true });
 }

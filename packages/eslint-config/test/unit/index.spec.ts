@@ -1,103 +1,73 @@
+/*
+ * Copyright (c) 2026.
+ * Author Peter Placzek (tada5hi)
+ * For the full copyright and license information,
+ * view the LICENSE file that was distributed with this source code.
+ */
+
 import { describe, expect, it } from 'vitest';
-import { Linter } from 'eslint';
 import eslintConfig from '../../src/index.ts';
 
-describe('eslint-config', () => {
-    const linter = new Linter();
-
-    it('should return a valid flat config array', () => {
-        const config = eslintConfig();
+describe('eslint-config factory', () => {
+    it('should return a valid flat config array', async () => {
+        const config = await eslintConfig({ typescript: false, vue: false });
         expect(Array.isArray(config)).toBe(true);
         expect(config.length).toBeGreaterThan(0);
     });
 
-    it('should enforce single quotes', () => {
-        const config = eslintConfig();
-        const messages = linter.verify(
-            'const x = "hello";\n',
-            config,
-            { filename: 'test.js' },
+    it('should include typescript configs when enabled', async () => {
+        const config = await eslintConfig({ typescript: true, vue: false });
+        const hasTsPlugin = config.some(
+            (c: any) => c.plugins && ('@typescript-eslint' in c.plugins),
         );
-        const quoteError = messages.find((m) => m.ruleId === '@stylistic/quotes');
-        expect(quoteError).toBeDefined();
+        expect(hasTsPlugin).toBe(true);
     });
 
-    it('should enforce 4-space indentation', () => {
-        const config = eslintConfig();
-        const messages = linter.verify(
-            'function foo() {\n  return true;\n}\n',
-            config,
-            { filename: 'test.js' },
+    it('should include vue configs when enabled', async () => {
+        const config = await eslintConfig({ typescript: false, vue: true });
+        const hasVuePlugin = config.some(
+            (c: any) => c.plugins && ('vue' in c.plugins),
         );
-        const indentError = messages.find((m) => m.ruleId === '@stylistic/indent');
-        expect(indentError).toBeDefined();
+        expect(hasVuePlugin).toBe(true);
     });
 
-    it('should allow no-await-in-loop', () => {
-        const config = eslintConfig();
-        const messages = linter.verify(
-            'async function foo(items) {\n    for (const item of items) {\n        await item.process();\n    }\n}\n',
-            config,
-            { filename: 'test.js' },
+    it('should include both typescript and vue configs', async () => {
+        const config = await eslintConfig({ typescript: true, vue: true });
+        const hasTsPlugin = config.some(
+            (c: any) => c.plugins && ('@typescript-eslint' in c.plugins),
         );
-        const error = messages.find((m) => m.ruleId === 'no-await-in-loop');
-        expect(error).toBeUndefined();
+        const hasVuePlugin = config.some(
+            (c: any) => c.plugins && ('vue' in c.plugins),
+        );
+        expect(hasTsPlugin).toBe(true);
+        expect(hasVuePlugin).toBe(true);
     });
 
-    it('should enforce prefer-const', () => {
-        const config = eslintConfig();
-        const messages = linter.verify(
-            'let x = 1;\n',
-            config,
-            { filename: 'test.js' },
+    it('should configure vue with typescript parser when both enabled', async () => {
+        const config = await eslintConfig({ typescript: true, vue: true });
+        const vueFileConfig = config.find(
+            (c: any) => c.files &&
+                c.files.some((f: string) => f.includes('.vue')) &&
+                c.languageOptions?.parserOptions?.parser,
         );
-        const error = messages.find((m) => m.ruleId === 'prefer-const');
-        expect(error).toBeDefined();
+        expect(vueFileConfig).toBeDefined();
+        expect(vueFileConfig!.languageOptions!.parserOptions!.extraFileExtensions).toContain('.vue');
     });
 
-    it('should enforce no-var', () => {
-        const config = eslintConfig();
-        const messages = linter.verify(
-            'var x = 1;\n',
-            config,
-            { filename: 'test.js' },
+    it('should accept typescript options object', async () => {
+        const config = await eslintConfig({ typescript: { project: './tsconfig.json' }, vue: false });
+        const hasParserOptions = config.some(
+            (c: any) => c.languageOptions?.parserOptions?.project === './tsconfig.json',
         );
-        const error = messages.find((m) => m.ruleId === 'no-var');
-        expect(error).toBeDefined();
+        expect(hasParserOptions).toBe(true);
     });
 
-    it('should enforce eqeqeq', () => {
-        const config = eslintConfig();
-        const messages = linter.verify(
-            'if (x == 1) {}\n',
-            config,
-            { filename: 'test.js' },
+    it('should append variadic user configs', async () => {
+        const config = await eslintConfig(
+            { typescript: false, vue: false },
+            { rules: { 'no-console': 'off' } },
         );
-        const error = messages.find((m) => m.ruleId === 'eqeqeq');
-        expect(error).toBeDefined();
-    });
-
-    it('should enforce unicorn/prefer-node-protocol', () => {
-        const config = eslintConfig();
-        const messages = linter.verify(
-            'import fs from \'fs\';\n',
-            config,
-            { filename: 'test.js' },
-        );
-        const error = messages.find((m) => m.ruleId === 'unicorn/prefer-node-protocol');
-        expect(error).toBeDefined();
-    });
-
-    it('should enforce max-len at 150 characters', () => {
-        const config = eslintConfig();
-        // Use a long comment line since ignoreStrings is enabled
-        const longLine = `// ${'a'.repeat(160)}\n`;
-        const messages = linter.verify(
-            longLine,
-            config,
-            { filename: 'test.js' },
-        );
-        const error = messages.find((m) => m.ruleId === '@stylistic/max-len');
-        expect(error).toBeDefined();
+        const last = config[config.length - 1];
+        expect((last as any).rules['no-console']).toBe('off');
     });
 });

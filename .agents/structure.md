@@ -15,10 +15,10 @@ javascript/
 │   └── commit-msg                        # Commitlint enforcement
 ├── packages/                             # All workspace packages
 │   ├── commitlint-config/                # Commitlint configuration
-│   ├── eslint-config/                    # Base ESLint flat config (JavaScript)
-│   ├── eslint-config-typescript/         # TypeScript ESLint flat config
-│   ├── eslint-config-vue/                # Vue.js ESLint flat config
-│   ├── eslint-config-vue-typescript/     # Vue + TypeScript ESLint flat config
+│   ├── eslint-config/                    # Unified ESLint flat config (JS + optional TS/Vue)
+│   ├── eslint-config-typescript/         # Deprecated — thin wrapper over eslint-config
+│   ├── eslint-config-vue/                # Deprecated — thin wrapper over eslint-config
+│   ├── eslint-config-vue-typescript/     # Deprecated — thin wrapper over eslint-config
 │   ├── eslint-config-nuxt/              # Nuxt ESLint config (deprecated)
 │   ├── eslint-config-nuxt-typescript/   # Nuxt + TypeScript ESLint config (deprecated)
 │   ├── prettier-config/                  # Prettier configuration
@@ -33,46 +33,88 @@ javascript/
 
 ## Packages
 
-### ESLint Configurations
+### ESLint Configuration
 
-These packages form a layered ESLint flat config system. Each variant includes the base and adds framework-specific rules. All ESLint config packages use ESM and export a function returning a flat config array.
+The unified `eslint-config` package provides an async factory function with optional TypeScript and Vue support via auto-detection or explicit options. The satellite packages (`eslint-config-typescript`, `eslint-config-vue`, `eslint-config-vue-typescript`) are deprecated thin wrappers that delegate to the unified package.
 
-| Package | Built on | Description |
-|---------|----------|-------------|
-| `eslint-config` | `@eslint/js` + `@stylistic/eslint-plugin` + `eslint-plugin-import-x` + `eslint-plugin-unicorn` | Base JavaScript rules: 4-space indent, 150-char max line, single quotes, import ordering, modern JS enforcement |
-| `eslint-config-typescript` | `eslint-config` + `typescript-eslint` | Adds TypeScript-specific rules, TS parser, type-aware rules when `project` option is set |
-| `eslint-config-vue` | `eslint-config` + `eslint-plugin-vue` | Adds Vue.js SFC linting via `flat/recommended` |
-| `eslint-config-vue-typescript` | `eslint-config-typescript` + `eslint-plugin-vue` | Combines TypeScript and Vue rules, configures TS parser for `.vue` files |
-| `eslint-config-nuxt` | _(deprecated)_ | Does not support ESLint 9 flat config |
-| `eslint-config-nuxt-typescript` | _(deprecated)_ | Does not support ESLint 9 flat config |
+| Package | Status | Description |
+|---------|--------|-------------|
+| `eslint-config` | **Active** | Unified ESLint flat config with optional TS/Vue support |
+| `eslint-config-typescript` | Deprecated | Thin wrapper → `eslintConfig({ typescript: options })` |
+| `eslint-config-vue` | Deprecated | Thin wrapper → `eslintConfig({ vue: true })` |
+| `eslint-config-vue-typescript` | Deprecated | Thin wrapper → `eslintConfig({ typescript: options, vue: true })` |
+| `eslint-config-nuxt` | Deprecated | Does not support ESLint 9 flat config |
+| `eslint-config-nuxt-typescript` | Deprecated | Does not support ESLint 9 flat config |
+
+#### Unified Package Structure
+
+```
+packages/eslint-config/
+├── src/
+│   ├── index.ts              # Async factory function + type re-exports
+│   ├── types.ts              # FactoryOptions, UserConfig (re-exports TypeScriptOptions, VueOptions)
+│   ├── utils.ts              # isPackageExists() helper
+│   └── configs/
+│       ├── javascript/       # @eslint/js recommended + core rules
+│       │   ├── module.ts
+│       │   ├── types.ts
+│       │   └── index.ts
+│       ├── stylistic/        # @stylistic plugin formatting rules
+│       │   ├── module.ts
+│       │   ├── types.ts
+│       │   └── index.ts
+│       ├── imports/          # import-x plugin + sort-imports
+│       │   ├── module.ts
+│       │   ├── types.ts
+│       │   └── index.ts
+│       ├── unicorn/          # unicorn plugin modern JS rules
+│       │   ├── module.ts
+│       │   ├── types.ts
+│       │   └── index.ts
+│       ├── typescript/       # typescript-eslint (dynamic import)
+│       │   ├── module.ts
+│       │   ├── types.ts      # TypeScriptOptions
+│       │   └── index.ts
+│       └── vue/              # eslint-plugin-vue (dynamic import)
+│           ├── module.ts
+│           ├── types.ts      # VueOptions
+│           └── index.ts
+├── test/unit/
+│   ├── index.spec.ts         # Factory tests
+│   ├── javascript.spec.ts    # JS rule tests
+│   ├── typescript.spec.ts    # TS rule tests
+│   └── vue.spec.ts           # Vue rule tests
+├── test/vitest.config.ts
+├── package.json
+├── tsconfig.build.json
+└── tsdown.config.ts
+```
 
 #### Consumer Usage
 
 ```js
-// eslint.config.js (TypeScript project)
-import eslintConfigTypescript from '@tada5hi/eslint-config-typescript';
+import eslintConfig from '@tada5hi/eslint-config';
 
-export default [
-    ...eslintConfigTypescript({ project: './tsconfig.json' }),
-    // project-specific overrides
-];
+// Auto-detects TS and Vue from installed packages
+export default eslintConfig();
 
-// eslint.config.js (Vue + TypeScript project)
-import eslintConfigVueTypescript from '@tada5hi/eslint-config-vue-typescript';
+// Explicit options
+export default eslintConfig({
+    typescript: { project: './tsconfig.json' },
+    vue: true,
+});
 
-export default [
-    ...eslintConfigVueTypescript({ project: './tsconfig.json' }),
-];
+// With user overrides (variadic)
+export default eslintConfig(
+    { typescript: true },
+    { rules: { 'no-console': 'off' } },
+);
 ```
 
-#### Dependency Graph
+#### Config Module Composition
 
-```
-eslint-config (base)
-├── eslint-config-typescript
-│   └── eslint-config-vue-typescript
-└── eslint-config-vue
-```
+The factory always includes: `javascript` + `stylistic` + `imports` + `unicorn`.
+Conditionally adds `typescript` and/or `vue` based on options or auto-detection (checks if `typescript`/`vue` packages are installed).
 
 ### Other Configurations
 
@@ -85,14 +127,18 @@ eslint-config (base)
 
 ## Package Structure
 
-ESLint config packages follow this structure:
+ESLint config packages use TypeScript with tsdown build:
 
 ```
 packages/<name>/
-├── index.js              # ESM flat config export (function returning config array)
+├── src/
+│   └── index.ts          # ESM entry point
+├── test/unit/
+│   └── index.spec.ts     # Vitest tests
+├── test/vitest.config.ts
 ├── package.json          # Package metadata ("type": "module", dependencies)
-├── test/
-│   └── index.spec.js     # Vitest tests
+├── tsconfig.build.json
+├── tsdown.config.ts
 └── CHANGELOG.md          # Auto-generated changelog
 ```
 

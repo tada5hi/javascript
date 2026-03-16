@@ -28,12 +28,12 @@ npx workspaces-publish         # publish all packages
 
 | Package | Purpose |
 |---------|---------|
-| `@tada5hi/eslint-config` | Base ESLint flat config (JavaScript) |
-| `@tada5hi/eslint-config-typescript` | TypeScript ESLint flat config |
-| `@tada5hi/eslint-config-vue` | Vue.js ESLint flat config |
-| `@tada5hi/eslint-config-vue-typescript` | Vue + TypeScript ESLint flat config |
-| `@tada5hi/eslint-config-nuxt` | Nuxt ESLint rules (deprecated — does not support ESLint 9) |
-| `@tada5hi/eslint-config-nuxt-typescript` | Nuxt + TypeScript ESLint rules (deprecated — does not support ESLint 9) |
+| `@tada5hi/eslint-config` | Unified ESLint flat config (JS + optional TS/Vue via async factory) |
+| `@tada5hi/eslint-config-typescript` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |
+| `@tada5hi/eslint-config-vue` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |
+| `@tada5hi/eslint-config-vue-typescript` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |
+| `@tada5hi/eslint-config-nuxt` | Deprecated — does not support ESLint 9 |
+| `@tada5hi/eslint-config-nuxt-typescript` | Deprecated — does not support ESLint 9 |
 | `@tada5hi/prettier-config` | Prettier formatting configuration |
 | `@tada5hi/tsconfig` | Shared TypeScript compiler configuration |
 | `@tada5hi/commitlint-config` | Commitlint conventional commit rules |
