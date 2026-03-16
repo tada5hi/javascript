@@ -28,6 +28,6 @@
     ],
     "scripts": {
         "prepare": "husky install",
-        "test": "vitest run"
+        "test": "npm run test --workspaces --if-present"
     }
 }

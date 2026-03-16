@@ -1,6 +1,6 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { Linter } from 'eslint';
-import eslintConfigTypescript from '../index.js';
+import eslintConfigTypescript from '../../index.js';
 
 describe('eslint-config-typescript', () => {
     const linter = new Linter();
@@ -40,7 +40,6 @@ describe('eslint-config-typescript', () => {
             config,
             { filename: 'test.ts' },
         );
-        const error = messages.find((m) => m.ruleId === '@typescript-eslint/consistent-type-imports');
         // This rule may need type information to work; just verify no crash
         expect(Array.isArray(messages)).toBe(true);
     });
@@ -49,7 +48,7 @@ describe('eslint-config-typescript', () => {
         const config = eslintConfigTypescript({ project: './tsconfig.json' });
         expect(Array.isArray(config)).toBe(true);
         const hasParserOptions = config.some(
-            (c) => c.languageOptions?.parserOptions?.project === './tsconfig.json',
+            (c: any) => c.languageOptions?.parserOptions?.project === './tsconfig.json',
         );
         expect(hasParserOptions).toBe(true);
     });
@@ -58,7 +57,7 @@ describe('eslint-config-typescript', () => {
         const config = eslintConfigTypescript({ project: true });
         expect(Array.isArray(config)).toBe(true);
         const hasProjectService = config.some(
-            (c) => c.languageOptions?.parserOptions?.projectService === true,
+            (c: any) => c.languageOptions?.parserOptions?.projectService === true,
         );
         expect(hasProjectService).toBe(true);
     });

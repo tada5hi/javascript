@@ -31,6 +31,9 @@
         "url": "https://github.com/tada5hi/javascript/issues"
     },
     "homepage": "https://github.com/tada5hi/javascript#readme",
+    "scripts": {
+        "test": "vitest run -c test/vitest.config.ts"
+    },
     "publishConfig": {
         "access": "public"
     },

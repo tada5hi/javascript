@@ -1,6 +1,6 @@
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import { Linter } from 'eslint';
-import eslintConfig from '../index.js';
+import eslintConfig from '../../index.js';
 
 describe('eslint-config', () => {
     const linter = new Linter();
