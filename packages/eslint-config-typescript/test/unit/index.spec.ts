@@ -33,7 +33,7 @@ describe('eslint-config-typescript', () => {
         expect(error).toBeUndefined();
     });
 
-    it('should warn on non-type imports', () => {
+    it('should not crash on non-type imports without type info', () => {
         const config = eslintConfigTypescript();
         const messages = linter.verify(
             'import { Foo } from \'./types\';\nconst x: Foo = {} as Foo;\n',
@@ -53,7 +53,7 @@ describe('eslint-config-typescript', () => {
         expect(hasParserOptions).toBe(true);
     });
 
-    it('should accept projectService option', () => {
+    it('should enable projectService when project is true', () => {
         const config = eslintConfigTypescript({ project: true });
         expect(Array.isArray(config)).toBe(true);
         const hasProjectService = config.some(

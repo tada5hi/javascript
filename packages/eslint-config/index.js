@@ -123,7 +123,6 @@ export default function eslintConfig() {
                 // ----------------------------------------
                 'no-shadow': 'off',
                 'no-use-before-define': 'off',
-                'no-restricted-exports': ['error', { restrictedNamedExports: ['default', 'then'] }],
 
                 // ----------------------------------------
                 // Style (semantic)
