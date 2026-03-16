@@ -18,13 +18,16 @@
     },
     "homepage": "https://github.com/tada5hi/javascript#readme",
     "devDependencies": {
+        "eslint": "^9.39.0",
         "husky": "^9.1.7",
+        "vitest": "^3.2.1",
         "workspaces-publish": "^1.5.0"
     },
     "workspaces": [
         "packages/*"
     ],
     "scripts": {
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "test": "vitest run"
     }
 }
