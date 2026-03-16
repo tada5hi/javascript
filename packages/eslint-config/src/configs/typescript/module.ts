@@ -6,8 +6,8 @@
  */
 
 import type { Linter } from 'eslint';
-import type { TypeScriptOptions } from './types.ts';
 import { ensurePackages } from '../../utils.ts';
+import type { TypeScriptOptions } from './types.ts';
 
 export async function typescript(options: TypeScriptOptions = {}): Promise<Linter.Config[]> {
     const { project } = options;
@@ -22,6 +22,7 @@ export async function typescript(options: TypeScriptOptions = {}): Promise<Linte
 
     if (project) {
         configs.push({
+            files: ['**/*.{ts,tsx,mts,cts}'],
             languageOptions: {
                 parserOptions: {
                     projectService: project === true ? true : undefined,
@@ -36,6 +37,7 @@ export async function typescript(options: TypeScriptOptions = {}): Promise<Linte
     }
 
     configs.push({
+        files: ['**/*.{ts,tsx,mts,cts}'],
         rules: {
             // ----------------------------------------
             // Disable base rules in favor of TS versions

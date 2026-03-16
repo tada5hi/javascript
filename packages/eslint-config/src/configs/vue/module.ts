@@ -6,8 +6,8 @@
  */
 
 import type { Linter } from 'eslint';
-import type { VueOptions } from './types.ts';
 import { ensurePackages } from '../../utils.ts';
+import type { VueOptions } from './types.ts';
 
 export async function vue(options: VueOptions = {}): Promise<Linter.Config[]> {
     await ensurePackages(['eslint-plugin-vue']);

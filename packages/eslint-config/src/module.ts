@@ -39,7 +39,7 @@ export async function eslintConfig(
 
     if (enableVue) {
         const vueOptions: VueOptions = isObject(options.vue) ?
-            options.vue :
+            { ...options.vue } :
             {};
 
         if (enableTypescript && !vueOptions.typescript) {
