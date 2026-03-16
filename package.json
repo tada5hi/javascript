@@ -24,7 +24,7 @@
         "nx": "^22.5.4",
         "tsdown": "^0.21.4",
         "typescript": "^5.9.3",
-        "vitest": "^3.2.1",
+        "vitest": "^4.1.0",
         "workspaces-publish": "^1.7.0"
     },
     "workspaces": [
