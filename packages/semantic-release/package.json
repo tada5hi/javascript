@@ -3,9 +3,18 @@
     "version": "0.3.2",
     "description": "This package provides a sharable semantic-release configuration.",
     "license": "MIT",
-    "main": "release.config.js",
+    "type": "module",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        }
+    },
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "files": [
-        "release.config.js"
+        "dist"
     ],
     "keywords": [
         "config",
@@ -20,13 +29,6 @@
         "email": "contact@tada5hi.net",
         "url": "https://tada5hi.net"
     },
-    "dependencies": {
-        "@semantic-release/changelog": "^6.0.3",
-        "@semantic-release/git": "^10.0.1"
-    },
-    "peerDependencies": {
-        "semantic-release": "19.x || 20.x || 21.x || 22.x || 23.x || 24.x"
-    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/tada5hi/javascript.git",
@@ -36,7 +38,17 @@
         "url": "https://github.com/tada5hi/javascript/issues"
     },
     "homepage": "https://github.com/tada5hi/javascript#readme",
+    "scripts": {
+        "build": "tsc --noEmit -p tsconfig.build.json && tsdown"
+    },
     "publishConfig": {
         "access": "public"
+    },
+    "dependencies": {
+        "@semantic-release/changelog": "^6.0.3",
+        "@semantic-release/git": "^10.0.1"
+    },
+    "peerDependencies": {
+        "semantic-release": ">=23.0.0"
     }
 }

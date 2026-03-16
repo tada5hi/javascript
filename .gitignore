@@ -1,5 +1,6 @@
 .agents/plans
 .claude/settings.local.json
+.nx
 
 node_modules
 

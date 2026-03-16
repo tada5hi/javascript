@@ -20,6 +20,9 @@
     "devDependencies": {
         "eslint": "^9.39.0",
         "husky": "^9.1.7",
+        "nx": "^22.5.4",
+        "tsdown": "^0.12.9",
+        "typescript": "^5.9.3",
         "vitest": "^3.2.1",
         "workspaces-publish": "^1.7.0"
     },
@@ -27,7 +30,8 @@
         "packages/*"
     ],
     "scripts": {
-        "prepare": "husky install",
-        "test": "npm run test --workspaces --if-present"
+        "prepare": "husky install && npm run build",
+        "build": "npx nx run-many --target=build",
+        "test": "npx nx run-many --target=test"
     }
 }

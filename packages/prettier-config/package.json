@@ -1,9 +1,21 @@
 {
     "name": "@tada5hi/prettier-config",
     "version": "1.2.13",
-    "description": "",
+    "description": "Shared Prettier configuration",
     "license": "MIT",
-    "main": "index.js",
+    "type": "module",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        }
+    },
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
     "keywords": [
         "prettier",
         "config",
@@ -24,6 +36,9 @@
         "url": "https://github.com/tada5hi/javascript/issues"
     },
     "homepage": "https://github.com/tada5hi/javascript#readme",
+    "scripts": {
+        "build": "tsc --noEmit -p tsconfig.build.json && tsdown"
+    },
     "publishConfig": {
         "access": "public"
     },

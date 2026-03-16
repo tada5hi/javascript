@@ -1,12 +1,17 @@
+import type { Linter } from 'eslint';
 import tseslint from 'typescript-eslint';
 import eslintConfig from '@tada5hi/eslint-config';
 
-export default function eslintConfigTypescript(options = {}) {
+interface Options {
+    project?: string | boolean;
+}
+
+export default function eslintConfigTypescript(options: Options = {}): Linter.Config[] {
     const { project } = options;
 
-    const configs = [
+    const configs: Linter.Config[] = [
         ...eslintConfig(),
-        ...tseslint.configs.recommended,
+        ...tseslint.configs.recommended as Linter.Config[],
     ];
 
     if (project) {

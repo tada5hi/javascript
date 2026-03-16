@@ -1,11 +1,16 @@
+import type { Linter } from 'eslint';
 import vue from 'eslint-plugin-vue';
 import tseslint from 'typescript-eslint';
 import eslintConfigTypescript from '@tada5hi/eslint-config-typescript';
 
-export default function eslintConfigVueTypescript(options = {}) {
+interface Options {
+    project?: string | boolean;
+}
+
+export default function eslintConfigVueTypescript(options: Options = {}): Linter.Config[] {
     return [
         ...eslintConfigTypescript(options),
-        ...vue.configs['flat/recommended'],
+        ...vue.configs['flat/recommended'] as Linter.Config[],
         {
             files: ['**/*.vue'],
             languageOptions: {

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { Linter } from 'eslint';
-import eslintConfigTypescript from '../../index.js';
+import eslintConfigTypescript from '../../src/index.ts';
 
 describe('eslint-config-typescript', () => {
     const linter = new Linter();
