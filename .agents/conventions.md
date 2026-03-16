@@ -106,7 +106,7 @@ Each config module is a folder with three files:
 Steps:
 1. Create `packages/eslint-config/src/configs/<name>/` with `module.ts`, `types.ts`, and `index.ts`
 2. Use dynamic `await import()` for optional dependencies (add them as optional peerDependencies + devDependencies)
-3. Wire the module into the factory in `src/index.ts` with auto-detection via `isPackageExists()`
+3. Wire the module into the factory in `src/module.ts` with auto-detection via `isPackageExists()`
 4. Re-export option types from `src/types.ts` if they are part of `FactoryOptions`
 5. Add tests in `test/unit/<name>.spec.ts`
 6. Run `npm test` to verify

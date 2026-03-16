@@ -19,6 +19,7 @@ export async function vue(options: VueOptions = {}): Promise<Linter.Config[]> {
     ];
 
     if (options.typescript) {
+        await ensurePackages(['typescript-eslint']);
         const tseslint = await import('typescript-eslint');
 
         configs.push({
