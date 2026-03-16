@@ -1,5 +1,6 @@
 {
     "name": "root",
+    "type": "module",
     "private": true,
     "author": {
         "name": "Peter Placzek",
@@ -32,6 +33,7 @@
     "scripts": {
         "prepare": "husky install && npm run build",
         "build": "npx nx run-many --target=build",
-        "test": "npx nx run-many --target=test"
+        "test": "npx nx run-many --target=test",
+        "lint": "eslint ."
     }
 }

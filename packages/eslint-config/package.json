@@ -1,7 +1,7 @@
 {
     "name": "@tada5hi/eslint-config",
     "version": "1.2.12",
-    "description": "Shared ESLint flat config for JavaScript projects",
+    "description": "Shared ESLint flat config with optional TypeScript and Vue support",
     "license": "MIT",
     "type": "module",
     "exports": {
@@ -21,7 +21,9 @@
         "config",
         "eslintconfig",
         "flat-config",
-        "javascript"
+        "javascript",
+        "typescript",
+        "vue"
     ],
     "author": {
         "name": "Peter Placzek",
@@ -45,13 +47,29 @@
         "access": "public"
     },
     "dependencies": {
+        "@antfu/install-pkg": "^1.1.0",
         "@eslint/js": "^9.0.0",
         "@stylistic/eslint-plugin": "^4.0.0",
         "eslint-plugin-import-x": "^4.0.0",
         "eslint-plugin-unicorn": "^59.0.0",
-        "globals": "^16.0.0"
+        "globals": "^16.0.0",
+        "smob": "^1.6.1"
+    },
+    "devDependencies": {
+        "eslint-plugin-vue": "^10.8.0",
+        "typescript-eslint": "^8.57.0"
     },
     "peerDependencies": {
-        "eslint": ">=9.0.0"
+        "eslint": ">=9.0.0",
+        "eslint-plugin-vue": ">=10.0.0",
+        "typescript-eslint": ">=8.0.0"
+    },
+    "peerDependenciesMeta": {
+        "typescript-eslint": {
+            "optional": true
+        },
+        "eslint-plugin-vue": {
+            "optional": true
+        }
     }
 }

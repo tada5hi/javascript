@@ -5,8 +5,4 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import { eslintConfig } from './module.ts';
-
-export type { FactoryOptions, TypeScriptOptions, UserConfig, VueOptions } from './types.ts';
-
-export default eslintConfig
+export { unicorn } from './module.ts';

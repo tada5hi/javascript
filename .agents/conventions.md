@@ -71,7 +71,7 @@ Tests verify:
 - Plugin configurations are properly included (vue, typescript-eslint)
 - Options (like `project`) are correctly applied
 
-Test files live at `packages/<name>/test/index.spec.js` and use ESLint's `Linter` API directly.
+Test files live at `packages/<name>/test/unit/*.spec.ts` and use ESLint's `Linter` API directly.
 
 ## Commit Messages
 
@@ -94,15 +94,22 @@ Body and footer line length limits are disabled.
 - All packages use public npm publishing
 - Changelogs are auto-generated per package
 
-## Adding a New ESLint Config Package
+## Adding ESLint Config Modules
 
-1. Create `packages/eslint-config-<name>/` with `index.js`, `package.json`, and `test/index.spec.js`
-2. Set `"type": "module"` in `package.json`
-3. Export a default function returning a flat config array
-4. Import and spread the appropriate base config (e.g., `eslintConfig()` or `eslintConfigTypescript()`)
-5. Add the package to `release-please-config.json`
-6. Declare `eslint` as a `peerDependency` (`>=9.0.0`)
-7. Run `npm test` to verify
+New ESLint rule sets should be added as config modules inside `packages/eslint-config/src/configs/`:
+
+Each config module is a folder with three files:
+- `module.ts` — the main function (sync or async) returning `Linter.Config[]`
+- `types.ts` — option interfaces for the module (can be empty if none)
+- `index.ts` — barrel export re-exporting from `module.ts` and `types.ts`
+
+Steps:
+1. Create `packages/eslint-config/src/configs/<name>/` with `module.ts`, `types.ts`, and `index.ts`
+2. Use dynamic `await import()` for optional dependencies (add them as optional peerDependencies + devDependencies)
+3. Wire the module into the factory in `src/index.ts` with auto-detection via `isPackageExists()`
+4. Re-export option types from `src/types.ts` if they are part of `FactoryOptions`
+5. Add tests in `test/unit/<name>.spec.ts`
+6. Run `npm test` to verify
 
 ## Best Practices
 

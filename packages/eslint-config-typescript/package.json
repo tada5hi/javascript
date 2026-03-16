@@ -1,7 +1,7 @@
 {
     "name": "@tada5hi/eslint-config-typescript",
     "version": "1.2.18",
-    "description": "Shared ESLint flat config for TypeScript projects",
+    "description": "Shared ESLint flat config for TypeScript projects (deprecated — use @tada5hi/eslint-config)",
     "license": "MIT",
     "type": "module",
     "exports": {
