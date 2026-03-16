@@ -36,7 +36,7 @@
         "packages/*"
     ],
     "scripts": {
-        "prepare": "husky install",
+        "prepare": "husky install && npm run build",
         "build": "npx nx run-many --target=build",
         "test": "npx nx run-many --target=test"
     }
