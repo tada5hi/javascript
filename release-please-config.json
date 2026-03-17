@@ -3,8 +3,6 @@
     "release-type": "node",
     "packages": {
         "packages/commitlint-config": {},
-        "packages/eslint-config-nuxt-typescript": {},
-        "packages/eslint-config-nuxt": {},
         "packages/eslint-config-typescript": {},
         "packages/eslint-config-vue-typescript": {},
         "packages/eslint-config-vue": {},
