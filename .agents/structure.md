@@ -19,8 +19,6 @@ javascript/
 │   ├── eslint-config-typescript/         # Deprecated — thin wrapper over eslint-config
 │   ├── eslint-config-vue/                # Deprecated — thin wrapper over eslint-config
 │   ├── eslint-config-vue-typescript/     # Deprecated — thin wrapper over eslint-config
-│   ├── eslint-config-nuxt/              # Nuxt ESLint config (deprecated)
-│   ├── eslint-config-nuxt-typescript/   # Nuxt + TypeScript ESLint config (deprecated)
 │   ├── prettier-config/                  # Prettier configuration
 │   ├── semantic-release/                 # Semantic-release configuration
 │   └── tsconfig/                         # TypeScript compiler configuration
@@ -43,8 +41,6 @@ The unified `eslint-config` package provides an async factory function with opti
 | `eslint-config-typescript` | Deprecated | Thin wrapper → `eslintConfig({ typescript: options })` |
 | `eslint-config-vue` | Deprecated | Thin wrapper → `eslintConfig({ vue: true })` |
 | `eslint-config-vue-typescript` | Deprecated | Thin wrapper → `eslintConfig({ typescript: options, vue: true })` |
-| `eslint-config-nuxt` | Deprecated | Does not support ESLint 9 flat config |
-| `eslint-config-nuxt-typescript` | Deprecated | Does not support ESLint 9 flat config |
 
 #### Unified Package Structure
 
