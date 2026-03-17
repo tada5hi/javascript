@@ -60,9 +60,9 @@
         "typescript-eslint": "^8.57.1"
     },
     "peerDependencies": {
-        "eslint": ">=9.0.0",
+        "eslint": ">=10.0.0",
         "eslint-plugin-vue": ">=10.0.0",
-        "typescript-eslint": ">=8.0.0"
+        "typescript-eslint": ">=8.57.0"
     },
     "peerDependenciesMeta": {
         "typescript-eslint": {
