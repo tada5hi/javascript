@@ -32,8 +32,6 @@ npx workspaces-publish         # publish all packages
 | `@tada5hi/eslint-config-typescript` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |
 | `@tada5hi/eslint-config-vue` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |
 | `@tada5hi/eslint-config-vue-typescript` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |
-| `@tada5hi/eslint-config-nuxt` | Deprecated — does not support ESLint 9 |
-| `@tada5hi/eslint-config-nuxt-typescript` | Deprecated — does not support ESLint 9 |
 | `@tada5hi/prettier-config` | Prettier formatting configuration |
 | `@tada5hi/tsconfig` | Shared TypeScript compiler configuration |
 | `@tada5hi/commitlint-config` | Commitlint conventional commit rules |
