@@ -16,6 +16,20 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
   * dependencies
     * @tada5hi/eslint-config-typescript bumped from ^1.2.8 to ^1.2.9
 
+## [2.0.1](https://github.com/tada5hi/javascript/compare/eslint-config-vue-typescript-v2.0.0...eslint-config-vue-typescript-v2.0.1) (2026-03-19)
+
+
+### Bug Fixes
+
+* updated LICENSE and integrated buil step in ci ([b2538ba](https://github.com/tada5hi/javascript/commit/b2538baa3e45d4b765d544bc286c3cead9535b8b))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^2.0.0 to ^2.0.1
+
 ## [2.0.0](https://github.com/tada5hi/javascript/compare/eslint-config-vue-typescript-v1.3.18...eslint-config-vue-typescript-v2.0.0) (2026-03-19)
 
 

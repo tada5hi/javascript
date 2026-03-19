@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.1](https://github.com/tada5hi/javascript/compare/prettier-config-v1.3.0...prettier-config-v1.3.1) (2026-03-19)
+
+
+### Bug Fixes
+
+* updated LICENSE and integrated buil step in ci ([b2538ba](https://github.com/tada5hi/javascript/commit/b2538baa3e45d4b765d544bc286c3cead9535b8b))
+
 ## [1.3.0](https://github.com/tada5hi/javascript/compare/prettier-config-v1.2.13...prettier-config-v1.3.0) (2026-03-19)
 
 
