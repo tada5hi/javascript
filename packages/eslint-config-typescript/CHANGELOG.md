@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/tada5hi/javascript/compare/eslint-config-typescript-v2.0.0...eslint-config-typescript-v2.0.1) (2026-03-19)
+
+
+### Bug Fixes
+
+* updated LICENSE and integrated buil step in ci ([b2538ba](https://github.com/tada5hi/javascript/commit/b2538baa3e45d4b765d544bc286c3cead9535b8b))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^2.0.0 to ^2.0.1
+
 ## [2.0.0](https://github.com/tada5hi/javascript/compare/eslint-config-typescript-v1.2.18...eslint-config-typescript-v2.0.0) (2026-03-19)
 
 

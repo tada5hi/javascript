@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.1](https://github.com/tada5hi/javascript/compare/eslint-config-v2.0.0...eslint-config-v2.0.1) (2026-03-19)
+
+
+### Bug Fixes
+
+* updated LICENSE and integrated buil step in ci ([b2538ba](https://github.com/tada5hi/javascript/commit/b2538baa3e45d4b765d544bc286c3cead9535b8b))
+
 ## [2.0.0](https://github.com/tada5hi/javascript/compare/eslint-config-v1.2.12...eslint-config-v2.0.0) (2026-03-19)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/tada5hi/javascript/compare/semantic-release-v0.4.0...semantic-release-v0.4.1) (2026-03-19)
+
+
+### Bug Fixes
+
+* updated LICENSE and integrated buil step in ci ([b2538ba](https://github.com/tada5hi/javascript/commit/b2538baa3e45d4b765d544bc286c3cead9535b8b))
+
 ## [0.4.0](https://github.com/tada5hi/javascript/compare/semantic-release-v0.3.2...semantic-release-v0.4.0) (2026-03-19)
 
 
