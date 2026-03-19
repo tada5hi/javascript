@@ -25,13 +25,13 @@
         "tsdown": "^0.21.4",
         "typescript": "^5.9.3",
         "vitest": "^4.1.0",
-        "workspaces-publish": "^1.7.0"
+        "workspaces-publish": "^1.8.1"
     },
     "workspaces": [
         "packages/*"
     ],
     "scripts": {
-        "prepare": "husky install && npm run build",
+        "prepare": "husky install",
         "build": "npx nx run-many --target=build",
         "test": "npx nx run-many --target=test",
         "lint": "eslint ."
