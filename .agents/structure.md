@@ -59,7 +59,7 @@ packages/eslint-config/
 │       │   ├── module.ts
 │       │   ├── types.ts
 │       │   └── index.ts
-│       ├── imports/          # import-x plugin + sort-imports
+│       ├── imports/          # import-lite plugin + sort-imports
 │       │   ├── module.ts
 │       │   ├── types.ts
 │       │   └── index.ts

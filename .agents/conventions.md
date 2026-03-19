@@ -19,7 +19,7 @@ The ESLint configs are built from composable building blocks rather than extendi
 |-------|---------|---------|
 | Core rules | `@eslint/js` | ESLint recommended rules (error prevention) |
 | Formatting | `@stylistic/eslint-plugin` | Indent, quotes, max-len, operator-linebreak, spaced-comment |
-| Imports | `eslint-plugin-import-x` | Import ordering, cycle detection, extraneous deps |
+| Imports | `eslint-plugin-import-lite` | Import ordering, no duplicates, no mutable exports |
 | Modern JS | `eslint-plugin-unicorn` | Prefer node: protocol, Array.isArray, includes, for-of, etc. |
 | TypeScript | `typescript-eslint` | TS parser, recommended rules, type-aware rules (optional) |
 | Vue | `eslint-plugin-vue` | Vue SFC linting via flat/recommended |
@@ -41,7 +41,7 @@ These are disabled in the base config because all downstream projects consistent
 | `no-shadow` | False positives with enums, type imports, callback params |
 | `no-underscore-dangle` | Conflicts with private/internal naming conventions |
 | `no-use-before-define` | TS compiler handles this; conflicts with "public API first" file organization |
-| `import-x/no-relative-packages` | Sometimes necessary during monorepo development |
+
 
 ## Coding Style
 
