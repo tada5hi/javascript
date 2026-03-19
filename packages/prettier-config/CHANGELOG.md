@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0](https://github.com/tada5hi/javascript/compare/prettier-config-v1.2.13...prettier-config-v1.3.0) (2026-03-19)
+
+
+### Features
+
+* **deps:** update package.json exports ([22b01b5](https://github.com/tada5hi/javascript/commit/22b01b546cd804a41580454534fd33320d3da20b))
+* migrate packages to TypeScript with rollup build pipeline ([#868](https://github.com/tada5hi/javascript/issues/868)) ([63e2f68](https://github.com/tada5hi/javascript/commit/63e2f6852f827170ae97b0c2d56652b7c4e341ca))
+
+
+### Bug Fixes
+
+* **deps:** bump prettier from 3.7.4 to 3.8.0 ([#837](https://github.com/tada5hi/javascript/issues/837)) ([52b91de](https://github.com/tada5hi/javascript/commit/52b91de1dbe16e96f97896b89da44721efefafda))
+* **deps:** bump prettier from 3.8.0 to 3.8.1 ([#841](https://github.com/tada5hi/javascript/issues/841)) ([6f7b98c](https://github.com/tada5hi/javascript/commit/6f7b98c9751ddb3bd80dfb44c336146ce71b518a))
+
 ## [1.2.13](https://github.com/tada5hi/javascript/compare/prettier-config-v1.2.12...prettier-config-v1.2.13) (2025-12-14)
 
 

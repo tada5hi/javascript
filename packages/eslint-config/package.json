@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-config",
-    "version": "1.2.12",
+    "version": "2.0.0",
     "description": "Shared ESLint flat config with optional TypeScript and Vue support",
     "license": "MIT",
     "type": "module",

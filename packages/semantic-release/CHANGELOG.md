@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0](https://github.com/tada5hi/javascript/compare/semantic-release-v0.3.2...semantic-release-v0.4.0) (2026-03-19)
+
+
+### Features
+
+* **deps:** update package.json exports ([22b01b5](https://github.com/tada5hi/javascript/commit/22b01b546cd804a41580454534fd33320d3da20b))
+* migrate packages to TypeScript with rollup build pipeline ([#868](https://github.com/tada5hi/javascript/issues/868)) ([63e2f68](https://github.com/tada5hi/javascript/commit/63e2f6852f827170ae97b0c2d56652b7c4e341ca))
+
 ## [0.3.2](https://github.com/tada5hi/javascript/compare/semantic-release-v0.3.1...semantic-release-v0.3.2) (2025-03-06)
 
 

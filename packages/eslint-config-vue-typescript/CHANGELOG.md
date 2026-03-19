@@ -16,6 +16,28 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
   * dependencies
     * @tada5hi/eslint-config-typescript bumped from ^1.2.8 to ^1.2.9
 
+## [2.0.0](https://github.com/tada5hi/javascript/compare/eslint-config-vue-typescript-v1.3.18...eslint-config-vue-typescript-v2.0.0) (2026-03-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* flat config
+
+### Features
+
+* **deps:** bump eslint to v10.x ([1d0c46a](https://github.com/tada5hi/javascript/commit/1d0c46afb19ab25d80e219757ed4f43e2f2cef7e))
+* **deps:** update package.json exports ([22b01b5](https://github.com/tada5hi/javascript/commit/22b01b546cd804a41580454534fd33320d3da20b))
+* merge eslint packages ([#870](https://github.com/tada5hi/javascript/issues/870)) ([e578dcc](https://github.com/tada5hi/javascript/commit/e578dccee8c7955d9fb7172d81b5219f27313a2f))
+* migrate packages to TypeScript with rollup build pipeline ([#868](https://github.com/tada5hi/javascript/issues/868)) ([63e2f68](https://github.com/tada5hi/javascript/commit/63e2f6852f827170ae97b0c2d56652b7c4e341ca))
+* migrate to eslint v9 ([#866](https://github.com/tada5hi/javascript/issues/866)) ([3f3a6a0](https://github.com/tada5hi/javascript/commit/3f3a6a04ccd352c6446da0709f4e0e007b98eef5))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^1.2.12 to ^2.0.0
+
 ## [1.3.18](https://github.com/tada5hi/javascript/compare/eslint-config-vue-typescript-v1.3.17...eslint-config-vue-typescript-v1.3.18) (2025-12-14)
 
 
