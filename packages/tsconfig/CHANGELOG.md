@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.2](https://github.com/tada5hi/javascript/compare/tsconfig-v0.7.1...tsconfig-v0.7.2) (2026-03-19)
+
+
+### Bug Fixes
+
+* clean up shared tsconfig and add stricter options ([#884](https://github.com/tada5hi/javascript/issues/884)) ([d7f820e](https://github.com/tada5hi/javascript/commit/d7f820e1b4015f781866a270a93a6a54681ab79b))
+
 ## [0.7.1](https://github.com/tada5hi/javascript/compare/tsconfig-v0.7.0...tsconfig-v0.7.1) (2026-03-19)
 
 

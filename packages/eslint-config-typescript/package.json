@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-config-typescript",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "description": "Shared ESLint flat config for TypeScript projects (deprecated — use @tada5hi/eslint-config)",
     "license": "Apache-2.0",
     "type": "module",
@@ -45,7 +45,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@tada5hi/eslint-config": "^2.0.1",
+        "@tada5hi/eslint-config": "^2.0.2",
         "typescript-eslint": "^8.57.0"
     },
     "peerDependencies": {
