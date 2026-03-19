@@ -1,36 +1,73 @@
 {
     "compilerOptions": {
+        // Use Node.js ESM module system
         "module": "NodeNext",
+
+        // Resolve modules using Node.js ESM/CJS rules (requires file extensions)
         "moduleResolution": "NodeNext",
+
+        // Treat all files as modules, even without import/export
         "moduleDetection": "force",
 
-        // Specify allowed/compiled syntax
+        // Emit latest JS syntax without downleveling
         "target": "ESNext",
 
-        // Specify allowed API(s)
+        // Include type definitions for browser APIs and all ES features
         "lib": [
             "DOM",
             "DOM.Iterable",
-            "ES2022"
+            "ESNext"
         ],
-        "allowSyntheticDefaultImports": true,
+
+        // Generate .d.ts declaration files
         "declaration": true,
+
+        // Enable interop between CommonJS and ES modules
         "esModuleInterop": true,
+
+        // Format error messages with color and context
         "pretty": true,
+
+        // Normalize line endings to LF
         "newLine": "LF",
-        "noImplicitAny": true,
-        "noImplicitThis": true,
+
+        // Error when a function path doesn't end with a return statement
         "noImplicitReturns": true,
+
+        // Require 'override' keyword when overriding base class members
         "noImplicitOverride": true,
+
+        // Error on declared but unused local variables
         "noUnusedLocals": true,
+
+        // Error on declared but unused function parameters
         "noUnusedParameters": true,
+
+        // Error on fall-through cases in switch statements
         "noFallthroughCasesInSwitch": true,
-        "noUncheckedIndexedAccess": false,
+
+        // Require undefined check when accessing by index signature
+        "noUncheckedIndexedAccess": true,
+
+        // Allow dot notation for index signature properties
         "noPropertyAccessFromIndexSignature": false,
+
+        // Skip emitting output when there are type errors
         "noEmitOnError": true,
+
+        // Ensure import paths match the file system casing
         "forceConsistentCasingInFileNames": true,
+
+        // Skip type checking of declaration files for faster builds
         "skipLibCheck": true,
+
+        // Omit declarations marked with @internal from .d.ts output
         "stripInternal": true,
+
+        // Enforce import type for type-only imports
+        "verbatimModuleSyntax": true,
+
+        // Enable all strict type-checking options
         "strict": true
     }
 }
