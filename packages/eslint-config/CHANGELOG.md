@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0](https://github.com/tada5hi/javascript/compare/eslint-config-v1.2.12...eslint-config-v2.0.0) (2026-03-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* flat config
+
+### Features
+
+* **deps:** bump eslint to v10.x ([1d0c46a](https://github.com/tada5hi/javascript/commit/1d0c46afb19ab25d80e219757ed4f43e2f2cef7e))
+* **deps:** update package.json exports ([22b01b5](https://github.com/tada5hi/javascript/commit/22b01b546cd804a41580454534fd33320d3da20b))
+* merge eslint packages ([#870](https://github.com/tada5hi/javascript/issues/870)) ([e578dcc](https://github.com/tada5hi/javascript/commit/e578dccee8c7955d9fb7172d81b5219f27313a2f))
+* migrate packages to TypeScript with rollup build pipeline ([#868](https://github.com/tada5hi/javascript/issues/868)) ([63e2f68](https://github.com/tada5hi/javascript/commit/63e2f6852f827170ae97b0c2d56652b7c4e341ca))
+* migrate to eslint v9 ([#866](https://github.com/tada5hi/javascript/issues/866)) ([3f3a6a0](https://github.com/tada5hi/javascript/commit/3f3a6a04ccd352c6446da0709f4e0e007b98eef5))
+
+
+### Bug Fixes
+
+* always require file extension for js/ts files ([fbc0afe](https://github.com/tada5hi/javascript/commit/fbc0afe44095bf627d581e607bd2149a0b5d2f47))
+* **deps:** bump @eslint/js from 9.39.4 to 10.0.1 ([#871](https://github.com/tada5hi/javascript/issues/871)) ([68b03c4](https://github.com/tada5hi/javascript/commit/68b03c46ad817a0ac978270e3bbbc6c72c1abd1f))
+* **deps:** bump @stylistic/eslint-plugin from 4.4.1 to 5.10.0 ([#874](https://github.com/tada5hi/javascript/issues/874)) ([a6d2757](https://github.com/tada5hi/javascript/commit/a6d275714dacb065e9cce5d753bab60ae72d549e))
+* **deps:** bump eslint-plugin-unicorn from 59.0.1 to 63.0.0 ([#873](https://github.com/tada5hi/javascript/issues/873)) ([7e74ed9](https://github.com/tada5hi/javascript/commit/7e74ed9285728e0092de5962a540d17694cc1c1c))
+* **deps:** bump globals from 16.5.0 to 17.4.0 ([#876](https://github.com/tada5hi/javascript/issues/876)) ([eaf166e](https://github.com/tada5hi/javascript/commit/eaf166ed6fd6e1a16d8810afc8e2b390a5b2e890))
+* ensure typescript-eslint package in vue config ([c067a47](https://github.com/tada5hi/javascript/commit/c067a477f476da54b08e66a0a75bdaac01e70249))
+
 ## [1.2.12](https://github.com/tada5hi/javascript/compare/eslint-config-v1.2.11...eslint-config-v1.2.12) (2025-12-14)
 
 

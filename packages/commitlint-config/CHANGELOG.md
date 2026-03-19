@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.0](https://github.com/tada5hi/javascript/compare/commitlint-config-v1.2.7...commitlint-config-v1.3.0) (2026-03-19)
+
+
+### Features
+
+* **deps:** update package.json exports ([22b01b5](https://github.com/tada5hi/javascript/commit/22b01b546cd804a41580454534fd33320d3da20b))
+* migrate packages to TypeScript with rollup build pipeline ([#868](https://github.com/tada5hi/javascript/issues/868)) ([63e2f68](https://github.com/tada5hi/javascript/commit/63e2f6852f827170ae97b0c2d56652b7c4e341ca))
+
+
+### Bug Fixes
+
+* **deps:** bump @commitlint/config-conventional from 20.2.0 to 20.3.0 ([#829](https://github.com/tada5hi/javascript/issues/829)) ([e5c81b7](https://github.com/tada5hi/javascript/commit/e5c81b72c1cc1d7c7f17924e5c2bdf21bf2889fc))
+* **deps:** bump @commitlint/config-conventional from 20.3.0 to 20.3.1 ([#833](https://github.com/tada5hi/javascript/issues/833)) ([b7a2e16](https://github.com/tada5hi/javascript/commit/b7a2e16e94e3876c5501d4f9ef88353f7efab805))
+* **deps:** bump @commitlint/config-conventional from 20.3.1 to 20.4.0 ([#844](https://github.com/tada5hi/javascript/issues/844)) ([1f046c6](https://github.com/tada5hi/javascript/commit/1f046c66d551bfcd75648c022028bd1b9a481be8))
+* **deps:** bump @commitlint/config-conventional from 20.4.0 to 20.4.1 ([#847](https://github.com/tada5hi/javascript/issues/847)) ([8812886](https://github.com/tada5hi/javascript/commit/8812886d02ab872491ab4e574390c74d0ee18da0))
+* **deps:** bump @commitlint/config-conventional from 20.4.1 to 20.4.2 ([#855](https://github.com/tada5hi/javascript/issues/855)) ([0c5cd1f](https://github.com/tada5hi/javascript/commit/0c5cd1fdf1ee8f8a119fef6ebbab01de09965f23))
+* **deps:** bump @commitlint/config-conventional from 20.4.2 to 20.4.3 ([#859](https://github.com/tada5hi/javascript/issues/859)) ([ba05983](https://github.com/tada5hi/javascript/commit/ba05983912d4c13ca9f51c2bcaa9fde86e600b01))
+* **deps:** bump @commitlint/config-conventional from 20.4.3 to 20.4.4 ([#863](https://github.com/tada5hi/javascript/issues/863)) ([a70cf34](https://github.com/tada5hi/javascript/commit/a70cf349bfdf55ca5a7064d31206f08e9a1366b3))
+
 ## [1.2.7](https://github.com/tada5hi/javascript/compare/commitlint-config-v1.2.6...commitlint-config-v1.2.7) (2025-12-14)
 
 
