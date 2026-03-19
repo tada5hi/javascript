@@ -2,7 +2,7 @@
     "name": "@tada5hi/tsconfig",
     "version": "0.7.0",
     "description": "",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "main": "tsconfig.json",
     "files": [
         "tsconfig.json"

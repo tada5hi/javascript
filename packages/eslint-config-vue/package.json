@@ -2,7 +2,7 @@
     "name": "@tada5hi/eslint-config-vue",
     "version": "2.0.0",
     "description": "Shared ESLint flat config for Vue.js projects (deprecated — use @tada5hi/eslint-config)",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "type": "module",
     "exports": {
         "./package.json": "./package.json",

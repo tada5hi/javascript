@@ -28,18 +28,32 @@ jobs:
                 with:
                     node-version: ${{ env.NODE_VERSION }}
 
-    tests:
-        name: Test Packages
+    build:
+        name: Build Packages
         needs: [install]
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout
                 uses: actions/checkout@v6
-
             -   name: Install
                 uses: ./.github/actions/install
                 with:
                     node-version: ${{ env.NODE_VERSION }}
+            -   name: Build
+                uses: ./.github/actions/build
 
+    tests:
+        name: Test Packages
+        needs: [build]
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v6
+            -   name: Install
+                uses: ./.github/actions/install
+                with:
+                    node-version: ${{ env.NODE_VERSION }}
+            -   name: Build
+                uses: ./.github/actions/build
             -   name: Run tests
                 run: npm test

@@ -2,7 +2,7 @@
     "name": "@tada5hi/eslint-config",
     "version": "2.0.0",
     "description": "Shared ESLint flat config with optional TypeScript and Vue support",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "type": "module",
     "exports": {
         "./package.json": "./package.json",

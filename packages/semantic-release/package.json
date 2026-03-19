@@ -2,7 +2,7 @@
     "name": "@tada5hi/semantic-release",
     "version": "0.4.0",
     "description": "This package provides a sharable semantic-release configuration.",
-    "license": "MIT",
+    "license": "Apache-2.0",
     "type": "module",
     "exports": {
         "./package.json": "./package.json",

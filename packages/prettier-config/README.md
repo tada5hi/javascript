@@ -30,4 +30,4 @@ Add the following line to the Prettier config file:
 
 Made with 💚
 
-Published under [MIT License](./LICENSE).
+Published under [Apache 2.0 License](./LICENSE).
