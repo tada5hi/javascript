@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/tsconfig",
-    "version": "0.7.1",
+    "version": "0.7.2",
     "description": "",
     "license": "Apache-2.0",
     "main": "tsconfig.json",
