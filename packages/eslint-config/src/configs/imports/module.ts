@@ -17,11 +17,13 @@ export function imports(): Linter.Config[] {
             rules: {
                 'import-x/export': 'error',
                 'import-x/extensions': ['error', 'ignorePackages', {
-                    js: 'never',
-                    jsx: 'never',
-                    ts: 'never',
-                    tsx: 'never',
-                    mjs: 'never',
+                    js: 'always',
+                    jsx: 'always',
+                    ts: 'always',
+                    tsx: 'always',
+                    mjs: 'always',
+                    mts: 'always',
+                    cts: 'always',
                 }],
                 'import-x/first': 'error',
                 'import-x/newline-after-import': 'error',
