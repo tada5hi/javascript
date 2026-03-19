@@ -6,53 +6,19 @@
  */
 
 import type { Linter } from 'eslint';
-import importXPlugin from 'eslint-plugin-import-x';
+import importLitePlugin from 'eslint-plugin-import-lite';
 
 export function imports(): Linter.Config[] {
     return [
         {
             plugins: {
-                'import-x': importXPlugin,
+                'import': importLitePlugin,
             },
             rules: {
-                'import-x/export': 'error',
-                'import-x/extensions': ['error', 'ignorePackages', {
-                    js: 'always',
-                    jsx: 'always',
-                    ts: 'always',
-                    tsx: 'always',
-                    mjs: 'always',
-                    mts: 'always',
-                    cts: 'always',
-                }],
-                'import-x/first': 'error',
-                'import-x/newline-after-import': 'error',
-                'import-x/no-absolute-path': 'error',
-                'import-x/no-cycle': 'error',
-                'import-x/no-duplicates': 'error',
-                'import-x/no-extraneous-dependencies': ['error', {
-                    devDependencies: [
-                        '**/test/**',
-                        '**/tests/**',
-                        '**/*.test.{js,ts}',
-                        '**/*.spec.{js,ts}',
-                        '**/vitest.config.*',
-                        '**/vite.config.*',
-                        '**/rollup.config.*',
-                        '**/eslint.config.*',
-                    ],
-                    optionalDependencies: false,
-                }],
-                'import-x/no-mutable-exports': 'error',
-                'import-x/no-relative-packages': 'off',
-                'import-x/no-self-import': 'error',
-                'import-x/no-useless-path-segments': 'error',
-                'import-x/no-webpack-loader-syntax': 'error',
-                'import-x/order': ['error', {
-                    groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-                }],
-                'import-x/prefer-default-export': 'off',
-                'import-x/no-unresolved': 'off',
+                'import/first': 'error',
+                'import/newline-after-import': 'error',
+                'import/no-duplicates': 'error',
+                'import/no-mutable-exports': 'error',
 
                 'sort-imports': ['error', {
                     ignoreCase: false,
