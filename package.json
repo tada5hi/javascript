@@ -34,6 +34,7 @@
         "prepare": "husky install",
         "build": "npx nx run-many --target=build",
         "test": "npx nx run-many --target=test",
-        "lint": "eslint ."
+        "lint": "eslint .",
+        "lint:fix": "npm run lint -- --fix"
     }
 }

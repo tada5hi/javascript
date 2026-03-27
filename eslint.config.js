@@ -1,7 +1,9 @@
 import eslintConfig from '@tada5hi/eslint-config';
 
 export default eslintConfig(
-    { typescript: true },
+    {
+        typescript: true 
+    },
     {
         ignores: [
             '**/dist/**',

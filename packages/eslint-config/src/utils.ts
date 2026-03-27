@@ -21,7 +21,11 @@ export async function ensurePackages(packages: string[]): Promise<void> {
         return;
     }
 
-    const { installPackage } = await import('@antfu/install-pkg');
+    const {
+        installPackage 
+    } = await import('@antfu/install-pkg');
 
-    await installPackage(missing, { dev: true });
+    await installPackage(missing, {
+        dev: true 
+    });
 }
