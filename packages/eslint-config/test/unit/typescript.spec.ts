@@ -5,7 +5,11 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import { describe, expect, it } from 'vitest';
+import {
+    describe, 
+    expect, 
+    it 
+} from 'vitest';
 import { Linter } from 'eslint';
 import eslintConfig from '../../src/index.ts';
 
@@ -13,7 +17,10 @@ describe('typescript rules', () => {
     const linter = new Linter();
 
     async function getConfig(options = {}) {
-        return eslintConfig({ typescript: options, vue: false });
+        return eslintConfig({
+            typescript: options,
+            vue: false 
+        });
     }
 
     it('should return a valid flat config array', async () => {
@@ -27,7 +34,9 @@ describe('typescript rules', () => {
         const messages = linter.verify(
             'var x = 1;\n',
             config,
-            { filename: 'test.ts' },
+            {
+                filename: 'test.ts' 
+            },
         );
         const error = messages.find((m) => m.ruleId === 'no-var');
         expect(error).toBeDefined();
@@ -38,7 +47,9 @@ describe('typescript rules', () => {
         const messages = linter.verify(
             'const x: any = 1;\n',
             config,
-            { filename: 'test.ts' },
+            {
+                filename: 'test.ts' 
+            },
         );
         const error = messages.find((m) => m.ruleId === '@typescript-eslint/no-explicit-any');
         expect(error).toBeUndefined();
@@ -49,13 +60,17 @@ describe('typescript rules', () => {
         const messages = linter.verify(
             'import { Foo } from \'./types\';\nconst x: Foo = {} as Foo;\n',
             config,
-            { filename: 'test.ts' },
+            {
+                filename: 'test.ts' 
+            },
         );
         expect(Array.isArray(messages)).toBe(true);
     });
 
     it('should accept project option', async () => {
-        const config = await getConfig({ project: './tsconfig.json' });
+        const config = await getConfig({
+            project: './tsconfig.json' 
+        });
         expect(Array.isArray(config)).toBe(true);
         const hasParserOptions = config.some(
             (c: any) => c.languageOptions?.parserOptions?.project === './tsconfig.json',
@@ -64,7 +79,9 @@ describe('typescript rules', () => {
     });
 
     it('should enable projectService when project is true', async () => {
-        const config = await getConfig({ project: true });
+        const config = await getConfig({
+            project: true 
+        });
         expect(Array.isArray(config)).toBe(true);
         const hasProjectService = config.some(
             (c: any) => c.languageOptions?.parserOptions?.projectService === true,

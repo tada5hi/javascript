@@ -19,9 +19,17 @@ export function stylisticConfig(): Linter.Config[] {
                     SwitchCase: 1,
                     VariableDeclarator: 1,
                     outerIIFEBody: 1,
-                    FunctionDeclaration: { parameters: 1, body: 1 },
-                    FunctionExpression: { parameters: 1, body: 1 },
-                    CallExpression: { arguments: 1 },
+                    FunctionDeclaration: {
+                        parameters: 1,
+                        body: 1
+                    },
+                    FunctionExpression: {
+                        parameters: 1,
+                        body: 1
+                    },
+                    CallExpression: {
+                        arguments: 1
+                    },
                     ArrayExpression: 1,
                     ObjectExpression: 1,
                     ImportDeclaration: 1,
@@ -35,13 +43,61 @@ export function stylisticConfig(): Linter.Config[] {
                     ignoreStrings: true,
                     ignoreTemplateLiterals: true,
                 }],
-                '@stylistic/quotes': ['error', 'single', { avoidEscape: true }],
+                '@stylistic/quotes': ['error', 'single', {
+                    avoidEscape: true
+                }],
                 '@stylistic/operator-linebreak': ['error', 'after', {
-                    overrides: { '=': 'none' },
+                    overrides: {
+                        '=': 'none'
+                    },
+                }],
+                '@stylistic/object-curly-spacing': ['error', 'always'],
+                '@stylistic/padded-blocks': ['error', 'never'],
+                '@stylistic/object-curly-newline': ['error', {
+                    ObjectExpression: {
+                        multiline: true,
+                        minProperties: 1
+                    },
+                    ObjectPattern: {
+                        multiline: true,
+                        minProperties: 1
+                    },
+                    ImportDeclaration: {
+                        multiline: true,
+                        minProperties: 4
+                    },
+                    ExportDeclaration: {
+                        multiline: true,
+                        minProperties: 4
+                    },
+                }],
+                '@stylistic/object-property-newline': ['error', {
+                    allowAllPropertiesOnSameLine: false,
+                }],
+                '@stylistic/exp-list-style': ['error', {
+                    overrides: {
+                        ExportNamedDeclaration: {
+                            singleLine: {
+                                maxItems: 3,
+                            },
+                        },
+                        ImportDeclaration: {
+                            singleLine: {
+                                maxItems: 3,
+                            },
+                        },
+                    },
                 }],
                 '@stylistic/spaced-comment': ['error', 'always', {
-                    line: { exceptions: ['-', '+'], markers: ['=', '!', '/'] },
-                    block: { exceptions: ['-', '+'], markers: ['=', '!', ':', '::'], balanced: true },
+                    line: {
+                        exceptions: ['-', '+'],
+                        markers: ['=', '!', '/']
+                    },
+                    block: {
+                        exceptions: ['-', '+'],
+                        markers: ['=', '!', ':', '::'],
+                        balanced: true
+                    },
                 }],
             },
         },

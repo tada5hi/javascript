@@ -9,5 +9,8 @@ interface Options {
  * @deprecated Use `@tada5hi/eslint-config` with `{ typescript: options }` instead.
  */
 export default function eslintConfigTypescript(options: Options = {}): Promise<Linter.Config[]> {
-    return eslintConfig({ typescript: options, vue: false });
+    return eslintConfig({
+        typescript: options,
+        vue: false 
+    });
 }
