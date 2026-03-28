@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.0](https://github.com/tada5hi/javascript/compare/eslint-config-typescript-v2.0.2...eslint-config-typescript-v2.1.0) (2026-03-27)
+
+
+### Features
+
+* **eslint-config:** add object spacing and newline stylistic rules ([#889](https://github.com/tada5hi/javascript/issues/889)) ([b1adc12](https://github.com/tada5hi/javascript/commit/b1adc1265dd8c5dd5a4d5c5bf2d3c0d6c671797a))
+
+
+### Bug Fixes
+
+* **deps:** bump the minorandpatch group across 1 directory with 5 updates ([#887](https://github.com/tada5hi/javascript/issues/887)) ([07a3e69](https://github.com/tada5hi/javascript/commit/07a3e690490023ba5dde9e6b72d1154c25fe1d75))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^2.0.2 to ^2.1.0
+
 ## [2.0.2](https://github.com/tada5hi/javascript/compare/eslint-config-typescript-v2.0.1...eslint-config-typescript-v2.0.2) (2026-03-19)
 
 
