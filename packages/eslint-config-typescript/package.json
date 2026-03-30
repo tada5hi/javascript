@@ -46,7 +46,7 @@
     },
     "dependencies": {
         "@tada5hi/eslint-config": "^2.1.0",
-        "typescript-eslint": "^8.57.2"
+        "typescript-eslint": "^8.58.0"
     },
     "peerDependencies": {
         "eslint": ">=10.0.0"
