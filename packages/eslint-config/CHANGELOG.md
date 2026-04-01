@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.0](https://github.com/tada5hi/javascript/compare/eslint-config-v2.1.0...eslint-config-v2.2.0) (2026-04-01)
+
+
+### Features
+
+* **eslint-config:** add object-curly-newline support for TS types, interfaces, and enums ([#897](https://github.com/tada5hi/javascript/issues/897)) ([fd60c6b](https://github.com/tada5hi/javascript/commit/fd60c6b4f007560a2665e033f0dc74cedafc5b55))
+
 ## [2.1.0](https://github.com/tada5hi/javascript/compare/eslint-config-v2.0.2...eslint-config-v2.1.0) (2026-03-27)
 
 

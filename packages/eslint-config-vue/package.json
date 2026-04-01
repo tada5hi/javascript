@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-config-vue",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "description": "Shared ESLint flat config for Vue.js projects (deprecated — use @tada5hi/eslint-config)",
     "license": "Apache-2.0",
     "type": "module",
@@ -46,7 +46,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@tada5hi/eslint-config": "^2.1.0",
+        "@tada5hi/eslint-config": "^2.2.0",
         "eslint-plugin-vue": "^10.0.0"
     },
     "peerDependencies": {
