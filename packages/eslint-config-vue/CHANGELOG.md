@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.0](https://github.com/tada5hi/javascript/compare/eslint-config-vue-v2.1.1...eslint-config-vue-v2.2.0) (2026-04-01)
+
+
+### Features
+
+* **eslint-config:** add new stylistic rules and adjust object newline thresholds ([4a47555](https://github.com/tada5hi/javascript/commit/4a47555efdac5b7ebe1544b32cd7229bdd7e4bf5))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^2.2.0 to ^2.3.0
+
 ## [2.1.1](https://github.com/tada5hi/javascript/compare/eslint-config-vue-v2.1.0...eslint-config-vue-v2.1.1) (2026-04-01)
 
 
