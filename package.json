@@ -25,7 +25,7 @@
         "tsdown": "^0.21.6",
         "typescript": "^5.9.3",
         "vitest": "^4.1.2",
-        "workspaces-publish": "^1.8.1"
+        "monoship": "^2.0.0"
     },
     "workspaces": [
         "packages/*"

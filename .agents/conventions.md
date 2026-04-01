@@ -8,7 +8,7 @@
 | Husky | Git hooks (commit-msg) |
 | commitlint | Conventional commit message enforcement |
 | release-please | Automated versioning and changelog generation |
-| workspaces-publish | npm publishing for all packages |
+| monoship | npm publishing for all packages |
 | vitest | Unit testing for ESLint config packages |
 
 ## ESLint Config Architecture

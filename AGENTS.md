@@ -16,7 +16,7 @@ npm install                    # install all dependencies + symlink between pack
 npm test                       # run vitest tests for all config packages
 
 # Publishing
-npx workspaces-publish         # publish all packages
+npx monoship                   # publish all packages
 ```
 
 - **Node.js**: `>=22.0.0`
