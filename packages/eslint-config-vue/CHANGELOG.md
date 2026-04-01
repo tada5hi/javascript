@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.1.1](https://github.com/tada5hi/javascript/compare/eslint-config-vue-v2.1.0...eslint-config-vue-v2.1.1) (2026-04-01)
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^2.1.0 to ^2.2.0
+
 ## [2.1.0](https://github.com/tada5hi/javascript/compare/eslint-config-vue-v2.0.2...eslint-config-vue-v2.1.0) (2026-03-27)
 
 
