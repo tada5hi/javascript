@@ -8,10 +8,10 @@
 import type { Linter } from 'eslint';
 import { isObject } from 'smob';
 import type {
-    FactoryOptions, 
-    TypeScriptOptions, 
-    UserConfig, 
-    VueOptions 
+    FactoryOptions,
+    TypeScriptOptions,
+    UserConfig,
+    VueOptions,
 } from './types.ts';
 import { javascript } from './configs/javascript/index.ts';
 import { stylisticConfig } from './configs/stylistic/index.ts';
@@ -38,26 +38,20 @@ export async function eslintConfig(
             options.typescript :
             {};
 
-        const {
-            typescript 
-        } = await import('./configs/typescript/index.ts');
+        const { typescript } = await import('./configs/typescript/index.ts');
         configs.push(...await typescript(tsOptions));
     }
 
     if (enableVue) {
         const vueOptions: VueOptions = isObject(options.vue) ?
-            {
-                ...options.vue 
-            } :
+            { ...options.vue } :
             {};
 
         if (enableTypescript && !vueOptions.typescript) {
             vueOptions.typescript = true;
         }
 
-        const {
-            vue 
-        } = await import('./configs/vue/index.ts');
+        const { vue } = await import('./configs/vue/index.ts');
         configs.push(...await vue(vueOptions));
     }
 

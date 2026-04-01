@@ -11,9 +11,7 @@ import importLitePlugin from 'eslint-plugin-import-lite';
 export function imports(): Linter.Config[] {
     return [
         {
-            plugins: {
-                'import': importLitePlugin,
-            },
+            plugins: { 'import': importLitePlugin },
             rules: {
                 'import/first': 'error',
                 'import/newline-after-import': 'error',

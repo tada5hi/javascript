@@ -11,9 +11,7 @@ import unicornPlugin from 'eslint-plugin-unicorn';
 export function unicorn(): Linter.Config[] {
     return [
         {
-            plugins: {
-                unicorn: unicornPlugin,
-            },
+            plugins: { unicorn: unicornPlugin },
             rules: {
                 'unicorn/prefer-node-protocol': 'error',
                 'unicorn/no-instanceof-array': 'error',

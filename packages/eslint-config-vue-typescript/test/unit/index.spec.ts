@@ -1,8 +1,4 @@
-import {
-    describe, 
-    expect, 
-    it 
-} from 'vitest';
+import { describe, expect, it } from 'vitest';
 import eslintConfigVueTypescript from '../../src/index.ts';
 
 describe('eslint-config-vue-typescript (deprecated wrapper)', () => {

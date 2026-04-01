@@ -25,21 +25,15 @@ export function javascript(): Linter.Config[] {
                 // ----------------------------------------
                 // Best practices
                 // ----------------------------------------
-                'array-callback-return': ['error', {
-                    allowImplicit: true 
-                }],
+                'array-callback-return': ['error', { allowImplicit: true }],
                 'arrow-body-style': ['error', 'as-needed'],
                 'consistent-return': 'error',
                 'curly': ['error', 'multi-line'],
                 'default-case': 'off',
                 'default-case-last': 'error',
                 'default-param-last': 'error',
-                'dot-notation': ['error', {
-                    allowKeywords: true 
-                }],
-                'eqeqeq': ['error', 'always', {
-                    null: 'ignore' 
-                }],
+                'dot-notation': ['error', { allowKeywords: true }],
+                'eqeqeq': ['error', 'always', { null: 'ignore' }],
                 'grouped-accessor-pairs': 'error',
                 'guard-for-in': 'off',
                 'max-classes-per-file': ['error', 1],
@@ -50,12 +44,8 @@ export function javascript(): Linter.Config[] {
                 'no-console': 'warn',
                 'no-constructor-return': 'error',
                 'no-continue': 'off',
-                'no-else-return': ['error', {
-                    allowElseIf: false 
-                }],
-                'no-empty-function': ['error', {
-                    allow: ['arrowFunctions', 'functions', 'methods'] 
-                }],
+                'no-else-return': ['error', { allowElseIf: false }],
+                'no-empty-function': ['error', { allow: ['arrowFunctions', 'functions', 'methods'] }],
                 'no-eval': 'error',
                 'no-extend-native': 'error',
                 'no-extra-bind': 'error',
@@ -64,7 +54,7 @@ export function javascript(): Linter.Config[] {
                 'no-iterator': 'error',
                 'no-labels': ['error', {
                     allowLoop: false,
-                    allowSwitch: false 
+                    allowSwitch: false, 
                 }],
                 'no-lone-blocks': 'error',
                 'no-multi-str': 'error',
@@ -76,55 +66,53 @@ export function javascript(): Linter.Config[] {
                 'no-plusplus': 'off',
                 'no-promise-executor-return': 'error',
                 'no-proto': 'error',
-                'no-restricted-exports': ['error', {
-                    restrictedNamedExports: ['default', 'then'] 
-                }],
-                'no-restricted-globals': ['error',{
+                'no-restricted-exports': ['error', { restrictedNamedExports: ['default', 'then'] }],
+                'no-restricted-globals': ['error', {
                     name: 'isFinite',
-                    message: 'Use Number.isFinite instead.' 
-                },{
+                    message: 'Use Number.isFinite instead.', 
+                }, {
                     name: 'isNaN',
-                    message: 'Use Number.isNaN instead.' 
-                },],
-                'no-restricted-properties': ['error',{
+                    message: 'Use Number.isNaN instead.', 
+                }],
+                'no-restricted-properties': ['error', {
                     object: 'arguments',
                     property: 'callee',
-                    message: 'arguments.callee is deprecated.' 
-                },{
+                    message: 'arguments.callee is deprecated.', 
+                }, {
                     object: 'global',
                     property: 'isFinite',
-                    message: 'Use Number.isFinite instead.' 
-                },{
+                    message: 'Use Number.isFinite instead.', 
+                }, {
                     object: 'self',
                     property: 'isFinite',
-                    message: 'Use Number.isFinite instead.' 
-                },{
+                    message: 'Use Number.isFinite instead.', 
+                }, {
                     object: 'window',
                     property: 'isFinite',
-                    message: 'Use Number.isFinite instead.' 
-                },{
+                    message: 'Use Number.isFinite instead.', 
+                }, {
                     object: 'global',
                     property: 'isNaN',
-                    message: 'Use Number.isNaN instead.' 
-                },{
+                    message: 'Use Number.isNaN instead.', 
+                }, {
                     object: 'self',
                     property: 'isNaN',
-                    message: 'Use Number.isNaN instead.' 
-                },{
+                    message: 'Use Number.isNaN instead.', 
+                }, {
                     object: 'window',
                     property: 'isNaN',
-                    message: 'Use Number.isNaN instead.' 
-                },{
+                    message: 'Use Number.isNaN instead.', 
+                }, {
                     property: '__defineGetter__',
-                    message: 'Use Object.defineProperty instead.' 
-                },{
+                    message: 'Use Object.defineProperty instead.', 
+                }, {
                     property: '__defineSetter__',
-                    message: 'Use Object.defineProperty instead.' 
-                },{
+                    message: 'Use Object.defineProperty instead.', 
+                }, {
                     object: 'Math',
                     property: 'pow',
-                    message: 'Use the ** operator instead.' 
-                },],
+                    message: 'Use the ** operator instead.', 
+                }],
                 'no-return-assign': ['error', 'always'],
                 'no-script-url': 'error',
                 'no-self-compare': 'error',
@@ -141,17 +129,15 @@ export function javascript(): Linter.Config[] {
                 'prefer-destructuring': ['error', {
                     VariableDeclarator: {
                         array: false,
-                        object: true 
+                        object: true, 
                     },
                     AssignmentExpression: {
                         array: false,
-                        object: false 
+                        object: false, 
                     },
                 }],
                 'prefer-numeric-literals': 'error',
-                'prefer-promise-reject-errors': ['error', {
-                    allowEmptyReject: true 
-                }],
+                'prefer-promise-reject-errors': ['error', { allowEmptyReject: true }],
                 'radix': 'error',
                 'yoda': 'error',
 
@@ -166,7 +152,7 @@ export function javascript(): Linter.Config[] {
                 'prefer-arrow-callback': 'error',
                 'prefer-const': ['error', {
                     destructuring: 'any',
-                    ignoreReadBeforeAssign: true 
+                    ignoreReadBeforeAssign: true, 
                 }],
                 'prefer-object-spread': 'error',
                 'prefer-rest-params': 'error',
@@ -186,14 +172,12 @@ export function javascript(): Linter.Config[] {
                 'class-methods-use-this': 'off',
                 'new-cap': ['error', {
                     newIsCap: true,
-                    capIsNew: false 
+                    capIsNew: false, 
                 }],
                 'no-lonely-if': 'error',
                 'no-nested-ternary': 'error',
                 'no-underscore-dangle': 'off',
-                'no-unneeded-ternary': ['error', {
-                    defaultAssignment: false 
-                }],
+                'no-unneeded-ternary': ['error', { defaultAssignment: false }],
                 'one-var': ['error', 'never'],
                 'operator-assignment': ['error', 'always'],
             },

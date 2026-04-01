@@ -10,9 +10,7 @@ import { ensurePackages } from '../../utils.ts';
 import type { TypeScriptOptions } from './types.ts';
 
 export async function typescript(options: TypeScriptOptions = {}): Promise<Linter.Config[]> {
-    const {
-        project 
-    } = options;
+    const { project } = options;
 
     await ensurePackages(['typescript-eslint']);
 
@@ -48,9 +46,7 @@ export async function typescript(options: TypeScriptOptions = {}): Promise<Linte
             '@typescript-eslint/default-param-last': 'error',
 
             'no-empty-function': 'off',
-            '@typescript-eslint/no-empty-function': ['error', {
-                allow: ['arrowFunctions', 'functions', 'methods'],
-            }],
+            '@typescript-eslint/no-empty-function': ['error', { allow: ['arrowFunctions', 'functions', 'methods'] }],
 
             'no-unused-expressions': 'off',
             '@typescript-eslint/no-unused-expressions': ['error', {

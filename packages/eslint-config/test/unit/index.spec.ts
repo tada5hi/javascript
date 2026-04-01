@@ -5,18 +5,14 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import {
-    describe, 
-    expect, 
-    it 
-} from 'vitest';
+import { describe, expect, it } from 'vitest';
 import eslintConfig from '../../src/index.ts';
 
 describe('eslint-config factory', () => {
     it('should return a valid flat config array', async () => {
         const config = await eslintConfig({
             typescript: false,
-            vue: false 
+            vue: false, 
         });
         expect(Array.isArray(config)).toBe(true);
         expect(config.length).toBeGreaterThan(0);
@@ -25,7 +21,7 @@ describe('eslint-config factory', () => {
     it('should include typescript configs when enabled', async () => {
         const config = await eslintConfig({
             typescript: true,
-            vue: false 
+            vue: false, 
         });
         const hasTsPlugin = config.some(
             (c: any) => c.plugins && ('@typescript-eslint' in c.plugins),
@@ -36,7 +32,7 @@ describe('eslint-config factory', () => {
     it('should include vue configs when enabled', async () => {
         const config = await eslintConfig({
             typescript: false,
-            vue: true 
+            vue: true, 
         });
         const hasVuePlugin = config.some(
             (c: any) => c.plugins && ('vue' in c.plugins),
@@ -47,7 +43,7 @@ describe('eslint-config factory', () => {
     it('should include both typescript and vue configs', async () => {
         const config = await eslintConfig({
             typescript: true,
-            vue: true 
+            vue: true, 
         });
         const hasTsPlugin = config.some(
             (c: any) => c.plugins && ('@typescript-eslint' in c.plugins),
@@ -62,7 +58,7 @@ describe('eslint-config factory', () => {
     it('should configure vue with typescript parser when both enabled', async () => {
         const config = await eslintConfig({
             typescript: true,
-            vue: true 
+            vue: true, 
         });
         const vueFileConfig = config.find(
             (c: any) => c.files &&
@@ -75,10 +71,8 @@ describe('eslint-config factory', () => {
 
     it('should accept typescript options object', async () => {
         const config = await eslintConfig({
-            typescript: {
-                project: './tsconfig.json' 
-            },
-            vue: false 
+            typescript: { project: './tsconfig.json' },
+            vue: false, 
         });
         const hasParserOptions = config.some(
             (c: any) => c.languageOptions?.parserOptions?.project === './tsconfig.json',
@@ -90,13 +84,9 @@ describe('eslint-config factory', () => {
         const config = await eslintConfig(
             {
                 typescript: false,
-                vue: false 
+                vue: false, 
             },
-            {
-                rules: {
-                    'no-console': 'off' 
-                } 
-            },
+            { rules: { 'no-console': 'off' } },
         );
         const last = config[config.length - 1];
         expect((last as any).rules['no-console']).toBe('off');

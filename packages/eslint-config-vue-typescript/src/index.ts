@@ -11,6 +11,6 @@ interface Options {
 export default function eslintConfigVueTypescript(options: Options = {}): Promise<Linter.Config[]> {
     return eslintConfig({
         typescript: options,
-        vue: true 
+        vue: true, 
     });
 }

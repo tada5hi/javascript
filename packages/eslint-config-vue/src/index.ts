@@ -7,6 +7,6 @@ import eslintConfig from '@tada5hi/eslint-config';
 export default function eslintConfigVue(): Promise<Linter.Config[]> {
     return eslintConfig({
         typescript: false,
-        vue: true 
+        vue: true, 
     });
 }

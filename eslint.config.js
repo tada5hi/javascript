@@ -1,9 +1,7 @@
 import eslintConfig from '@tada5hi/eslint-config';
 
 export default eslintConfig(
-    {
-        typescript: true 
-    },
+    { typescript: true },
     {
         ignores: [
             '**/dist/**',
@@ -11,9 +9,5 @@ export default eslintConfig(
             '**/CHANGELOG.md',
         ],
     },
-    {
-        rules: {
-            'import-x/no-extraneous-dependencies': 'off',
-        },
-    },
+    { rules: { 'import-x/no-extraneous-dependencies': 'off' } },
 );
