@@ -78,6 +78,19 @@ describe('typescript rules', () => {
         expect(hasParserOptions).toBe(true);
     });
 
+    it('should enforce object-curly-newline for TS type literals', async () => {
+        const config = await getConfig();
+        const messages = linter.verify(
+            'type Foo = { a: string,\n    b: number };\n',
+            config,
+            {
+                filename: 'test.ts',
+            },
+        );
+        const error = messages.find((m) => m.ruleId === '@stylistic/object-curly-newline');
+        expect(error).toBeDefined();
+    });
+
     it('should enable projectService when project is true', async () => {
         const config = await getConfig({
             project: true 

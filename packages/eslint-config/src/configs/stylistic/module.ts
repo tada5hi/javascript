@@ -56,19 +56,31 @@ export function stylisticConfig(): Linter.Config[] {
                 '@stylistic/object-curly-newline': ['error', {
                     ObjectExpression: {
                         multiline: true,
-                        minProperties: 1
+                        minProperties: 1,
                     },
                     ObjectPattern: {
                         multiline: true,
-                        minProperties: 1
+                        minProperties: 1,
                     },
                     ImportDeclaration: {
                         multiline: true,
-                        minProperties: 4
+                        minProperties: 4,
                     },
                     ExportDeclaration: {
                         multiline: true,
-                        minProperties: 4
+                        minProperties: 4,
+                    },
+                    TSTypeLiteral: {
+                        consistent: true,
+                        multiline: true,
+                    },
+                    TSInterfaceBody: {
+                        consistent: true,
+                        multiline: true,
+                    },
+                    TSEnumBody: {
+                        consistent: true,
+                        multiline: true,
                     },
                 }],
                 '@stylistic/object-property-newline': ['error', {
