@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.0](https://github.com/tada5hi/javascript/compare/eslint-config-v2.2.0...eslint-config-v2.3.0) (2026-04-01)
+
+
+### Features
+
+* **eslint-config:** add new stylistic rules and adjust object newline thresholds ([4a47555](https://github.com/tada5hi/javascript/commit/4a47555efdac5b7ebe1544b32cd7229bdd7e4bf5))
+
+
+### Bug Fixes
+
+* **deps:** bump eslint-plugin-unicorn in the majorprod group ([#893](https://github.com/tada5hi/javascript/issues/893)) ([1fef6e1](https://github.com/tada5hi/javascript/commit/1fef6e111c6df35ea6a4dca30360c8b737c53538))
+* **deps:** bump the minorandpatch group across 1 directory with 3 updates ([#895](https://github.com/tada5hi/javascript/issues/895)) ([0d474b3](https://github.com/tada5hi/javascript/commit/0d474b316a31002d4578aed65eefbf04c9d92880))
+
 ## [2.2.0](https://github.com/tada5hi/javascript/compare/eslint-config-v2.1.0...eslint-config-v2.2.0) (2026-04-01)
 
 
