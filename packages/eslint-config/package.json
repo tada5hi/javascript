@@ -52,12 +52,12 @@
         "@stylistic/eslint-plugin": "^5.10.0",
         "eslint-plugin-import-lite": "^0.6.0",
         "eslint-plugin-unicorn": "^64.0.0",
-        "globals": "^17.4.0",
+        "globals": "^17.5.0",
         "smob": "^1.6.1"
     },
     "devDependencies": {
         "eslint-plugin-vue": "^10.8.0",
-        "typescript-eslint": "^8.58.0"
+        "typescript-eslint": "^8.58.2"
     },
     "peerDependencies": {
         "eslint": ">=10.0.0",
