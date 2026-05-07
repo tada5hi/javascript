@@ -45,12 +45,12 @@
         "access": "public"
     },
     "dependencies": {
-        "@commitlint/config-conventional": "^20.4.4"
+        "@commitlint/config-conventional": "^20.5.3"
     },
     "devDependencies": {
-        "@commitlint/cli": "^20.4.3"
+        "@commitlint/cli": "^20.5.3"
     },
     "peerDependencies": {
-        "@commitlint/cli": "^20.4.3"
+        "@commitlint/cli": "^20.5.3"
     }
 }
