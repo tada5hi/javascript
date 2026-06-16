@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/tada5hi/javascript/compare/eslint-config-vue-v2.2.0...eslint-config-vue-v2.2.1) (2026-06-16)
+
+
+### Bug Fixes
+
+* **deps:** bump the minorandpatch group across 1 directory with 10 updates ([#918](https://github.com/tada5hi/javascript/issues/918)) ([5b9eebe](https://github.com/tada5hi/javascript/commit/5b9eebe7c935e11af703376817ed4e04fbd2a736))
+* **deps:** bump the minorandpatch group across 1 directory with 9 updates ([#906](https://github.com/tada5hi/javascript/issues/906)) ([984afd3](https://github.com/tada5hi/javascript/commit/984afd349d62b722909d33b1f25eb5f75cc16f03))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^2.3.0 to ^2.3.1
+
 ## [2.2.0](https://github.com/tada5hi/javascript/compare/eslint-config-vue-v2.1.1...eslint-config-vue-v2.2.0) (2026-04-01)
 
 
