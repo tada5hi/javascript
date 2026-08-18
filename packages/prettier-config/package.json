@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/prettier-config",
-    "version": "1.3.2",
+    "version": "1.3.3",
     "description": "Shared Prettier configuration",
     "license": "Apache-2.0",
     "type": "module",

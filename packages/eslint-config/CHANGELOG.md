@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.0](https://github.com/tada5hi/javascript/compare/eslint-config-v2.3.1...eslint-config-v2.4.0) (2026-08-18)
+
+
+### Features
+
+* **eslint-config:** expand unicorn rule set for v73 ([407368f](https://github.com/tada5hi/javascript/commit/407368f4a9381d361611b21e6061eb72eb2179b5))
+
+
+### Bug Fixes
+
+* **deps:** bump the majorprod group across 1 directory with 4 updates ([6cb569f](https://github.com/tada5hi/javascript/commit/6cb569f84228d2554df906fa7b608b736bde17a3))
+* **deps:** bump the minorandpatch group across 1 directory with 8 updates ([#931](https://github.com/tada5hi/javascript/issues/931)) ([c4a6542](https://github.com/tada5hi/javascript/commit/c4a6542d33a2866e31c3dcc9955488378ebce24b))
+* **eslint-config:** drop two defective unicorn rules, declare node engine ([258c4fc](https://github.com/tada5hi/javascript/commit/258c4fc17dda6fea007c5be3ce34f89835a109fa))
+
 ## [2.3.1](https://github.com/tada5hi/javascript/compare/eslint-config-v2.3.0...eslint-config-v2.3.1) (2026-06-16)
 
 
