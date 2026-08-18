@@ -8,6 +8,7 @@ The project is a monorepo using npm workspaces. All packages live under `package
 javascript/
 ├── .agents/                              # Agent documentation
 │   ├── plans/                            # Migration and implementation plans
+│   ├── references/                       # Cumulative mappings for external projects
 │   ├── structure.md                      # This file
 │   └── conventions.md                    # Coding conventions
 ├── .github/                              # GitHub workflows (CI, release-please)
@@ -78,6 +79,8 @@ packages/eslint-config/
 ├── test/unit/
 │   ├── index.spec.ts         # Factory tests
 │   ├── javascript.spec.ts    # JS rule tests
+│   ├── imports.spec.ts       # Import rule tests
+│   ├── unicorn.spec.ts       # Unicorn rule tests + deprecation guard
 │   ├── typescript.spec.ts    # TS rule tests
 │   └── vue.spec.ts           # Vue rule tests
 ├── test/vitest.config.ts
