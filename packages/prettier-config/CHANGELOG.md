@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.3.3](https://github.com/tada5hi/javascript/compare/prettier-config-v1.3.2...prettier-config-v1.3.3) (2026-08-18)
+
+
+### Bug Fixes
+
+* **deps:** bump the minorandpatch group across 1 directory with 8 updates ([#931](https://github.com/tada5hi/javascript/issues/931)) ([c4a6542](https://github.com/tada5hi/javascript/commit/c4a6542d33a2866e31c3dcc9955488378ebce24b))
+
 ## [1.3.2](https://github.com/tada5hi/javascript/compare/prettier-config-v1.3.1...prettier-config-v1.3.2) (2026-06-16)
 
 

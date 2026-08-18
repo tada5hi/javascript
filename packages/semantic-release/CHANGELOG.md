@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/tada5hi/javascript/compare/semantic-release-v0.4.1...semantic-release-v0.4.2) (2026-08-18)
+
+
+### Bug Fixes
+
+* **deps:** bump the majorprod group across 1 directory with 4 updates ([6cb569f](https://github.com/tada5hi/javascript/commit/6cb569f84228d2554df906fa7b608b736bde17a3))
+
 ## [0.4.1](https://github.com/tada5hi/javascript/compare/semantic-release-v0.4.0...semantic-release-v0.4.1) (2026-03-19)
 
 
