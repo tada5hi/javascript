@@ -25,7 +25,6 @@ export function unicorn(): Linter.Config[] {
                 'unicorn/prefer-string-match-all': 'error',
                 'unicorn/prefer-single-replace': 'error',
                 'unicorn/prefer-global-number-constants': 'error',
-                'unicorn/prefer-number-coercion': 'error',
                 'unicorn/prefer-number-is-safe-integer': 'error',
                 'unicorn/prefer-math-abs': 'error',
                 'unicorn/prefer-math-constants': 'error',
@@ -82,7 +81,6 @@ export function unicorn(): Linter.Config[] {
                 'unicorn/no-shorthand-property-overrides': 'error',
                 'unicorn/no-unsafe-property-key': 'error',
                 'unicorn/no-negated-array-predicate': 'error',
-                'unicorn/require-array-sort-compare': 'error',
 
                 // ----------------------------------------
                 // Redundant code

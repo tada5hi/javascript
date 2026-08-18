@@ -4,6 +4,9 @@
     "description": "Shared ESLint flat config with optional TypeScript and Vue support",
     "license": "Apache-2.0",
     "type": "module",
+    "engines": {
+        "node": ">=22.0.0"
+    },
     "exports": {
         "./package.json": "./package.json",
         ".": {

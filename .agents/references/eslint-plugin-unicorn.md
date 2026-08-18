@@ -8,7 +8,7 @@ Consumed by `packages/eslint-config` — wired in `src/configs/unicorn/module.ts
 
 | This repo | Plugin version | Notes |
 |-----------|----------------|-------|
-| `@tada5hi/eslint-config` (current) | `^73.0.0` | 346 rules total, 338 non-deprecated; 75 enabled here |
+| `@tada5hi/eslint-config` (current) | `^73.0.0` | 346 rules total, 338 non-deprecated; 73 enabled here |
 | `@tada5hi/eslint-config` (previous) | `^64.0.0` | 147 rules total; 10 enabled |
 
 ## Rule renames / removals to watch
@@ -51,3 +51,19 @@ repo does **not** extend the recommended preset (see [Unicorn Rule Set](../conve
 | `no-top-level-side-effects`, `prefer-smaller-scope`, `max-nested-calls`, `try-complexity`, `id-match` | Noisy in config-style and library code |
 | `prefer-private-class-fields`, `no-undeclared-class-members` | Overlap with TypeScript language features |
 | `no-invalid-argument-count` | TypeScript compiler already covers this |
+| `require-array-sort-compare` | False positive on `['b','a'].sort()`, which is correct for strings; empty schema, so it cannot be tuned |
+| `prefer-number-coercion` | Contradicts the enabled core `radix` rule, and `Number()` is not semantically equal to `parseInt()` |
+
+## Rules enabled despite a recent runtime requirement
+
+`engines.node` is declared as `>=22.0.0`, which covers the Node side. It cannot express a browser baseline, so these
+rules may need a local override in Vue projects targeting pre-2024 browsers:
+
+| Rule | Suggested API | Available from (approx.) |
+|------|---------------|--------------------------|
+| `prefer-group-by` | `Object.groupBy()` | Node 21 · Chrome 117 · Safari 17.4 |
+| `prefer-promise-with-resolvers` | `Promise.withResolvers()` | Node 22 · Chrome 119 · Safari 17.4 |
+| `prefer-array-from-async` | `Array.fromAsync()` | Node 22 · Chrome 121 |
+| `prefer-iterator-to-array` | `Iterator#toArray()` | Node 22 · Chrome 122 · Safari 18.4 |
+| `prefer-set-methods` | `Set#union()` and friends | Node 22 · Chrome 122 |
+| `prefer-url-can-parse` | `URL.canParse()` | Node 18.17 · Chrome 120 |

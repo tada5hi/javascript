@@ -88,17 +88,6 @@ describe('unicorn rules', () => {
         expect(error).toBeDefined();
     });
 
-    it('should enforce unicorn/require-array-sort-compare', async () => {
-        const config = await getConfig();
-        const messages = linter.verify(
-            'const x = [3, 1, 2].sort();\n',
-            config,
-            { filename: 'test.js' },
-        );
-        const error = messages.find((m) => m.ruleId === 'unicorn/require-array-sort-compare');
-        expect(error).toBeDefined();
-    });
-
     it('should enforce unicorn/no-impossible-length-comparison', async () => {
         const config = await getConfig();
         const messages = linter.verify(

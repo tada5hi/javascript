@@ -62,9 +62,17 @@ These are disabled in the base config because all downstream projects consistent
 
 Selection criteria for adding a unicorn rule:
 
-- **Node baseline is 22.** Do not enable rules that suggest APIs newer than Node 22 — e.g. `prefer-regexp-escape`
-  (`RegExp.escape`), `prefer-error-is-error` (`Error.isError`), `prefer-promise-try` (`Promise.try`) and
-  `prefer-temporal` (`Temporal`) are deliberately **excluded**.
+- **Node baseline is 22**, declared as `engines.node` on the package. Do not enable rules that suggest APIs newer than
+  Node 22 — e.g. `prefer-regexp-escape` (`RegExp.escape`), `prefer-error-is-error` (`Error.isError`),
+  `prefer-promise-try` (`Promise.try`) and `prefer-temporal` (`Temporal`) are deliberately **excluded**.
+- **`engines` constrains Node only.** Several enabled rules (`prefer-group-by`, `prefer-promise-with-resolvers`,
+  `prefer-array-from-async`, `prefer-iterator-to-array`, `prefer-set-methods`) suggest APIs that reached browsers around
+  2024. Vue consumers targeting older browsers need a polyfill or a local override for those rules.
+- **Never enable a rule that contradicts an enabled core rule.** `prefer-number-coercion` was removed for this reason:
+  the core `radix` rule requires `parseInt(x, 10)`, which that rule then flags — and `Number()` is not a semantic
+  equivalent (`parseInt('12px', 10)` is `12`, `Number('12px')` is `NaN`).
+- **Verify against idiomatic correct code, not just violating code.** `require-array-sort-compare` was removed after it
+  flagged `['b', 'a'].sort()`, which is correct for strings; its schema is empty, so the noise cannot be tuned away.
 - **No duplicates of core rules.** The `javascript` module already sets `operator-assignment`, `no-useless-concat`,
   `no-else-return` and `no-nested-ternary`, so the unicorn equivalents are excluded.
 - **No opinionated naming/layout rules.** `name-replacements`, `consistent-boolean-name`, `consistent-class-member-order`
