@@ -5,6 +5,8 @@
 | Tool | Purpose |
 |------|---------|
 | npm workspaces | Monorepo package management |
+| nx | Build/test orchestration with caching (`run-many`, `dependsOn: ^build`) |
+| tsdown | Bundling every package except `tsconfig` (`src/index.ts` -> `dist/index.mjs`) |
 | Husky | Git hooks (commit-msg) |
 | commitlint | Conventional commit message enforcement |
 | release-please | Automated versioning and changelog generation |
@@ -87,19 +89,19 @@ These are the defaults enforced by the packages in this repo:
 
 ## Testing
 
-ESLint config packages have unit tests using vitest:
+The four ESLint packages have vitest unit tests at `packages/<name>/test/unit/*.spec.ts`, asserting against ESLint's
+`Linter` API. See **[Testing](testing.md)** for the full setup, commands and patterns.
 
 ```bash
-npm test                       # run all tests
+npm run build && npm test      # build first — the repo consumes its own dist/
 ```
 
 Tests verify:
 - Config functions return valid flat config arrays
 - Specific rules produce expected lint results (quotes, indent, no-var, eqeqeq, etc.)
+- Every configured plugin rule id exists upstream and is not deprecated
 - Plugin configurations are properly included (vue, typescript-eslint)
 - Options (like `project`) are correctly applied
-
-Test files live at `packages/<name>/test/unit/*.spec.ts` and use ESLint's `Linter` API directly.
 
 ## Commit Messages
 

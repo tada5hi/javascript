@@ -48,7 +48,8 @@ The unified `eslint-config` package provides an async factory function with opti
 ```
 packages/eslint-config/
 ├── src/
-│   ├── index.ts              # Async factory function + type re-exports
+│   ├── index.ts              # Public entry — default-exports the factory, re-exports types
+│   ├── module.ts             # eslintConfig() factory + resolveEnabled()
 │   ├── types.ts              # FactoryOptions, UserConfig (re-exports TypeScriptOptions, VueOptions)
 │   ├── utils.ts              # isPackageExists() helper
 │   └── configs/
@@ -141,7 +142,7 @@ packages/<name>/
 └── CHANGELOG.md          # Auto-generated changelog
 ```
 
-Other config packages:
-- `tsconfig` exports a `tsconfig.json` file
-- `prettier-config`, `commitlint-config` export CJS `index.js`
-- `semantic-release` exports `release.config.js`
+`prettier-config`, `commitlint-config` and `semantic-release` follow the same shape minus the `test/` directory —
+each is a single `src/index.ts` default-exporting a configuration object, built to `dist/index.mjs` by tsdown.
+
+`tsconfig` is the only package without a build step: it ships `tsconfig.json` directly as its export.

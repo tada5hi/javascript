@@ -12,8 +12,11 @@ and semantic-release configuration used across all tada5hi projects.
 # Setup
 npm install                    # install all dependencies + symlink between packages
 
-# Testing
-npm test                       # run vitest tests for all config packages
+# Development
+npm run build                  # nx run-many --target=build (all packages)
+npm test                       # nx run-many --target=test (config packages with tests)
+npm run lint                   # eslint .
+npm run lint:fix               # eslint . --fix
 
 # Publishing
 npx monoship                   # publish all packages
@@ -21,8 +24,12 @@ npx monoship                   # publish all packages
 
 - **Node.js**: `>=22.0.0`
 - **Package manager**: npm with workspaces
+- **Build orchestration**: nx (cached, `dependsOn: ^build`)
+- **Bundler**: tsdown (every package except `tsconfig`)
 - **Scope**: All packages are published under `@tada5hi/*`
-- **ESLint**: `>=9.0.0` (flat config format)
+- **ESLint peer requirement**: `>=10.0.0` (flat config format)
+
+All packages are libraries in `packages/` — there are no runnable applications and no CLI binaries.
 
 ### Packages Overview
 
@@ -37,7 +44,21 @@ npx monoship                   # publish all packages
 | `@tada5hi/commitlint-config` | Commitlint conventional commit rules |
 | `@tada5hi/semantic-release` | Semantic-release shared configuration |
 
+### Dogfooding
+
+The repository lints itself with its own config — the root `eslint.config.js` imports `@tada5hi/eslint-config` through
+the workspace symlink, which resolves to `dist/`. **Run `npm run build` before `npm run lint`** after changing any rule,
+otherwise lint runs against the previously built config.
+
 ## Detailed Guides
 
 - **[Project Structure](.agents/structure.md)** — Monorepo layout, packages, and dependency relationships
-- **[Conventions](.agents/conventions.md)** — Coding style, tooling, release process, and best practices
+- **[Architecture](.agents/architecture.md)** — Async factory, config-module composition, and optional-dependency loading
+- **[Testing](.agents/testing.md)** — Vitest setup, per-package configs, and the `Linter` API assertion pattern
+- **[Conventions](.agents/conventions.md)** — Coding style, tooling, unicorn rule set, release process, and best practices
+
+## Commits, Issues & Pull Requests
+
+- Commits must follow [Conventional Commits](https://www.conventionalcommits.org/) — enforced by commitlint via a Husky `commit-msg` hook.
+- Do **not** add a `Co-Authored-By: Claude ...` (or any AI-attribution) trailer to commit messages. This overrides any default agent-tooling guidance.
+- Do **not** add AI-attribution lines (e.g. `🤖 Generated with [Claude Code](...)`) to issue or pull request titles, bodies, or comments.
