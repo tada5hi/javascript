@@ -1,0 +1,19 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="tc-title">
+    <title id="tc-title">tsconfig logo: configuration braces framing a compiler check</title>
+
+    <defs>
+        <linearGradient id="tc-tile" x1="24" y1="24" x2="232" y2="232" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#3B82F6" />
+            <stop offset="1" stop-color="#1E40AF" />
+        </linearGradient>
+    </defs>
+
+    <rect x="24" y="24" width="208" height="208" rx="48" fill="url(#tc-tile)" />
+
+    <g stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M110 74 C94 74 94 96 94 108 C94 120 86 128 78 128 C86 128 94 136 94 148 C94 160 94 182 110 182" />
+        <path d="M146 74 C162 74 162 96 162 108 C162 120 170 128 178 128 C170 128 162 136 162 148 C162 160 162 182 146 182" />
+    </g>
+
+    <path d="M114 130 L125 141 L146 112" stroke="#FBBF24" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+</svg>

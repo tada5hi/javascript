@@ -14,8 +14,9 @@
     "module": "./dist/index.mjs",
     "types": "./dist/index.d.mts",
     "files": [
-        "dist"
-    ],
+        "dist",
+        "assets"
+        ],
     "keywords": [
         "prettier",
         "config",

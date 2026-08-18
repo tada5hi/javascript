@@ -1,0 +1,19 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ec-title">
+    <title id="ec-title">eslint-config logo: three lines of code with one flagged by a rule</title>
+
+    <defs>
+        <linearGradient id="ec-tile" x1="24" y1="24" x2="232" y2="232" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#8B5CF6" />
+            <stop offset="1" stop-color="#4B32C3" />
+        </linearGradient>
+    </defs>
+
+    <rect x="24" y="24" width="208" height="208" rx="48" fill="url(#ec-tile)" />
+
+    <rect x="66" y="84" width="112" height="16" rx="8" fill="#FFFFFF" />
+    <rect x="66" y="120" width="74" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.9" />
+    <rect x="66" y="156" width="96" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.62" />
+
+    <!-- the reported problem -->
+    <circle cx="172" cy="128" r="17" fill="#FBBF24" stroke="#FFFFFF" stroke-width="5" />
+</svg>

@@ -1,0 +1,23 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cc-title">
+    <title id="cc-title">commitlint-config logo: a chain of commits with the newest one validated</title>
+
+    <defs>
+        <linearGradient id="cc-tile" x1="24" y1="24" x2="232" y2="232" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FB7185" />
+            <stop offset="1" stop-color="#DB2777" />
+        </linearGradient>
+    </defs>
+
+    <rect x="24" y="24" width="208" height="208" rx="48" fill="url(#cc-tile)" />
+
+    <path d="M128 74 L128 176" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-opacity="0.75" />
+
+    <g fill="#FFFFFF">
+        <circle cx="128" cy="74" r="16" />
+        <circle cx="128" cy="125" r="16" />
+    </g>
+
+    <!-- validated commit -->
+    <circle cx="128" cy="178" r="23" fill="#FBBF24" />
+    <path d="M117 178 L125 187 L141 168" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+</svg>

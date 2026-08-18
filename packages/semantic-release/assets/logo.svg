@@ -1,0 +1,24 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="sr-title">
+    <title id="sr-title">semantic-release logo: successive versions stepping upward into a release arrow</title>
+
+    <defs>
+        <linearGradient id="sr-tile" x1="24" y1="24" x2="232" y2="232" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#E879F9" />
+            <stop offset="1" stop-color="#A21CAF" />
+        </linearGradient>
+    </defs>
+
+    <rect x="24" y="24" width="208" height="208" rx="48" fill="url(#sr-tile)" />
+
+    <path d="M74 180 L118 146 L162 112" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <g fill="#FFFFFF">
+        <circle cx="74" cy="180" r="13" />
+        <circle cx="118" cy="146" r="13" />
+        <circle cx="162" cy="112" r="13" />
+    </g>
+
+    <!-- the release -->
+    <path d="M162 112 L184 96" stroke="#FBBF24" stroke-width="9" stroke-linecap="round" />
+    <path d="M196 82 L188.2 103 L174.6 88.4 Z" fill="#FBBF24" />
+</svg>

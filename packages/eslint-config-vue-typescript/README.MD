@@ -1,4 +1,12 @@
-# @tada5hi/eslint-config-vue-typescript 📚
+<p align="center">
+    <img src="https://raw.githubusercontent.com/tada5hi/javascript/HEAD/packages/eslint-config-vue-typescript/assets/logo.svg" alt="@tada5hi/eslint-config-vue-typescript" width="128" height="128" />
+</p>
+
+<h1 align="center">@tada5hi/eslint-config-vue-typescript</h1>
+
+<p align="center">
+    <b>Deprecated — a thin wrapper over <a href="../eslint-config"><code>@tada5hi/eslint-config</code></a>.</b>
+</p>
 This package provides ESLint rules for TypeScript, including Vue.js & ECMAScript 6+.
 
 **Table of Contents**

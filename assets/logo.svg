@@ -1,0 +1,18 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="js-title">
+    <title id="js-title">tada5hi javascript logo: three stacked configuration layers, the last one highlighted</title>
+
+    <defs>
+        <linearGradient id="js-tile" x1="24" y1="24" x2="232" y2="232" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#6366F1" />
+            <stop offset="0.55" stop-color="#7C3AED" />
+            <stop offset="1" stop-color="#2563EB" />
+        </linearGradient>
+    </defs>
+
+    <rect x="24" y="24" width="208" height="208" rx="48" fill="url(#js-tile)" />
+
+    <!-- stacked config layers, staggered to read as a shared set -->
+    <rect x="56" y="72" width="120" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.45" />
+    <rect x="68" y="113" width="120" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.72" />
+    <rect x="80" y="154" width="120" height="30" rx="15" fill="#FBBF24" />
+</svg>

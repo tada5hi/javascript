@@ -1,6 +1,12 @@
-# @tada5hi/eslint-config
+<p align="center">
+    <img src="https://raw.githubusercontent.com/tada5hi/javascript/HEAD/packages/eslint-config/assets/logo.svg" alt="@tada5hi/eslint-config" width="128" height="128" />
+</p>
 
-Shared ESLint flat config for JavaScript projects, with optional TypeScript and Vue support.
+<h1 align="center">@tada5hi/eslint-config</h1>
+
+<p align="center">
+    <b>Shared ESLint flat config for JavaScript projects, with optional TypeScript and Vue support.</b>
+</p>
 
 **Table of Contents**
 

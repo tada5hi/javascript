@@ -1,4 +1,12 @@
-# JavaScript - Shared Configurations
+<p align="center">
+    <img src="./assets/logo.svg" alt="tada5hi javascript" width="128" height="128" />
+</p>
+
+<h1 align="center">JavaScript</h1>
+
+<p align="center">
+    <b>Shared developer tool configurations published under the <code>@tada5hi</code> scope.<br>ESLint, Prettier, TypeScript, commitlint and semantic-release — one opinionated set of defaults.</b>
+</p>
 
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 

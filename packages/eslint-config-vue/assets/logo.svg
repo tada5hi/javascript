@@ -1,0 +1,22 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="eslint-config-vue-title">
+    <title id="eslint-config-vue-title">eslint-config-vue logo: a deprecated wrapper delegating to the unified config</title>
+
+    <defs>
+        <linearGradient id="eslint-config-vue-tile" x1="24" y1="24" x2="232" y2="232" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#94A3B8" />
+            <stop offset="1" stop-color="#475569" />
+        </linearGradient>
+    </defs>
+
+    <rect x="24" y="24" width="208" height="208" rx="48" fill="url(#eslint-config-vue-tile)" />
+
+    <!-- the thin wrapper -->
+    <rect x="52" y="106" width="44" height="44" rx="14" fill="#FFFFFF" fill-opacity="0.5" />
+
+    <!-- delegates to -->
+    <path d="M106 128 L128 128" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" stroke-opacity="0.75" />
+    <path d="M142 128 L126 119 L126 137 Z" fill="#FFFFFF" fill-opacity="0.75" />
+
+    <!-- the unified config -->
+    <rect x="152" y="98" width="60" height="60" rx="18" fill="#FFFFFF" />
+</svg>

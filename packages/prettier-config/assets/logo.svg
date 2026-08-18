@@ -1,0 +1,21 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="pc-title">
+    <title id="pc-title">prettier-config logo: consistently indented lines wrapped at a print-width guide</title>
+
+    <defs>
+        <linearGradient id="pc-tile" x1="24" y1="24" x2="232" y2="232" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FBBF24" />
+            <stop offset="1" stop-color="#EA580C" />
+        </linearGradient>
+    </defs>
+
+    <rect x="24" y="24" width="208" height="208" rx="48" fill="url(#pc-tile)" />
+
+    <!-- formatted lines, consistently indented -->
+    <rect x="60" y="76" width="112" height="16" rx="8" fill="#FFFFFF" />
+    <rect x="84" y="108" width="88" height="16" rx="8" fill="#FFFFFF" />
+    <rect x="84" y="140" width="70" height="16" rx="8" fill="#FFFFFF" />
+    <rect x="60" y="172" width="104" height="16" rx="8" fill="#FFFFFF" />
+
+    <!-- print-width guide -->
+    <path d="M192 70 L192 194" stroke="#3B0764" stroke-width="11" stroke-linecap="round" />
+</svg>
