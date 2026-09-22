@@ -19,10 +19,10 @@
     },
     "homepage": "https://github.com/tada5hi/javascript#readme",
     "devDependencies": {
-        "eslint": "^10.8.0",
+        "eslint": "^10.11.0",
         "husky": "^9.1.7",
-        "nx": "^23.1.1",
-        "tsdown": "^0.22.14",
+        "nx": "^23.2.1",
+        "tsdown": "^0.23.0",
         "typescript": "^6.0.3",
         "vitest": "^4.1.10",
         "monoship": "^2.2.0"
