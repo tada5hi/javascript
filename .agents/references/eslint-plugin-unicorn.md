@@ -63,7 +63,7 @@ repo does **not** extend the recommended preset (see [Unicorn Rule Set](../conve
 
 ## Rules enabled despite a recent runtime requirement
 
-`engines.node` is declared as `>=24.0.0`, which covers the Node side. It cannot express a browser baseline, so these
+`engines.node` is declared as `>=24.3.0`, which covers the Node side. It cannot express a browser baseline, so these
 rules may need a local override in Vue projects targeting pre-2024 browsers:
 
 | Rule | Suggested API | Available from (approx.) |
@@ -75,7 +75,7 @@ rules may need a local override in Vue projects targeting pre-2024 browsers:
 | `prefer-set-methods` | `Set#union()` and friends | Node 22 · Chrome 122 |
 | `prefer-url-can-parse` | `URL.canParse()` | Node 18.17 · Chrome 120 |
 | `prefer-regexp-escape` | `RegExp.escape()` | Node 24 |
-| `prefer-error-is-error` | `Error.isError()` | Node 24 |
+| `prefer-error-is-error` | `Error.isError()` | Node 24.3 (see below) |
 | `prefer-promise-try` | `Promise.try()` | Node 24 |
 
 ### Deliberate exceptions to the Node baseline
@@ -83,11 +83,21 @@ rules may need a local override in Vue projects targeting pre-2024 browsers:
 These rules suggest APIs that are **not available in Node 24** (verified on v24.22). They are enabled on purpose;
 consumers on Node 24 need a polyfill or a local override:
 
-| Rule | Suggested API |
-|------|---------------|
-| `prefer-uint8array-base64` | `Uint8Array#toBase64()` / `Uint8Array.fromBase64()` |
-| `prefer-uint8array-hex` | `Uint8Array#toHex()` / `Uint8Array.fromHex()` |
-| `prefer-iterator-zip` | `Iterator.zip()` |
+| Rule | Suggested API | `--fix` behaviour |
+|------|---------------|-------------------|
+| `prefer-uint8array-base64` | `Uint8Array#toBase64()` / `Uint8Array.fromBase64()` | Suggestions only for `Buffer`/`atob`/`btoa`; autofixes only code that already calls `toBase64()` |
+| `prefer-uint8array-hex` | `Uint8Array#toHex()` / `Uint8Array.fromHex()` | **Autofixes** `Buffer.from(bytes).toString('hex')` and manual `padStart` loops to `bytes.toHex()`, which throws on Node 24 |
+| `prefer-iterator-zip` | `Iterator.zip()` | Suggestions only |
+
+`prefer-uint8array-hex` is the one that can break working code: on Node 24 without a polyfill, `eslint --fix`
+produces a `TypeError: bytes.toHex is not a function` at runtime. Consumers in that situation should turn the rule off
+locally.
+
+### Why the baseline is 24.3, not 24.0
+
+`prefer-error-is-error` autofixes `e instanceof Error` to `Error.isError(e)`. On Node 24.0–24.2,
+`Error.isError(new DOMException())` returns `false` while `instanceof Error` returns `true`, so the fix would change
+behaviour for DOMException. Node 24.3.0 returns `true` for both (verified on 24.0.0, 24.2.0 and 24.3.0).
 
 ## Rules that need a non-default parser setting
 

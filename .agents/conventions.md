@@ -63,7 +63,7 @@ These are disabled in the base config because all downstream projects consistent
 
 Selection criteria for adding a unicorn rule:
 
-- **Node baseline is 24**, declared as `engines.node` on the package. Do not enable rules that suggest APIs newer than
+- **Node baseline is 24.3**, declared as `engines.node` on the package. Do not enable rules that suggest APIs newer than
   Node 24 — e.g. `prefer-temporal` (`Temporal`) and `prefer-get-or-insert-computed` are deliberately **excluded**.
   The documented exceptions are `prefer-uint8array-base64`, `prefer-uint8array-hex` and `prefer-iterator-zip`, which
   are enabled on purpose — see the [reference](references/eslint-plugin-unicorn.md).

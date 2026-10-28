@@ -5,7 +5,7 @@
     "license": "Apache-2.0",
     "type": "module",
     "engines": {
-        "node": ">=24.0.0"
+        "node": ">=24.3.0"
     },
     "exports": {
         "./package.json": "./package.json",

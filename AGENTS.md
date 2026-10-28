@@ -22,7 +22,7 @@ npm run lint:fix               # eslint . --fix
 npx monoship                   # publish all packages
 ```
 
-- **Node.js**: `>=24.0.0`
+- **Node.js**: `>=24.3.0`
 - **Package manager**: npm with workspaces
 - **Build orchestration**: nx (cached, `dependsOn: ^build`)
 - **Bundler**: tsdown (every package except `tsconfig`)
