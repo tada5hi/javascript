@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-config-vue-typescript",
-    "version": "2.2.2",
+    "version": "2.2.3",
     "description": "Shared ESLint flat config for Vue.js + TypeScript projects (deprecated — use @tada5hi/eslint-config)",
     "license": "Apache-2.0",
     "type": "module",
@@ -16,7 +16,7 @@
     "files": [
         "dist",
         "assets"
-        ],
+    ],
     "keywords": [
         "eslint",
         "config",
@@ -48,7 +48,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@tada5hi/eslint-config": "^2.4.0",
+        "@tada5hi/eslint-config": "^2.4.1",
         "eslint-plugin-vue": "^10.11.1",
         "typescript-eslint": "^8.72.0"
     },
