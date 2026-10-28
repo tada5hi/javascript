@@ -85,7 +85,7 @@ Coverage is not configured — there is no coverage provider dependency and no `
 
 ## CI Pipeline
 
-GitHub Actions (`.github/workflows/main.yml`) runs on pushes to `master` and on PR open/synchronize, with Node 22:
+GitHub Actions (`.github/workflows/main.yml`) runs on pushes to `master` and on PR open/synchronize, with Node 24:
 
 ```
 install (checkout + ./.github/actions/install)

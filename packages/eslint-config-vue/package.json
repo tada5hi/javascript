@@ -51,6 +51,6 @@
         "eslint-plugin-vue": "^10.11.1"
     },
     "peerDependencies": {
-        "eslint": ">=10.0.0"
+        "eslint": ">=10.4.0"
     }
 }

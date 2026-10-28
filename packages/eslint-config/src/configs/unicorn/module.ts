@@ -30,6 +30,13 @@ export function unicorn(): Linter.Config[] {
                 'unicorn/prefer-math-constants': 'error',
                 'unicorn/prefer-flat-math-min-max': 'error',
                 'unicorn/prefer-unary-minus': 'error',
+                'unicorn/prefer-regexp-escape': 'error',
+                'unicorn/prefer-error-is-error': 'error',
+                'unicorn/prefer-promise-try': 'error',
+                'unicorn/prefer-promise-static-methods': 'error',
+                'unicorn/prefer-temporal-conversion': 'error',
+                'unicorn/prefer-uint8array-base64': 'error',
+                'unicorn/prefer-uint8array-hex': 'error',
 
                 // ----------------------------------------
                 // Collections & iteration
@@ -45,6 +52,7 @@ export function unicorn(): Linter.Config[] {
                 'unicorn/prefer-array-iterable-methods': 'error',
                 'unicorn/prefer-iterator-to-array': 'error',
                 'unicorn/prefer-array-from-async': 'error',
+                'unicorn/prefer-iterator-zip': 'error',
 
                 // ----------------------------------------
                 // Async & URL
@@ -55,6 +63,10 @@ export function unicorn(): Linter.Config[] {
                 'unicorn/prefer-url-can-parse': 'error',
                 'unicorn/prefer-url-href': 'error',
                 'unicorn/prefer-url-search-parameters': 'error',
+                'unicorn/no-url-in-search-params': 'error',
+                'unicorn/no-invalid-url-protocol-comparison': 'error',
+                'unicorn/no-invalid-response-options': 'error',
+                'unicorn/require-text-decoder-streaming': 'error',
 
                 // ----------------------------------------
                 // Likely bugs
@@ -77,10 +89,18 @@ export function unicorn(): Linter.Config[] {
                 'unicorn/no-double-comparison': 'error',
                 'unicorn/no-constant-zero-expression': 'error',
                 'unicorn/no-return-array-push': 'error',
-                'unicorn/no-unused-array-method-return': 'error',
+                'unicorn/no-unused-builtin-method-return': 'error',
                 'unicorn/no-shorthand-property-overrides': 'error',
                 'unicorn/no-unsafe-property-key': 'error',
                 'unicorn/no-negated-array-predicate': 'error',
+                'unicorn/no-async-iterator-callback': 'error',
+                'unicorn/no-unused-iterator-helper': 'error',
+                'unicorn/no-incomplete-accessor-override': 'error',
+                'unicorn/no-invalid-property-descriptor': 'error',
+                'unicorn/no-invalid-intl-options': 'error',
+                'unicorn/no-invalid-temporal-arithmetic': 'error',
+                'unicorn/no-unsafe-json-serialization': 'error',
+                'unicorn/no-using-resource-escape': 'error',
 
                 // ----------------------------------------
                 // Redundant code
@@ -101,6 +121,9 @@ export function unicorn(): Linter.Config[] {
                 'unicorn/prefer-simplified-conditions': 'error',
                 'unicorn/prefer-boolean-return': 'error',
                 'unicorn/prefer-early-return': 'error',
+                'unicorn/prefer-combined-guards': 'error',
+                'unicorn/no-useless-set-construction': 'error',
+                'unicorn/no-unnecessary-default-arguments': 'error',
 
                 // ----------------------------------------
                 // DOM (inert outside browser code)
@@ -109,6 +132,21 @@ export function unicorn(): Linter.Config[] {
                 'unicorn/no-selector-as-dom-name': 'error',
                 'unicorn/require-css-escape': 'error',
                 'unicorn/prefer-add-event-listener-options': 'error',
+                'unicorn/no-prevent-default-in-passive-listener': 'error',
+                'unicorn/no-invalid-dom-token': 'error',
+                'unicorn/no-invalid-style-set-property': 'error',
+                'unicorn/no-invalid-boolean-attribute-value': 'error',
+                'unicorn/no-conflicting-constraints': 'error',
+                'unicorn/no-ineffective-csp-directives': 'error',
+                'unicorn/no-invalid-integrity': 'error',
+
+                // ----------------------------------------
+                // Literals & formatting
+                // ----------------------------------------
+                'unicorn/prefer-short-escape-sequences': 'error',
+                'unicorn/prefer-literal-ascii': 'error',
+                'unicorn/prefer-escaped-irregular-whitespace': 'error',
+                'unicorn/no-leading-empty-lines': 'error',
             },
         },
     ];

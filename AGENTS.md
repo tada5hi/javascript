@@ -22,12 +22,12 @@ npm run lint:fix               # eslint . --fix
 npx monoship                   # publish all packages
 ```
 
-- **Node.js**: `>=22.0.0`
+- **Node.js**: `>=24.0.0`
 - **Package manager**: npm with workspaces
 - **Build orchestration**: nx (cached, `dependsOn: ^build`)
 - **Bundler**: tsdown (every package except `tsconfig`)
 - **Scope**: All packages are published under `@tada5hi/*`
-- **ESLint peer requirement**: `>=10.0.0` (flat config format)
+- **ESLint peer requirement**: `>=10.4.0` (flat config format)
 
 All packages are libraries in `packages/` — there are no runnable applications and no CLI binaries.
 
