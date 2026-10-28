@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-config",
-    "version": "2.4.0",
+    "version": "2.4.1",
     "description": "Shared ESLint flat config with optional TypeScript and Vue support",
     "license": "Apache-2.0",
     "type": "module",
@@ -19,7 +19,7 @@
     "files": [
         "dist",
         "assets"
-        ],
+    ],
     "keywords": [
         "eslint",
         "config",

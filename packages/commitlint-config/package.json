@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/commitlint-config",
-    "version": "1.3.2",
+    "version": "1.3.3",
     "description": "Shared commitlint configuration",
     "license": "Apache-2.0",
     "type": "module",
@@ -16,7 +16,7 @@
     "files": [
         "dist",
         "assets"
-        ],
+    ],
     "keywords": [
         "config",
         "configuration",
