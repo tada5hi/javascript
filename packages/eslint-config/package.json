@@ -5,7 +5,7 @@
     "license": "Apache-2.0",
     "type": "module",
     "engines": {
-        "node": ">=22.0.0"
+        "node": ">=24.3.0"
     },
     "exports": {
         "./package.json": "./package.json",
@@ -55,7 +55,7 @@
         "@eslint/js": "^10.0.1",
         "@stylistic/eslint-plugin": "^5.10.0",
         "eslint-plugin-import-lite": "^0.6.0",
-        "eslint-plugin-unicorn": "^73.0.0",
+        "eslint-plugin-unicorn": "^79.0.0",
         "globals": "^17.13.0",
         "smob": "^1.6.2"
     },
@@ -64,7 +64,7 @@
         "typescript-eslint": "^8.72.0"
     },
     "peerDependencies": {
-        "eslint": ">=10.0.0",
+        "eslint": ">=10.4.0",
         "eslint-plugin-vue": ">=10.0.0",
         "typescript-eslint": ">=8.57.0"
     },

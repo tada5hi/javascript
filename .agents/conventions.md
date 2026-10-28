@@ -58,13 +58,15 @@ These are disabled in the base config because all downstream projects consistent
 | Async & URL | Prefer modern async/URL primitives | `prefer-promise-with-resolvers`, `prefer-queue-microtask`, `prefer-url-can-parse` |
 | Likely bugs | Catch real defects, not style | `no-accidental-bitwise-operator`, `no-array-fill-with-reference-type`, `require-array-sort-compare` |
 | Redundant code | Remove no-op / dead constructs | `no-useless-coercion`, `no-unnecessary-boolean-comparison`, `prefer-early-return` |
-| DOM | Inert outside browser code, useful for Vue | `no-incorrect-query-selector`, `require-css-escape` |
+| DOM | Inert outside browser code, useful for Vue | `no-incorrect-query-selector`, `require-css-escape`, `no-invalid-dom-token` |
+| Literals & formatting | Readable escapes, no invisible characters | `prefer-short-escape-sequences`, `prefer-literal-ascii`, `no-leading-empty-lines` |
 
 Selection criteria for adding a unicorn rule:
 
-- **Node baseline is 22**, declared as `engines.node` on the package. Do not enable rules that suggest APIs newer than
-  Node 22 — e.g. `prefer-regexp-escape` (`RegExp.escape`), `prefer-error-is-error` (`Error.isError`),
-  `prefer-promise-try` (`Promise.try`) and `prefer-temporal` (`Temporal`) are deliberately **excluded**.
+- **Node baseline is 24.3**, declared as `engines.node` on the package. Do not enable rules that suggest APIs newer than
+  Node 24 — e.g. `prefer-temporal` (`Temporal`) and `prefer-get-or-insert-computed` are deliberately **excluded**.
+  The documented exceptions are `prefer-uint8array-base64`, `prefer-uint8array-hex` and `prefer-iterator-zip`, which
+  are enabled on purpose — see the [reference](references/eslint-plugin-unicorn.md).
 - **`engines` constrains Node only.** Several enabled rules (`prefer-group-by`, `prefer-promise-with-resolvers`,
   `prefer-array-from-async`, `prefer-iterator-to-array`, `prefer-set-methods`) suggest APIs that reached browsers around
   2024. Vue consumers targeting older browsers need a polyfill or a local override for those rules.
