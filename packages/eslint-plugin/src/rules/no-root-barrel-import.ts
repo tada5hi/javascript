@@ -42,12 +42,17 @@ const rule: TSESLint.RuleModule<'root', []> = {
             return {};
         }
 
-        function check(node: TSESTree.Node, source: string) {
-            if (!isRelative(source)) {
+        const windowsFilename = /^(?:[a-z]:[/\\]|\\\\)/iu.test(context.filename);
+
+        function check(node: TSESTree.Node, source: string, commonjs = false) {
+            // Backslashes are separators for Windows CommonJS, not ESM or POSIX requests.
+            const request = commonjs && windowsFilename ? source.replaceAll('\\', '/') : source;
+
+            if (!isRelative(request)) {
                 return;
             }
 
-            const target = join(dirname(filename!), source).replace(/\/$/u, '');
+            const target = join(dirname(filename!), request).replace(/\/$/u, '');
 
             if (target === root || (dirname(target) === root && /^index(?:\.(?:[cm]?[jt]s|[jt]sx))?$/u.test(basename(target)))) {
                 context.report({ node, messageId: 'root' });
@@ -80,11 +85,11 @@ const rule: TSESLint.RuleModule<'root', []> = {
                     current = current.upper;
                 }
 
-                check(source, source.value);
+                check(source, source.value, true);
             },
             TSExternalModuleReference(node) {
                 if (typeof node.expression.value === 'string') {
-                    check(node.expression, node.expression.value);
+                    check(node.expression, node.expression.value, true);
                 }
             },
             ImportExpression(node) {

@@ -117,6 +117,17 @@ tester.run('no-root-barrel-import', noRootBarrelImport, {
         { code: 'function load(require: (id: string) => unknown) { return require("../index"); }', filename },
         { code: 'const require = (id: string) => id; const x = require("../index");', filename },
         { code: 'const x = require(path);', filename },
+        ...['..\\index', './..\\index'].flatMap((source) => [
+            { code: `const x = require(${JSON.stringify(source)});`, filename },
+            { code: `import x = require(${JSON.stringify(source)});`, filename },
+            ...[
+                `import x from ${JSON.stringify(source)};`,
+                `import(${JSON.stringify(source)});`,
+                `type X = import(${JSON.stringify(source)}).X;`,
+                `function load(require: (id: string) => unknown) { return require(${JSON.stringify(source)}); }`,
+            ].map((code) => ({ code, filename: 'C:\\repo\\src\\feature\\file.ts' })),
+        ]),
+        { code: `const x = require(${JSON.stringify('.\\index')});`, filename: 'C:\\repo\\src\\feature\\file.ts' },
         { code: "export * from '../index';", filename },
         { code: "import x from '../../index.ts';", filename: '/repo/src/nested/src/feature/file.ts' },
     ],
@@ -140,6 +151,15 @@ tester.run('no-root-barrel-import', noRootBarrelImport, {
             errors: [{ messageId: 'root' }],
             output: null,
         })),
+        ...['..\\index', './..\\index'].flatMap((source) => [
+            `const x = require(${JSON.stringify(source)});`,
+            `import x = require(${JSON.stringify(source)});`,
+        ].flatMap((code) => ['C:\\repo\\src\\feature\\file.ts', '\\\\server\\share\\repo\\src\\feature\\file.ts'].map((windowsFilename) => ({
+            code,
+            filename: windowsFilename,
+            errors: [{ messageId: 'root' }],
+            output: null,
+        })))),
         {
             code: "import './index';",
             filename: '/repo/src/file.ts',
