@@ -17,10 +17,10 @@ RuleTester.it = it;
 const tester = new RuleTester({ languageOptions: { parser } });
 const options = [{
     enforce: [{
-        blankLine: 'always', 
-        prev: 'field', 
-        next: '*', 
-    }], 
+        blankLine: 'always',
+        prev: 'field',
+        next: '*',
+    }],
 }];
 
 tester.run('lines-between-class-members', rule, {
