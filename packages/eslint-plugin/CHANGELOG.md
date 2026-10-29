@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/tada5hi/javascript/compare/eslint-plugin-v1.0.0...eslint-plugin-v1.1.0) (2026-10-29)
+
+
+### Features
+
+* **eslint-config:** require blank lines after class properties ([#955](https://github.com/tada5hi/javascript/issues/955)) ([282030d](https://github.com/tada5hi/javascript/commit/282030de176a1de9e1a4b058b94ccb6f189679ea))
+
 ## [1.0.0](https://github.com/tada5hi/javascript/compare/eslint-plugin-v0.1.0...eslint-plugin-v1.0.0) (2026-10-29)
 
 
