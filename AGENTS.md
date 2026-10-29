@@ -2,7 +2,7 @@
 
 # JavaScript - Agent Guide
 
-This repository is a collection of shared developer tool configurations published as npm packages under the `@tada5hi` scope.
+This repository is a collection of shared developer tool configurations and custom ESLint rules published as npm packages under the `@tada5hi` scope.
 It provides meaningful default ESLint rules, TypeScript compiler settings, Prettier formatting, commitlint conventions,
 and semantic-release configuration used across all tada5hi projects.
 
@@ -35,7 +35,8 @@ All packages are libraries in `packages/` — there are no runnable applications
 
 | Package | Purpose |
 |---------|---------|
-| `@tada5hi/eslint-config` | Unified ESLint flat config (JS + optional TS/Vue via async factory) |
+| `@tada5hi/eslint-config` | Unified ESLint flat config (JS + optional TS/Vue and default convention rules via async factory) |
+| `@tada5hi/eslint-plugin` | Custom syntax-only rules for condition readability, exported types, barrel ownership, and root imports |
 | `@tada5hi/eslint-config-typescript` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |
 | `@tada5hi/eslint-config-vue` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |
 | `@tada5hi/eslint-config-vue-typescript` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |

@@ -4,6 +4,7 @@
     "packages/eslint-config-vue-typescript": "2.2.3",
     "packages/eslint-config-vue": "2.2.3",
     "packages/eslint-config": "2.4.1",
+    "packages/eslint-plugin": "0.1.0",
     "packages/prettier-config": "1.3.4",
     "packages/semantic-release": "0.4.2",
     "packages/tsconfig": "0.7.2"

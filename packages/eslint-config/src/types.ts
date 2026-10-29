@@ -9,12 +9,9 @@ import type { Linter } from 'eslint';
 import type { TypeScriptOptions } from './configs/typescript/types.ts';
 import type { VueOptions } from './configs/vue/types.ts';
 
-export type { TypeScriptOptions } from './configs/typescript/index.ts';
-export type { VueOptions } from './configs/vue/index.ts';
-
-export interface FactoryOptions {
+export type FactoryOptions = {
     typescript?: boolean | TypeScriptOptions;
     vue?: boolean | VueOptions;
-}
+};
 
 export type UserConfig = Linter.Config;

@@ -9,14 +9,15 @@ import type { Linter } from 'eslint';
 import { isObject } from 'smob';
 import type {
     FactoryOptions,
-    TypeScriptOptions,
     UserConfig,
-    VueOptions,
 } from './types.ts';
+import type { TypeScriptOptions } from './configs/typescript/types.ts';
+import type { VueOptions } from './configs/vue/types.ts';
 import { javascript } from './configs/javascript/index.ts';
 import { stylisticConfig } from './configs/stylistic/index.ts';
 import { imports } from './configs/imports/index.ts';
 import { unicorn } from './configs/unicorn/index.ts';
+import { conventions } from './configs/conventions/index.ts';
 import { isPackageExists } from './utils.ts';
 
 export async function eslintConfig(
@@ -54,6 +55,8 @@ export async function eslintConfig(
         const { vue } = await import('./configs/vue/index.ts');
         configs.push(...await vue(vueOptions));
     }
+
+    configs.push(...conventions(enableTypescript, enableVue));
 
     configs.push(...userConfigs);
 

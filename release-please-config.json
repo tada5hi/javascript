@@ -7,6 +7,7 @@
         "packages/eslint-config-vue-typescript": {},
         "packages/eslint-config-vue": {},
         "packages/eslint-config": {},
+        "packages/eslint-plugin": {},
         "packages/prettier-config": {},
         "packages/semantic-release": {},
         "packages/tsconfig": {}

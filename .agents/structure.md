@@ -16,7 +16,8 @@ javascript/
 │   └── commit-msg                        # Commitlint enforcement
 ├── packages/                             # All workspace packages
 │   ├── commitlint-config/                # Commitlint configuration
-│   ├── eslint-config/                    # Unified ESLint flat config (JS + optional TS/Vue)
+│   ├── eslint-config/                    # Unified ESLint flat config (JS + optional TS/Vue and default conventions)
+│   ├── eslint-plugin/                    # Custom module-layout rules and standalone flat preset
 │   ├── eslint-config-typescript/         # Deprecated — thin wrapper over eslint-config
 │   ├── eslint-config-vue/                # Deprecated — thin wrapper over eslint-config
 │   ├── eslint-config-vue-typescript/     # Deprecated — thin wrapper over eslint-config
@@ -50,7 +51,7 @@ packages/eslint-config/
 ├── src/
 │   ├── index.ts              # Public entry — default-exports the factory, re-exports types
 │   ├── module.ts             # eslintConfig() factory + resolveEnabled()
-│   ├── types.ts              # FactoryOptions, UserConfig (re-exports TypeScriptOptions, VueOptions)
+│   ├── types.ts              # FactoryOptions and UserConfig aliases; public re-exports live in index.ts
 │   ├── utils.ts              # isPackageExists() helper
 │   └── configs/
 │       ├── javascript/       # @eslint/js recommended + core rules
@@ -73,9 +74,12 @@ packages/eslint-config/
 │       │   ├── module.ts
 │       │   ├── types.ts      # TypeScriptOptions
 │       │   └── index.ts
-│       └── vue/              # eslint-plugin-vue (dynamic import)
+│       ├── vue/              # eslint-plugin-vue (dynamic import)
+│       │   ├── module.ts
+│       │   ├── types.ts      # VueOptions
+│       │   └── index.ts
+│       └── conventions/      # Default custom layout + TS naming
 │           ├── module.ts
-│           ├── types.ts      # VueOptions
 │           └── index.ts
 ├── test/unit/
 │   ├── index.spec.ts         # Factory tests
@@ -83,6 +87,7 @@ packages/eslint-config/
 │   ├── imports.spec.ts       # Import rule tests
 │   ├── unicorn.spec.ts       # Unicorn rule tests + deprecation guard
 │   ├── typescript.spec.ts    # TS rule tests
+│   ├── conventions.spec.ts   # Default naming, module layout, Vue, overrides
 │   └── vue.spec.ts           # Vue rule tests
 ├── test/vitest.config.ts
 ├── package.json
@@ -115,6 +120,9 @@ export default eslintConfig(
 
 The factory always includes: `javascript` + `stylistic` + `imports` + `unicorn`.
 Conditionally adds `typescript` and/or `vue` based on options or auto-detection (checks if `typescript`/`vue` packages are installed).
+The factory appends condition-readability and source module-layout rules by default and, when TypeScript is enabled, interface/alias naming rules.
+Consumers disable individual rules through later user overrides; the standalone `@tada5hi/eslint-plugin` preset remains
+explicitly composable. See [project-conventions](references/project-conventions.md) for policy evidence and exclusions.
 
 ### Other Configurations
 

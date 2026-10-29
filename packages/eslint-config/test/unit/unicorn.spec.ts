@@ -49,6 +49,7 @@ describe('unicorn rules', () => {
 
         const deprecated = names.filter((name) => {
             const rule = unicornPlugin.rules[name.replace('unicorn/', '')];
+
             return Boolean(rule?.meta?.deprecated);
         });
 

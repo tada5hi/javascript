@@ -8,12 +8,13 @@
 - **Prerequisite**: `npm run build`. The nx `test` target declares `dependsOn: ["^build"]` because the deprecated
   wrapper packages import `@tada5hi/eslint-config` through the workspace symlink, which resolves to `dist/`.
 
-Only the four ESLint packages have tests. `prettier-config`, `commitlint-config`, `semantic-release` and `tsconfig`
+The four ESLint config packages and the custom ESLint plugin have tests. `prettier-config`, `commitlint-config`, `semantic-release` and `tsconfig`
 export plain configuration objects and have no `test` script.
 
 | Package | Spec files |
 |---------|-----------|
-| `eslint-config` | `index`, `javascript`, `imports`, `unicorn`, `typescript`, `vue` |
+| `eslint-config` | `index`, `javascript`, `imports`, `unicorn`, `typescript`, `vue`, `conventions`, `stylistic` |
+| `eslint-plugin` | `rules`, `conditions`: direct rule tests using JS/TS parsing; valid/invalid cases, path edge cases, deferred evaluation |
 | `eslint-config-typescript` | `index` |
 | `eslint-config-vue` | `index` |
 | `eslint-config-vue-typescript` | `index` |

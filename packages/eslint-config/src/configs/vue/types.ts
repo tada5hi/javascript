@@ -5,6 +5,6 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-export interface VueOptions {
+export type VueOptions = {
     typescript?: boolean;
-}
+};
