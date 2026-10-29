@@ -3,9 +3,9 @@
 ## Overview
 
 The repository publishes **configuration as data**. Every package resolves to a single default export that a consumer's
-tool loads directly — there is no runtime logic beyond config assembly.
+tool loads directly. The exception is `@tada5hi/eslint-plugin`, which implements syntax-only custom ESLint rules.
 
-`@tada5hi/eslint-config` is the only package with meaningful architecture. It is a **composable async factory**: a
+`@tada5hi/eslint-config` is a **composable async factory**: a
 function that assembles a flat-config array from independent config modules, resolving optional TypeScript and Vue
 support at call time.
 
@@ -15,6 +15,7 @@ Consumer eslint.config.js
             ├── always:      javascript + stylistic + imports + unicorn
             ├── optional:    typescript          (dynamic import)
             ├── optional:    vue                 (dynamic import)
+            ├── default:     conventions         (readability + module layout + TS naming)
             └── appended:    ...userConfigs      (last wins)
 ```
 
@@ -54,8 +55,8 @@ unified factory with preset options. They carry no rules of their own, so rule c
 
 ### Config Module
 
-Every rule set under `src/configs/<name>/` is a folder of three files — `module.ts` (the function), `types.ts` (its
-options), `index.ts` (barrel). A module returns `Linter.Config[]` and is either sync or async.
+Each rule set under `src/configs/<name>/` has `module.ts` (the function) and `index.ts` (barrel), plus `types.ts` when
+it declares options. A module returns `Linter.Config[]` and is either sync or async.
 
 Sync module — no optional dependency:
 
@@ -90,7 +91,8 @@ Conventions:
 - The exported function is named after the folder (`javascript`, `imports`, `unicorn`, `typescript`, `vue`).
   `stylistic` is the exception — it exports `stylisticConfig` to avoid colliding with the imported plugin.
 - Optional dependencies are imported **inside** the function with `await import()`, never at module top level.
-- Options interfaces live in `types.ts`; re-export them from `src/types.ts` only if part of `FactoryOptions`.
+- Option declarations live in `types.ts`; public option types are re-exported through `src/index.ts`, not `src/types.ts`.
+- `FactoryOptions`, `TypeScriptOptions`, and `VueOptions` retain their public names as type aliases; do not rename them to add interface prefixes.
 
 ### Enablement Resolution
 
@@ -108,7 +110,8 @@ Processing:
   2. Resolve typescript/vue enablement (explicit boolean > options object > package detection)
   3. Dynamically import and append each enabled optional module
   4. Vue inherits typescript: true when TypeScript is enabled and not explicitly set
-  5. Append userConfigs last so consumer overrides win
+  5. Append default conventions (source-module layout always; naming when TypeScript is enabled)
+  6. Append userConfigs last so consumer overrides win
 
 Output:
   └── Promise<Linter.Config[]> — a flat config array ESLint consumes directly
@@ -128,7 +131,7 @@ Output:
 packages/eslint-config/src/
 ├── index.ts                  # public entry — re-exports types, default-exports the factory
 ├── module.ts                 # eslintConfig() factory + resolveEnabled()
-├── types.ts                  # FactoryOptions, UserConfig + option type re-exports
+├── types.ts                  # FactoryOptions and UserConfig aliases
 ├── utils.ts                  # isPackageExists()
 └── configs/
     ├── javascript/           # @eslint/js recommended + core rules       (always)
@@ -136,7 +139,8 @@ packages/eslint-config/src/
     ├── imports/              # import-lite + sort-imports                (always)
     ├── unicorn/              # eslint-plugin-unicorn rule set            (always)
     ├── typescript/           # typescript-eslint                         (optional, dynamic import)
-    └── vue/                  # eslint-plugin-vue                         (optional, dynamic import)
+    ├── vue/                  # eslint-plugin-vue                         (optional, dynamic import)
+    └── conventions/          # custom plugin + TS naming                 (default layer)
 ```
 
 ## Configuration
@@ -147,4 +151,10 @@ The packages have no environment variables. Consumer-facing configuration is the
 |--------|---------|
 | `typescript` | `boolean` or `TypeScriptOptions` (e.g. `{ project: './tsconfig.json' }`) for type-aware linting |
 | `vue` | `boolean` or `VueOptions`; inherits `typescript` when TypeScript is enabled |
+
 | `...userConfigs` | Variadic flat-config objects appended last, so they override everything |
+
+Conventions are not an option: module-layout rules always cover JavaScript/TypeScript under `src/`, and naming rules
+apply when TypeScript is enabled (including Vue scripts when Vue is enabled). The convention module is statically
+imported; only the TypeScript and Vue integrations use optional loading. User overrides can disable individual rules.
+The standalone `@tada5hi/eslint-plugin` `configs.conventions` preset remains an explicit composition choice.

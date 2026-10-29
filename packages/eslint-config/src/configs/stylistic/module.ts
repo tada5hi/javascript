@@ -52,6 +52,19 @@ export function stylisticConfig(): Linter.Config[] {
                 '@stylistic/comma-spacing': ['error', { before: false, after: true }],
                 '@stylistic/object-curly-spacing': ['error', 'always'],
                 '@stylistic/padded-blocks': ['error', 'never'],
+                '@stylistic/padding-line-between-statements': [
+                    'error',
+                    {
+                        blankLine: 'always',
+                        prev: '*',
+                        next: ['if', 'for', 'while', 'do', 'try', 'switch', 'return'],
+                    },
+                    {
+                        blankLine: 'always',
+                        prev: ['if', 'for', 'while', 'do', 'try', 'switch'],
+                        next: '*',
+                    },
+                ],
                 '@stylistic/object-curly-newline': ['error', {
                     ObjectExpression: {
                         multiline: true,

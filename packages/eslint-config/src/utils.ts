@@ -8,6 +8,7 @@
 export function isPackageExists(name: string): boolean {
     try {
         import.meta.resolve(name);
+
         return true;
     } catch {
         return false;

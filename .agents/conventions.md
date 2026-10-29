@@ -26,6 +26,25 @@ The ESLint configs are built from composable building blocks rather than extendi
 | TypeScript | `typescript-eslint` | TS parser, recommended rules, type-aware rules (optional) |
 | Vue | `eslint-plugin-vue` | Vue SFC linting via flat/recommended |
 
+### Project Conventions
+
+The convention rules are part of the default `eslintConfig` layer after TypeScript/Vue and before user overrides.
+They compose `@typescript-eslint/naming-convention` (interface `I` prefixes, no interface-style alias names) with
+`@tada5hi/eslint-plugin` (collection-free conditions, exported type locations, barrel ownership, and no internal imports through `src/index.*`).
+Naming covers TypeScript and enabled Vue scripts; layout covers JavaScript and TypeScript under `src/` only. Consumers
+can disable individual rules with a later user override; there is no conventions boolean. See the config and plugin
+READMEs for exemptions and the standalone preset distinction.
+
+Treat newly enabled or stricter defaults as breaking lint-policy changes: downstream projects must migrate affected
+source or use explicit per-rule overrides. Do not keep a feature flag solely to avoid downstream migrations. Public
+`FactoryOptions`, `TypeScriptOptions`, and `VueOptions` names remain stable as type aliases; declaration merging is no
+longer supported. Put exported option declarations in `types.ts` and public re-exports in `index.ts`.
+
+The policy is inferred from `tada5hi/skills`' init-agent-docs template and Authup/PrivateAIM Hub conventions.
+Do not infer class-only interface semantics: Hub explicitly permits data interfaces. Do not add generic
+filename casing, enum casing, or member-order rules without explicit evidence. Custom rules should be
+syntax-only, avoid unsafe fixes, and have valid/invalid tests including path edge cases.
+
 ### Rule Philosophy
 
 - **Pragmatic defaults**: Rules are enabled because they catch real bugs or enforce modern patterns, not because they exist
@@ -77,8 +96,8 @@ Selection criteria for adding a unicorn rule:
   flagged `['b', 'a'].sort()`, which is correct for strings; its schema is empty, so the noise cannot be tuned away.
 - **No duplicates of core rules.** The `javascript` module already sets `operator-assignment`, `no-useless-concat`,
   `no-else-return` and `no-nested-ternary`, so the unicorn equivalents are excluded.
-- **No opinionated naming/layout rules.** `name-replacements`, `consistent-boolean-name`, `consistent-class-member-order`
-  and `no-barrel-files` are excluded — the last one conflicts with this repo's own barrel-file convention.
+- **No additional Unicorn naming/layout policies.** `name-replacements`, `consistent-boolean-name`, `consistent-class-member-order`
+  and `no-barrel-files` are excluded — the last one conflicts with the default barrel-ownership convention.
 
 When bumping the plugin across majors, check for renamed/removed rules — an unknown rule id is a hard ESLint error for
 consumers. `test/unit/unicorn.spec.ts` guards this by asserting every configured rule exists and none is deprecated.
@@ -94,12 +113,14 @@ These are the defaults enforced by the packages in this repo:
 - **Semicolons**: Always
 - **Module format**: ESM (`export default`) for ESLint config packages; CJS for Prettier/commitlint configs
 - **Arrow functions**: Implicit return when possible (`arrow-body-style: as-needed`)
+- **Readable conditions**: Extract `map`/`filter`/`flatMap`/`some`/`every`/`find`/`findIndex`/`findLast`/`findLastIndex`/`reduce`/`reduceRight` calls into named variables before `if`, loop tests, and ternary conditions. Syntax-only `@tada5hi/no-collection-call-in-condition` allows simple predicates and `includes`/`has`, skips deferred function bodies, and provides no unsafe autofix.
+- **Statement spacing**: Blank lines before/after `if` chains, `for`/`for…in`/`for…of`, `while`, `do…while`, `try` chains, and `switch` at every nesting level; blank line before every `return`. No padding at block edges or between connected `else`/`catch`/`finally` branches. Enforced and autofixed by `@stylistic/padding-line-between-statements`.
 - **Early returns**: Preferred over else blocks (`no-else-return`)
 - **One class per file**: Enforced (`max-classes-per-file: 1`)
 
 ## Testing
 
-The four ESLint packages have vitest unit tests at `packages/<name>/test/unit/*.spec.ts`, asserting against ESLint's
+The ESLint config packages and custom plugin have vitest unit tests at `packages/<name>/test/unit/*.spec.ts`, asserting against ESLint's
 `Linter` API. See **[Testing](testing.md)** for the full setup, commands and patterns.
 
 ```bash
@@ -138,16 +159,16 @@ Body and footer line length limits are disabled.
 
 New ESLint rule sets should be added as config modules inside `packages/eslint-config/src/configs/`:
 
-Each config module is a folder with three files:
+Each config module is a folder with these files:
 - `module.ts` — the main function (sync or async) returning `Linter.Config[]`
-- `types.ts` — option interfaces for the module (can be empty if none)
-- `index.ts` — barrel export re-exporting from `module.ts` and `types.ts`
+- `types.ts` — option declarations for the module (omit if none)
+- `index.ts` — barrel export re-exporting from `module.ts`, and from `types.ts` when present
 
 Steps:
-1. Create `packages/eslint-config/src/configs/<name>/` with `module.ts`, `types.ts`, and `index.ts`
+1. Create `packages/eslint-config/src/configs/<name>/` with `module.ts` and `index.ts`, plus `types.ts` when the module declares options
 2. Use dynamic `await import()` for optional dependencies (add them as optional peerDependencies + devDependencies)
-3. Wire the module into the factory in `src/module.ts` with auto-detection via `isPackageExists()`
-4. Re-export option types from `src/types.ts` if they are part of `FactoryOptions`
+3. Wire the module into `src/module.ts`; use auto-detection only for optional integrations, not default convention rules
+4. Re-export public option types from `src/index.ts` (not `src/types.ts`); retain existing public type names
 5. Add tests in `test/unit/<name>.spec.ts`
 6. Run `npm test` to verify
 
@@ -160,6 +181,7 @@ behavioural differences — so future work can skip the re-search.
 | Reference | Covers |
 |-----------|--------|
 | [eslint-plugin-unicorn](references/eslint-plugin-unicorn.md) | Rule inventory, enabled/excluded decisions, deprecations and rename history |
+| [project-conventions](references/project-conventions.md) | Shared skill/Authup/Hub policies, lint mapping, intentional exclusions |
 
 ## Best Practices
 

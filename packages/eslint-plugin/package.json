@@ -1,0 +1,52 @@
+{
+    "name": "@tada5hi/eslint-plugin",
+    "version": "0.1.0",
+    "description": "ESLint rules for type locations and directory barrel boundaries",
+    "license": "Apache-2.0",
+    "type": "module",
+    "engines": {
+        "node": ">=24.3.0"
+    },
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "types": "./dist/index.d.mts",
+            "import": "./dist/index.mjs"
+        }
+    },
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.mts",
+    "files": [
+        "dist"
+    ],
+    "keywords": ["eslint", "eslintplugin", "flat-config", "typescript"],
+    "author": {
+        "name": "Peter Placzek",
+        "email": "contact@tada5hi.net",
+        "url": "https://tada5hi.net"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tada5hi/javascript.git",
+        "directory": "packages/eslint-plugin"
+    },
+    "bugs": {
+        "url": "https://github.com/tada5hi/javascript/issues"
+    },
+    "homepage": "https://github.com/tada5hi/javascript#readme",
+    "scripts": {
+        "build": "tsc --noEmit -p tsconfig.build.json && tsdown",
+        "test": "vitest run -c test/vitest.config.ts"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "@types/node": "^24.0.0",
+        "@typescript-eslint/parser": "^8.72.0",
+        "@typescript-eslint/utils": "^8.72.0"
+    },
+    "peerDependencies": {
+        "eslint": ">=10.4.0"
+    }
+}

@@ -24,7 +24,8 @@ and semantic-release configuration.
 
 | Package | Description |
 |---------|-------------|
-| [`@tada5hi/eslint-config`](packages/eslint-config) | ESLint flat config with optional TypeScript and Vue support |
+| [`@tada5hi/eslint-config`](packages/eslint-config) | ESLint flat config with optional TypeScript and Vue support, plus default convention rules |
+| [`@tada5hi/eslint-plugin`](packages/eslint-plugin) | Custom rules for readable conditions, type locations, module barrels, and internal imports |
 | [`@tada5hi/prettier-config`](packages/prettier-config) | Prettier configuration |
 | [`@tada5hi/tsconfig`](packages/tsconfig) | TypeScript compiler configuration |
 | [`@tada5hi/commitlint-config`](packages/commitlint-config) | Commitlint configuration |
@@ -48,7 +49,7 @@ import eslintConfig from '@tada5hi/eslint-config';
 export default eslintConfig();
 ```
 
-TypeScript and Vue support are auto-detected based on installed packages. You can also enable them explicitly:
+TypeScript and Vue support are auto-detected based on installed packages. The config's convention rules are enabled by default and can be disabled individually with user overrides. You can also enable TypeScript and Vue explicitly:
 
 ```js
 // TypeScript with type-aware linting
@@ -61,6 +62,24 @@ export default eslintConfig({
     typescript: { project: './tsconfig.json' },
     vue: true,
 });
+```
+
+Module-layout rules cover JavaScript and TypeScript under `src/` by default. Naming rules apply when TypeScript is
+enabled, including Vue scripts when Vue is also enabled. These defaults are a breaking lint-policy change for existing
+consumers; see [Conventions](packages/eslint-config/README.MD#conventions) for migration details. The standalone plugin's
+`configs.conventions` preset remains explicitly composed, separate from these defaults.
+
+Individual convention rules can be disabled for a downstream migration or an intentional exception:
+
+```js
+export default eslintConfig(
+    { typescript: true },
+    {
+        rules: {
+            '@tada5hi/no-root-barrel-import': 'off',
+        },
+    },
+);
 ```
 
 Additional ESLint flat config objects can be passed as extra arguments:

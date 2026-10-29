@@ -9,9 +9,9 @@ import { eslintConfig } from './module.ts';
 
 export type {
     FactoryOptions,
-    TypeScriptOptions,
     UserConfig,
-    VueOptions,
 } from './types.ts';
+export type { TypeScriptOptions } from './configs/typescript/index.ts';
+export type { VueOptions } from './configs/vue/index.ts';
 
 export default eslintConfig;
