@@ -16,6 +16,24 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
   * dependencies
     * @tada5hi/eslint-config-typescript bumped from ^1.2.8 to ^1.2.9
 
+## [3.0.0](https://github.com/tada5hi/javascript/compare/eslint-config-vue-typescript-v2.2.3...eslint-config-vue-typescript-v3.0.0) (2026-10-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* **eslint-config:** enforce naming, module layout, and readability conventions ([#952](https://github.com/tada5hi/javascript/issues/952))
+
+### Features
+
+* **eslint-config:** enforce naming, module layout, and readability conventions ([#952](https://github.com/tada5hi/javascript/issues/952)) ([889befb](https://github.com/tada5hi/javascript/commit/889befbc6fe4143d93203cf0b526aaa361270327))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^2.4.1 to ^3.0.0
+
 ## [2.2.3](https://github.com/tada5hi/javascript/compare/eslint-config-vue-typescript-v2.2.2...eslint-config-vue-typescript-v2.2.3) (2026-10-28)
 
 
