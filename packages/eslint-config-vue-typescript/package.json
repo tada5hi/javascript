@@ -49,8 +49,8 @@
     },
     "dependencies": {
         "@tada5hi/eslint-config": "^3.0.0",
-        "eslint-plugin-vue": "^10.11.1",
-        "typescript-eslint": "^8.72.0"
+        "eslint-plugin-vue": "^10.12.0",
+        "typescript-eslint": "^8.72.1"
     },
     "peerDependencies": {
         "eslint": ">=10.4.0"

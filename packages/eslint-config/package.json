@@ -61,8 +61,8 @@
         "smob": "^1.6.2"
     },
     "devDependencies": {
-        "eslint-plugin-vue": "^10.11.1",
-        "typescript-eslint": "^8.72.0"
+        "eslint-plugin-vue": "^10.12.0",
+        "typescript-eslint": "^8.72.1"
     },
     "peerDependencies": {
         "eslint": ">=10.4.0",
