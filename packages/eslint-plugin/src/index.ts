@@ -6,6 +6,7 @@
  */
 
 import type { ESLint, Linter } from 'eslint';
+import linesBetweenClassMembers from './rules/lines-between-class-members.ts';
 import noCollectionCallInCondition from './rules/no-collection-call-in-condition.ts';
 import noReexportShims from './rules/no-reexport-shims.ts';
 import noRootBarrelImport from './rules/no-root-barrel-import.ts';
@@ -13,6 +14,7 @@ import typeDeclarationLocation from './rules/type-declaration-location.ts';
 
 // TypeScript AST visitors are compatible at runtime; expose ESLint's native plugin types to consumers.
 const rules = {
+    'lines-between-class-members': linesBetweenClassMembers,
     'no-collection-call-in-condition': noCollectionCallInCondition,
     'type-declaration-location': typeDeclarationLocation,
     'no-reexport-shims': noReexportShims,
@@ -33,6 +35,13 @@ plugin.configs.conventions = {
     files: ['**/src/**/*.{ts,tsx,mts,cts}'],
     plugins: { '@tada5hi': plugin },
     rules: {
+        '@tada5hi/lines-between-class-members': ['error', {
+            enforce: [{
+                blankLine: 'always',
+                prev: 'field',
+                next: '*',
+            }],
+        }],
         '@tada5hi/no-collection-call-in-condition': 'error',
         '@tada5hi/type-declaration-location': 'error',
         '@tada5hi/no-reexport-shims': 'error',

@@ -36,7 +36,7 @@ All packages are libraries in `packages/` — there are no runnable applications
 | Package | Purpose |
 |---------|---------|
 | `@tada5hi/eslint-config` | Unified ESLint flat config (JS + optional TS/Vue and default convention rules via async factory) |
-| `@tada5hi/eslint-plugin` | Custom syntax-only rules for condition readability, exported types, barrel ownership, and root imports |
+| `@tada5hi/eslint-plugin` | Syntax-only rules for class-property spacing, condition readability, exported types, barrel ownership, and root imports |
 | `@tada5hi/eslint-config-typescript` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |
 | `@tada5hi/eslint-config-vue` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |
 | `@tada5hi/eslint-config-vue-typescript` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |
