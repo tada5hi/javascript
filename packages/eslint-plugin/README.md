@@ -64,4 +64,22 @@ if (hasActiveItems) {
 - **`no-reexport-shims`** — top-level export-from declarations are allowed only in `index` directory barrels, including `index.d.ts`, `index.d.mts`, and `index.d.cts`. Ambient module re-exports are not file barrels and are exempt. Their source must begin with `./` and normalize within that barrel directory's subtree. Named local exports are allowed.
 - **`no-root-barrel-import`** — internal relative static imports, dynamic imports, unshadowed CommonJS `require()` calls, TypeScript import-equals declarations, and TypeScript import types may not target the nearest `src` root or its explicit `index` file. Nested and sibling barrels remain allowed. For Windows absolute filenames (drive-letter or UNC paths), CommonJS `require()` and TypeScript import-equals requests also recognize backslash separators; ESM and POSIX requests are unchanged.
 
-The rules do not resolve files, use a TypeScript program, or autofix code. Filename-based checks are skipped when ESLint provides an unknown filename.
+The rules do not resolve files or use a TypeScript program. Only `lines-between-class-members` provides autofixes;
+the other rules require manual changes. Filename-based checks are skipped when ESLint provides an unknown filename.
+
+## Exceptions
+
+Place overrides after `tada5hi.configs.conventions` (or after the shared config). Use the exact rule IDs to disable
+individual policies, optionally adding `files` to limit an exception:
+
+```js
+{
+    rules: {
+        '@tada5hi/lines-between-class-members': 'off',
+        '@tada5hi/no-collection-call-in-condition': 'off',
+        '@tada5hi/type-declaration-location': 'off',
+        '@tada5hi/no-reexport-shims': 'off',
+        '@tada5hi/no-root-barrel-import': 'off',
+    },
+}
+```
