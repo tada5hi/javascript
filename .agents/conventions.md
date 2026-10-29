@@ -162,10 +162,10 @@ New ESLint rule sets should be added as config modules inside `packages/eslint-c
 Each config module is a folder with these files:
 - `module.ts` — the main function (sync or async) returning `Linter.Config[]`
 - `types.ts` — option declarations for the module (omit if none)
-- `index.ts` — barrel export re-exporting from `module.ts` and `types.ts`
+- `index.ts` — barrel export re-exporting from `module.ts`, and from `types.ts` when present
 
 Steps:
-1. Create `packages/eslint-config/src/configs/<name>/` with `module.ts`, `types.ts`, and `index.ts`
+1. Create `packages/eslint-config/src/configs/<name>/` with `module.ts` and `index.ts`, plus `types.ts` when the module declares options
 2. Use dynamic `await import()` for optional dependencies (add them as optional peerDependencies + devDependencies)
 3. Wire the module into `src/module.ts`; use auto-detection only for optional integrations, not default convention rules
 4. Re-export public option types from `src/index.ts` (not `src/types.ts`); retain existing public type names
