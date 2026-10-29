@@ -39,6 +39,11 @@ export default [{
 
 ## Rules
 
+- **`lines-between-class-members`** — autofixable Stylistic class-member spacing with support for TypeScript abstract
+  properties and auto-accessors in its `field` selector. Accepts the same options as
+  `@stylistic/lines-between-class-members`; the shared config and conventions preset require a blank line after
+  fields only (`prev: 'field'`, `next: '*'`), leaving method-to-method spacing unchanged. Does not mutate the parser AST.
+
 - **`no-collection-call-in-condition`** — extract collection operations into named variables rather than putting them
   in `if` / `else if`, `while`, `do…while`, `for` tests, or ternary conditions. Matches `map`, `filter`, `flatMap`,
   `some`, `every`, `find`, `findIndex`, `findLast`, `findLastIndex`, `reduce`, and `reduceRight` by method name,

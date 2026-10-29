@@ -16,7 +16,7 @@ const stylistic = stylisticConfig()[0]!;
 const config = [{ plugins: stylistic.plugins, rules: { [ruleId]: stylistic.rules![ruleId]! } }];
 const linter = new Linter();
 
-const classRuleId = '@stylistic/lines-between-class-members';
+const classRuleId = '@tada5hi/lines-between-class-members';
 const classConfig = [{
     languageOptions: { parser },
     plugins: stylistic.plugins,
@@ -35,6 +35,10 @@ describe('class property spacing', () => {
         ['before accessor', 'first = 1;', 'get value() { return 1; }'],
         ['before static block', 'first = 1;', 'static {}'],
         ['commented', 'first = 1;', '// Second property\n@Column()\nsecond!: string;'],
+        ['trailing comment', 'first = 1; // First property', 'second = 2;'],
+        ['JSDoc', 'first = 1;', '/** Second property */\nsecond = 2;'],
+        ['multiple decorators', '@Index()\n@Column()\nfirst!: string;', '@Index()\n@Column()\nsecond!: string;'],
+        ['semicolonless', 'first = 1', 'second = 2'],
     ])('autofixes %s properties without changing code', (_name, first, second) => {
         const source = `class Example {\n${first}\n${second}\n}`;
         const expected = `class Example {\n${first}\n\n${second}\n}`;
@@ -45,6 +49,48 @@ describe('class property spacing', () => {
         expect(fixed.output).toBe(expected);
         expect(fixed.messages).toEqual([]);
         expect(linter.verifyAndFix(expected, classConfig).fixed).toBe(false);
+    });
+
+    it.each([
+        ['abstract property', 'abstract first: string;'],
+        ['abstract readonly property', 'abstract readonly first: string;'],
+        ['auto-accessor', 'accessor first = 1;'],
+        ['static auto-accessor', 'static accessor first = 1;'],
+        ['private auto-accessor', 'accessor #first = 1;'],
+        ['decorated auto-accessor', '@Column()\naccessor first = 1;'],
+        ['abstract auto-accessor', 'abstract accessor first: string;'],
+    ])('autofixes %s without mutating the AST', (_name, first) => {
+        const source = `abstract class Example {\n${first}\nsecond = 2;\n}`;
+        const ast = parser.parseForESLint(source, {
+            loc: true,
+            range: true,
+            tokens: true,
+            comment: true,
+        });
+        const typesBefore = ast.ast.body[0]!.type === 'ClassDeclaration' ? ast.ast.body[0]!.body.body.map((member) => member.type) : [];
+        const parsedConfig = [{
+            ...classConfig[0],
+            languageOptions: { parser: { parseForESLint: () => ast } },
+        }];
+        expect(linter.verify(source, parsedConfig).map((message) => message.ruleId)).toEqual([classRuleId]);
+        expect(ast.ast.body[0]!.type === 'ClassDeclaration' ? ast.ast.body[0]!.body.body.map((member) => member.type) : []).toEqual(typesBefore);
+
+        const fixed = linter.verifyAndFix(source, classConfig);
+        expect(fixed.output).toBe(`abstract class Example {\n${first}\n\nsecond = 2;\n}`);
+        expect(fixed.messages).toEqual([]);
+        expect(linter.verifyAndFix(fixed.output, classConfig).fixed).toBe(false);
+    });
+
+    it.each([
+        ['first = 1;', '// eslint-disable-next-line no-undef\nsecond = missing;'],
+        ['first = missing; // eslint-disable-line no-undef', 'second = 2;'],
+    ])('preserves ESLint comment attachment', (first, second) => {
+        const source = `class Example {\n${first}\n${second}\n}`;
+        const directiveConfig = [{ ...classConfig[0], rules: { ...classConfig[0]!.rules, 'no-undef': 'error' as const } }];
+        const fixed = linter.verifyAndFix(source, directiveConfig);
+        expect(fixed.messages).toEqual([]);
+        expect(fixed.output).toBe(`class Example {\n${first}\n\n${second}\n}`);
+        expect(linter.verifyAndFix(fixed.output, directiveConfig).fixed).toBe(false);
     });
 
     it.each([
@@ -61,8 +107,8 @@ describe('class property spacing', () => {
 
     it.each([
         ['src/example.js', 'class Example {\nfirst = 1;\nsecond = 2;\n}', { typescript: false }],
-        ['src/example.ts', 'class Example {\nfirst!: string;\nsecond!: string;\n}', {}],
-        ['src/example.vue', '<script lang="ts">\nclass Example {\nfirst!: string;\nsecond!: string;\n}\n</script>', { vue: true }],
+        ['src/example.ts', 'abstract class Example {\nabstract first: string;\naccessor second = 2;\n}', {}],
+        ['src/example.vue', '<script lang="ts">\nabstract class Example {\nabstract accessor first: string;\nsecond!: string;\n}\n</script>', { vue: true }],
     ])('is enabled by default in %s and can be disabled', async (filename, source, options) => {
         const defaults = await eslintConfig(options);
         const messages = linter.verify(source, defaults, { filename });

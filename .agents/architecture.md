@@ -53,6 +53,14 @@ unified factory with preset options. They carry no rules of their own, so rule c
 
 ## Design Patterns
 
+### Class Property Spacing Adapter
+
+`eslint-plugin/src/rules/lines-between-class-members.ts` delegates to the public Stylistic rule module, reusing
+its options, comment-aware spacing, and autofix logic. It passes shallow copies of TypeScript abstract properties
+and auto-accessors as ordinary fields to the upstream visitor; it never mutates the parser AST. Stylistic is a
+runtime dependency of the plugin. The shared config and source-only plugin preset enable field-to-next-member
+spacing; method-to-method spacing remains unchanged.
+
 ### Config Module
 
 Each rule set under `src/configs/<name>/` has `module.ts` (the function) and `index.ts` (barrel), plus `types.ts` when

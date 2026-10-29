@@ -7,11 +7,12 @@
 
 import type { Linter } from 'eslint';
 import stylistic from '@stylistic/eslint-plugin';
+import tada5hi from '@tada5hi/eslint-plugin';
 
 export function stylisticConfig(): Linter.Config[] {
     return [
         {
-            plugins: { '@stylistic': stylistic },
+            plugins: { '@stylistic': stylistic, '@tada5hi': tada5hi },
             rules: {
                 '@stylistic/indent': ['error', 4, {
                     SwitchCase: 1,
@@ -52,7 +53,7 @@ export function stylisticConfig(): Linter.Config[] {
                 '@stylistic/comma-spacing': ['error', { before: false, after: true }],
                 '@stylistic/object-curly-spacing': ['error', 'always'],
                 '@stylistic/padded-blocks': ['error', 'never'],
-                '@stylistic/lines-between-class-members': ['error', {
+                '@tada5hi/lines-between-class-members': ['error', {
                     enforce: [{
                         blankLine: 'always',
                         prev: 'field',

@@ -126,8 +126,8 @@ Disable or customize `@stylistic/padding-line-between-statements` through a user
 
 ### Class Property Spacing
 
-`@stylistic/lines-between-class-members` requires a blank line after each class property when another
-class member follows. This includes single-line, decorated, static, and private properties and is autofixable
+`@tada5hi/lines-between-class-members` requires a blank line after each class property when another
+class member follows. This includes single-line, decorated, static, private, abstract, and auto-accessor properties and is autofixable
 with `eslint --fix`. Decorators stay attached to their property:
 
 ```ts
@@ -142,7 +142,10 @@ class Example {
 
 No blank line is added after the final property or between a decorator and its declaration. Method-to-method
 spacing, interfaces, type literals, and object literals are unchanged. Disable or customize
-`@stylistic/lines-between-class-members` through a user override if needed.
+`@tada5hi/lines-between-class-members` through a user override if needed. This rule delegates spacing and
+autofixes to Stylistic, extending its field selector to recognize TypeScript abstract properties and auto-accessors.
+If your own config also enables `@stylistic/lines-between-class-members`, disable that upstream rule to avoid
+duplicate diagnostics or conflicting autofixes; customize `@tada5hi/lines-between-class-members` instead.
 
 ### Conventions
 
