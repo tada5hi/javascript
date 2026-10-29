@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0](https://github.com/tada5hi/javascript/compare/eslint-config-v2.4.1...eslint-config-v3.0.0) (2026-10-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* **eslint-config:** enforce naming, module layout, and readability conventions ([#952](https://github.com/tada5hi/javascript/issues/952))
+
+### Features
+
+* **eslint-config:** enforce naming, module layout, and readability conventions ([#952](https://github.com/tada5hi/javascript/issues/952)) ([889befb](https://github.com/tada5hi/javascript/commit/889befbc6fe4143d93203cf0b526aaa361270327))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-plugin bumped from ^0.1.0 to ^1.0.0
+
 ## [2.4.1](https://github.com/tada5hi/javascript/compare/eslint-config-v2.4.0...eslint-config-v2.4.1) (2026-10-28)
 
 

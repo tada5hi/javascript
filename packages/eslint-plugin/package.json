@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-plugin",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "ESLint rules for type locations and directory barrel boundaries",
     "license": "Apache-2.0",
     "type": "module",
@@ -19,7 +19,12 @@
     "files": [
         "dist"
     ],
-    "keywords": ["eslint", "eslintplugin", "flat-config", "typescript"],
+    "keywords": [
+        "eslint",
+        "eslintplugin",
+        "flat-config",
+        "typescript"
+    ],
     "author": {
         "name": "Peter Placzek",
         "email": "contact@tada5hi.net",
