@@ -17,6 +17,7 @@
     - [Vue](#vue)
     - [Vue + TypeScript](#vue--typescript)
     - [Statement Spacing](#statement-spacing)
+    - [Class Property Spacing](#class-property-spacing)
     - [Conventions](#conventions)
     - [Options](#options)
     - [User Overrides](#user-overrides)
@@ -122,6 +123,26 @@ There is no extra blank line at the beginning or end of a block, between `} else
 or `} finally {`, or solely between switch cases. Ordinary declarations and expressions can stay adjacent.
 This does not introduce a separate spacing requirement before `break`, `continue`, or `throw`.
 Disable or customize `@stylistic/padding-line-between-statements` through a user override if needed.
+
+### Class Property Spacing
+
+`@stylistic/lines-between-class-members` requires a blank line after each class property when another
+class member follows. This includes single-line, decorated, static, and private properties and is autofixable
+with `eslint --fix`. Decorators stay attached to their property:
+
+```ts
+class Example {
+    @Column({ type: 'text' })
+    text!: string;
+
+    @Column({ type: 'text' })
+    status!: string;
+}
+```
+
+No blank line is added after the final property or between a decorator and its declaration. Method-to-method
+spacing, interfaces, type literals, and object literals are unchanged. Disable or customize
+`@stylistic/lines-between-class-members` through a user override if needed.
 
 ### Conventions
 

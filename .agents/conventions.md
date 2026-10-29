@@ -114,6 +114,7 @@ These are the defaults enforced by the packages in this repo:
 - **Module format**: ESM (`export default`) for ESLint config packages; CJS for Prettier/commitlint configs
 - **Arrow functions**: Implicit return when possible (`arrow-body-style: as-needed`)
 - **Readable conditions**: Extract `map`/`filter`/`flatMap`/`some`/`every`/`find`/`findIndex`/`findLast`/`findLastIndex`/`reduce`/`reduceRight` calls into named variables before `if`, loop tests, and ternary conditions. Syntax-only `@tada5hi/no-collection-call-in-condition` allows simple predicates and `includes`/`has`, skips deferred function bodies, and provides no unsafe autofix.
+- **Class property spacing**: Require a blank line after each class property when another class member follows, including decorated, static, private, and single-line properties. Keep decorators attached; no trailing block padding or method-to-method spacing requirement. Enforced and autofixed by `@stylistic/lines-between-class-members` (`prev: 'field'`, `next: '*'`).
 - **Statement spacing**: Blank lines before/after `if` chains, `for`/`for…in`/`for…of`, `while`, `do…while`, `try` chains, and `switch` at every nesting level; blank line before every `return`. No padding at block edges or between connected `else`/`catch`/`finally` branches. Enforced and autofixed by `@stylistic/padding-line-between-statements`.
 - **Early returns**: Preferred over else blocks (`no-else-return`)
 - **One class per file**: Enforced (`max-classes-per-file: 1`)

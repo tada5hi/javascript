@@ -52,6 +52,13 @@ export function stylisticConfig(): Linter.Config[] {
                 '@stylistic/comma-spacing': ['error', { before: false, after: true }],
                 '@stylistic/object-curly-spacing': ['error', 'always'],
                 '@stylistic/padded-blocks': ['error', 'never'],
+                '@stylistic/lines-between-class-members': ['error', {
+                    enforce: [{
+                        blankLine: 'always',
+                        prev: 'field',
+                        next: '*',
+                    }],
+                }],
                 '@stylistic/padding-line-between-statements': [
                     'error',
                     {

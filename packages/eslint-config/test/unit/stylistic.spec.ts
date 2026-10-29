@@ -5,6 +5,7 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
+import parser from '@typescript-eslint/parser';
 import { Linter } from 'eslint';
 import { describe, expect, it } from 'vitest';
 import eslintConfig from '../../src/index.ts';
@@ -14,6 +15,66 @@ const ruleId = '@stylistic/padding-line-between-statements';
 const stylistic = stylisticConfig()[0]!;
 const config = [{ plugins: stylistic.plugins, rules: { [ruleId]: stylistic.rules![ruleId]! } }];
 const linter = new Linter();
+
+const classRuleId = '@stylistic/lines-between-class-members';
+const classConfig = [{
+    languageOptions: { parser },
+    plugins: stylistic.plugins,
+    rules: { [classRuleId]: stylistic.rules![classRuleId]! },
+}];
+
+describe('class property spacing', () => {
+    it.each([
+        ['plain', 'first = 1;', 'second = 2;'],
+        ['decorated', '@Column({ type: "text" })\nfirst!: string;', '@Column()\nsecond!: string;'],
+        ['static', 'static first = 1;', 'static second = 2;'],
+        ['private', '#first = 1;', '#second = 2;'],
+        ['typed', 'declare first: string;', 'readonly second?: string;'],
+        ['multiline', 'first = {\n    value: 1,\n};', 'second = 2;'],
+        ['before method', 'first = 1;', 'method() {}'],
+        ['before accessor', 'first = 1;', 'get value() { return 1; }'],
+        ['before static block', 'first = 1;', 'static {}'],
+        ['commented', 'first = 1;', '// Second property\n@Column()\nsecond!: string;'],
+    ])('autofixes %s properties without changing code', (_name, first, second) => {
+        const source = `class Example {\n${first}\n${second}\n}`;
+        const expected = `class Example {\n${first}\n\n${second}\n}`;
+        const messages = linter.verify(source, classConfig);
+        expect(messages.map((message) => message.ruleId)).toEqual([classRuleId]);
+
+        const fixed = linter.verifyAndFix(source, classConfig);
+        expect(fixed.output).toBe(expected);
+        expect(fixed.messages).toEqual([]);
+        expect(linter.verifyAndFix(expected, classConfig).fixed).toBe(false);
+    });
+
+    it.each([
+        'class Example {\nfirst = 1;\n}',
+        'class Example {\nfirst = 1;\n\nsecond = 2;\n}',
+        'class Example {\nmethod() {}\nother() {}\n}',
+        'class Example {\nmethod() {}\nfield = 1;\n}',
+        'interface IExample {\nfirst: string;\nsecond: string;\n}',
+        'type Example = {\nfirst: string;\nsecond: string;\n};',
+        'const example = {\nfirst: 1,\nsecond: 2,\n};',
+    ])('does not require unrelated padding in %s', (source) => {
+        expect(linter.verify(source, classConfig)).toEqual([]);
+    });
+
+    it.each([
+        ['src/example.js', 'class Example {\nfirst = 1;\nsecond = 2;\n}', { typescript: false }],
+        ['src/example.ts', 'class Example {\nfirst!: string;\nsecond!: string;\n}', {}],
+        ['src/example.vue', '<script lang="ts">\nclass Example {\nfirst!: string;\nsecond!: string;\n}\n</script>', { vue: true }],
+    ])('is enabled by default in %s and can be disabled', async (filename, source, options) => {
+        const defaults = await eslintConfig(options);
+        const messages = linter.verify(source, defaults, { filename });
+        expect(messages.filter((message) => message.fatal)).toEqual([]);
+        expect(messages.filter((message) => message.ruleId === classRuleId)).toHaveLength(1);
+
+        const overrides = await eslintConfig(options, { rules: { [classRuleId]: 'off' } });
+        const overridden = linter.verify(source, overrides, { filename });
+        expect(overridden.filter((message) => message.fatal)).toEqual([]);
+        expect(overridden.filter((message) => message.ruleId === classRuleId)).toEqual([]);
+    });
+});
 
 function verify(code: string) {
     const messages = linter.verify(code, config);
