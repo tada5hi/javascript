@@ -3,6 +3,29 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0](https://github.com/tada5hi/javascript/compare/eslint-config-v3.0.0...eslint-config-v4.0.0) (2026-10-29)
+
+
+### ⚠ BREAKING CHANGES
+
+* **eslint-config:** require blank lines after class properties ([#955](https://github.com/tada5hi/javascript/issues/955))
+
+### Features
+
+* **eslint-config:** require blank lines after class properties ([#955](https://github.com/tada5hi/javascript/issues/955)) ([2763eb7](https://github.com/tada5hi/javascript/commit/2763eb7c54e56c3079009420d7724de247746ce7))
+
+
+### Bug Fixes
+
+* **deps:** bump the minorandpatch group with 2 updates ([#956](https://github.com/tada5hi/javascript/issues/956)) ([224401a](https://github.com/tada5hi/javascript/commit/224401a7262517c93b5a9e48c8d30cc7a89fd239))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-plugin bumped from ^1.0.0 to ^2.0.0
+
 ## [3.0.0](https://github.com/tada5hi/javascript/compare/eslint-config-v2.4.1...eslint-config-v3.0.0) (2026-10-29)
 
 
