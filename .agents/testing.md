@@ -14,7 +14,7 @@ export plain configuration objects and have no `test` script.
 | Package | Spec files |
 |---------|-----------|
 | `eslint-config` | `index`, `javascript`, `imports`, `unicorn`, `typescript`, `vue`, `conventions`, `stylistic` |
-| `eslint-plugin` | `rules`, `conditions`: direct rule tests using JS/TS parsing; valid/invalid cases, path edge cases, deferred evaluation |
+| `eslint-plugin` | `rules`, `conditions`, `spacing`: direct rule tests using JS/TS parsing; valid/invalid cases, path edge cases, deferred evaluation, and TypeScript property spacing |
 | `eslint-config-typescript` | `index` |
 | `eslint-config-vue` | `index` |
 | `eslint-config-vue-typescript` | `index` |
