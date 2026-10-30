@@ -27,6 +27,7 @@ const rule: Rule.RuleModule = {
 
                     return member;
                 });
+
                 listener.ClassBody?.({ ...node, body });
             },
         };

@@ -7,7 +7,9 @@ describe('eslint-config-typescript (deprecated wrapper)', () => {
 
     it('should return a valid flat config array', async () => {
         const config = await eslintConfigTypescript();
+
         expect(Array.isArray(config)).toBe(true);
+
         expect(config.length).toBeGreaterThan(0);
     });
 
@@ -19,6 +21,7 @@ describe('eslint-config-typescript (deprecated wrapper)', () => {
             { filename: 'test.ts' },
         );
         const error = messages.find((m) => m.ruleId === 'no-var');
+
         expect(error).toBeDefined();
     });
 
@@ -30,24 +33,31 @@ describe('eslint-config-typescript (deprecated wrapper)', () => {
             { filename: 'test.ts' },
         );
         const error = messages.find((m) => m.ruleId === '@typescript-eslint/no-explicit-any');
+
         expect(error).toBeUndefined();
     });
 
     it('should accept project option', async () => {
         const config = await eslintConfigTypescript({ project: './tsconfig.json' });
+
         expect(Array.isArray(config)).toBe(true);
+
         const hasParserOptions = config.some(
             (c: any) => c.languageOptions?.parserOptions?.project === './tsconfig.json',
         );
+
         expect(hasParserOptions).toBe(true);
     });
 
     it('should enable projectService when project is true', async () => {
         const config = await eslintConfigTypescript({ project: true });
+
         expect(Array.isArray(config)).toBe(true);
+
         const hasProjectService = config.some(
             (c: any) => c.languageOptions?.parserOptions?.projectService === true,
         );
+
         expect(hasProjectService).toBe(true);
     });
 });

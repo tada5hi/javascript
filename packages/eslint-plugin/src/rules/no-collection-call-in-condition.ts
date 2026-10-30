@@ -81,6 +81,7 @@ const rule: TSESLint.RuleModule<'condition', []> = {
                     }
 
                     child = parent;
+
                     parent = parent.parent;
                 }
             },

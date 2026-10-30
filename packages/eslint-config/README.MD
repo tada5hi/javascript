@@ -115,6 +115,9 @@ if (def.toolsContext) {
 `@stylistic/padding-line-between-statements` requires blank lines before and after complete `if` chains,
 loops (`for`, `for…in`, `for…of`, `while`, `do…while`), `try` chains, and `switch` statements,
 at every nesting level. Every `return` also needs a blank line before it when another statement precedes it.
+Variable declarations (`const`, `let`, `var`) need a blank line before a following expression statement.
+Every expression statement (including standalone calls, assignments, and awaited calls) needs a blank line
+before the next statement, including another expression statement.
 The rule is enabled by default and supports `eslint --fix`.
 
 ```js
@@ -134,8 +137,9 @@ return result;
 ```
 
 There is no extra blank line at the beginning or end of a block, between `} else {`, `} catch {`,
-or `} finally {`, or solely between switch cases. Ordinary declarations and expressions can stay adjacent.
-This does not introduce a separate spacing requirement before `break`, `continue`, or `throw`.
+or `} finally {`, or solely between switch cases. Consecutive variable declarations can stay adjacent.
+There is no separate spacing requirement before `break`, `continue`, or `throw`, unless the preceding
+statement already requires a blank line after it.
 Disable or customize `@stylistic/padding-line-between-statements` through a user override if needed.
 
 ### Class Property Spacing

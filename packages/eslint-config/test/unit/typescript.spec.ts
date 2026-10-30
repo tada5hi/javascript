@@ -21,7 +21,9 @@ describe('typescript rules', () => {
 
     it('should return a valid flat config array', async () => {
         const config = await getConfig();
+
         expect(Array.isArray(config)).toBe(true);
+
         expect(config.length).toBeGreaterThan(0);
     });
 
@@ -33,6 +35,7 @@ describe('typescript rules', () => {
             { filename: 'test.ts' },
         );
         const error = messages.find((m) => m.ruleId === 'no-var');
+
         expect(error).toBeDefined();
     });
 
@@ -44,6 +47,7 @@ describe('typescript rules', () => {
             { filename: 'test.ts' },
         );
         const error = messages.find((m) => m.ruleId === '@typescript-eslint/no-explicit-any');
+
         expect(error).toBeUndefined();
     });
 
@@ -54,15 +58,19 @@ describe('typescript rules', () => {
             config,
             { filename: 'test.ts' },
         );
+
         expect(Array.isArray(messages)).toBe(true);
     });
 
     it('should accept project option', async () => {
         const config = await getConfig({ project: './tsconfig.json' });
+
         expect(Array.isArray(config)).toBe(true);
+
         const hasParserOptions = config.some(
             (c: any) => c.languageOptions?.parserOptions?.project === './tsconfig.json',
         );
+
         expect(hasParserOptions).toBe(true);
     });
 
@@ -74,15 +82,19 @@ describe('typescript rules', () => {
             { filename: 'test.ts' },
         );
         const error = messages.find((m) => m.ruleId === '@stylistic/object-curly-newline');
+
         expect(error).toBeDefined();
     });
 
     it('should enable projectService when project is true', async () => {
         const config = await getConfig({ project: true });
+
         expect(Array.isArray(config)).toBe(true);
+
         const hasProjectService = config.some(
             (c: any) => c.languageOptions?.parserOptions?.projectService === true,
         );
+
         expect(hasProjectService).toBe(true);
     });
 });

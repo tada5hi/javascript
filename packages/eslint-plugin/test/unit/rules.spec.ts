@@ -14,6 +14,7 @@ import noRootBarrelImport from '../../src/rules/no-root-barrel-import.ts';
 import typeDeclarationLocation from '../../src/rules/type-declaration-location.ts';
 
 RuleTester.describe = describe;
+
 RuleTester.it = it;
 
 const tester = new RuleTester({ languageOptions: { parser } });
@@ -195,6 +196,7 @@ it('supports JavaScript import rules without a TypeScript parser', () => {
             '@tada5hi/no-reexport-shims': 'error',
         },
     }, { filename: 'src/feature/file.js' });
+
     expect(messages.map((message) => message.ruleId)).toEqual([
         '@tada5hi/no-root-barrel-import',
         '@tada5hi/no-reexport-shims',
@@ -203,23 +205,29 @@ it('supports JavaScript import rules without a TypeScript parser', () => {
 
 it('can combine the preset with explicit registration of the exported plugin', () => {
     expect(plugin.configs.conventions.plugins?.['@tada5hi']).toBe(plugin);
+
     const messages = new Linter().verify('export type Options = string;', [
         { files: ['**/*.ts'], languageOptions: { parser } },
         plugin.configs.conventions,
         { plugins: { '@tada5hi': plugin } },
     ], { filename: 'src/types.ts' });
+
     expect(messages).toEqual([]);
 });
 
 it('provides a source-only preset with custom rules and native ESLint compatibility', () => {
     expect(plugin.meta).toEqual({ name: '@tada5hi/eslint-plugin', version: '0.1.0' });
+
     expect(plugin.configs.conventions.files).toEqual(['**/src/**/*.{ts,tsx,mts,cts}']);
+
     const linter = new Linter();
     const config = [
         { files: ['**/*.ts'], languageOptions: { parser } },
         plugin.configs.conventions,
     ];
     const code = 'export interface Exported {}';
+
     expect(linter.verify(code, config, { filename: 'src/file.ts' }).map((message) => message.ruleId)).toEqual(['@tada5hi/type-declaration-location']);
+
     expect(linter.verify(code, config, { filename: 'test/file.ts' })).toEqual([]);
 });

@@ -11,6 +11,7 @@ import { describe, it } from 'vitest';
 import noCollectionCallInCondition from '../../src/rules/no-collection-call-in-condition.ts';
 
 RuleTester.describe = describe;
+
 RuleTester.it = it;
 
 const tester = new RuleTester();

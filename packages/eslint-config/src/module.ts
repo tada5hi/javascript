@@ -40,6 +40,7 @@ export async function eslintConfig(
             {};
 
         const { typescript } = await import('./configs/typescript/index.ts');
+
         configs.push(...await typescript(tsOptions));
     }
 
@@ -53,6 +54,7 @@ export async function eslintConfig(
         }
 
         const { vue } = await import('./configs/vue/index.ts');
+
         configs.push(...await vue(vueOptions));
     }
 

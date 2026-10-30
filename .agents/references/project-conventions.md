@@ -34,8 +34,11 @@ Compared [Chamvi bundle.ts](https://github.com/chamvi/chamvi/blob/feat/approved-
 with [the user's preferred version](https://gist.github.com/tada5hi/42bc28ea19f2415f5ce06944c35add7b).
 The user confirmed blank lines around complete loops, `if` chains, `try` chains, and `switch` at all
 nesting levels, plus before every `return` (not only multiline returns). Do not insert blank lines at
-block edges or between connected `else`, `catch`, and `finally` branches. No new spacing policy was
-requested for `break`, `continue`, `throw`, or switch-case boundaries.
+block edges or between connected `else`, `catch`, and `finally` branches. Additionally, require a blank
+line between variable declarations (`const`, `let`, `var`) and following expression statements, and after
+every expression statement when another statement follows (including consecutive calls and assignments).
+Consecutive declarations can stay together. There is no independent spacing requirement for `break`,
+`continue`, `throw`, or switch-case boundaries.
 
 Implemented using the existing autofixable `@stylistic/padding-line-between-statements` rule in
 `configs/stylistic/module.ts`; no custom AST rule is necessary. Tests cover all loop forms, nested

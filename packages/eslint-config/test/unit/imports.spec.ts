@@ -22,6 +22,7 @@ describe('import rules', () => {
         const hasPlugin = config.some(
             (c: any) => c.plugins && ('import' in c.plugins),
         );
+
         expect(hasPlugin).toBe(true);
     });
 
@@ -42,6 +43,7 @@ describe('import rules', () => {
         const resolverErrors = messages.filter(
             (m) => m.message.includes('resolver') || m.message.includes('Resolve error'),
         );
+
         expect(resolverErrors).toHaveLength(0);
     });
 
@@ -62,6 +64,7 @@ describe('import rules', () => {
         const resolverErrors = messages.filter(
             (m) => m.message.includes('resolver') || m.message.includes('Resolve error'),
         );
+
         expect(resolverErrors).toHaveLength(0);
     });
 
@@ -78,6 +81,7 @@ describe('import rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === 'import/first');
+
         expect(error).toBeDefined();
     });
 
@@ -94,6 +98,7 @@ describe('import rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === 'import/no-duplicates');
+
         expect(error).toBeDefined();
     });
 });

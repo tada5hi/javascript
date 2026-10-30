@@ -27,6 +27,7 @@ describe('javascript rules', () => {
             { filename: 'test.js' },
         );
         const quoteError = messages.find((m) => m.ruleId === '@stylistic/quotes');
+
         expect(quoteError).toBeDefined();
     });
 
@@ -38,6 +39,7 @@ describe('javascript rules', () => {
             { filename: 'test.js' },
         );
         const indentError = messages.find((m) => m.ruleId === '@stylistic/indent');
+
         expect(indentError).toBeDefined();
     });
 
@@ -49,6 +51,7 @@ describe('javascript rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === 'no-await-in-loop');
+
         expect(error).toBeUndefined();
     });
 
@@ -60,6 +63,7 @@ describe('javascript rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === 'prefer-const');
+
         expect(error).toBeDefined();
     });
 
@@ -71,6 +75,7 @@ describe('javascript rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === 'no-var');
+
         expect(error).toBeDefined();
     });
 
@@ -82,6 +87,7 @@ describe('javascript rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === 'eqeqeq');
+
         expect(error).toBeDefined();
     });
 
@@ -93,6 +99,7 @@ describe('javascript rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === 'unicorn/prefer-node-protocol');
+
         expect(error).toBeDefined();
     });
 
@@ -129,6 +136,7 @@ describe('javascript rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === '@stylistic/object-curly-spacing');
+
         expect(error).toBeDefined();
     });
 
@@ -140,6 +148,7 @@ describe('javascript rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === '@stylistic/padded-blocks');
+
         expect(error).toBeDefined();
     });
 
@@ -151,6 +160,7 @@ describe('javascript rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === '@stylistic/object-curly-newline');
+
         expect(error).toBeDefined();
     });
 
@@ -162,6 +172,7 @@ describe('javascript rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === '@stylistic/object-property-newline');
+
         expect(error).toBeDefined();
     });
 
@@ -174,6 +185,7 @@ describe('javascript rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === '@stylistic/max-len');
+
         expect(error).toBeDefined();
     });
 });
