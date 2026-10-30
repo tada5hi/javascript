@@ -36,9 +36,9 @@ The user confirmed blank lines around complete loops, `if` chains, `try` chains,
 nesting levels, plus before every `return` (not only multiline returns). Do not insert blank lines at
 block edges or between connected `else`, `catch`, and `finally` branches. Additionally, require a blank
 line between variable declarations (`const`, `let`, `var`) and following expression statements, and after
-every expression statement when another statement follows (including consecutive calls and assignments).
-Consecutive declarations can stay together. There is no independent spacing requirement for `break`,
-`continue`, `throw`, or switch-case boundaries.
+expression statements before non-expression statements. Blank lines between consecutive expression
+statements (including calls and assignments) are optional. Consecutive declarations can stay together.
+There is no independent spacing requirement for `break`, `continue`, `throw`, or switch-case boundaries.
 
 Implemented using the existing autofixable `@stylistic/padding-line-between-statements` rule in
 `configs/stylistic/module.ts`; no custom AST rule is necessary. Tests cover all loop forms, nested

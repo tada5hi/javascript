@@ -78,6 +78,11 @@ export function stylisticConfig(): Linter.Config[] {
                         prev: ['const', 'let', 'var'],
                         next: 'expression',
                     },
+                    {
+                        blankLine: 'any',
+                        prev: 'expression',
+                        next: 'expression',
+                    },
                 ],
                 '@stylistic/object-curly-newline': ['error', {
                     ObjectExpression: {

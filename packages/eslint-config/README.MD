@@ -116,8 +116,8 @@ if (def.toolsContext) {
 loops (`for`, `for…in`, `for…of`, `while`, `do…while`), `try` chains, and `switch` statements,
 at every nesting level. Every `return` also needs a blank line before it when another statement precedes it.
 Variable declarations (`const`, `let`, `var`) need a blank line before a following expression statement.
-Every expression statement (including standalone calls, assignments, and awaited calls) needs a blank line
-before the next statement, including another expression statement.
+Expression statements (including standalone calls, assignments, and awaited calls) need a blank line
+before the next non-expression statement. Blank lines between consecutive expression statements are optional.
 The rule is enabled by default and supports `eslint --fix`.
 
 ```js

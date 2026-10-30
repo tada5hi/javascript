@@ -204,8 +204,6 @@ describe('control-flow statement spacing', () => {
         ['var declaration and call', 'var value = 1;', 'use(value);'],
         ['declaration and assignment', 'let value = 1;', 'value = 2;'],
         ['call and declaration', 'prepare();', 'const value = 1;'],
-        ['consecutive calls', 'prepare();', 'work();'],
-        ['assignment and call', 'value = 1;', 'work();'],
         ['call and throw', 'prepare();', 'throw error;'],
         ['comment before call', 'const value = 1;', '// Use the value\nuse(value);'],
     ])('separates %s and autofixes idempotently', (_label, previous, next) => {
@@ -223,12 +221,25 @@ describe('control-flow statement spacing', () => {
         expect(linter.verifyAndFix(fixed.output, config).fixed).toBe(false);
     });
 
+    it.each([
+        'prepare();\nwork();',
+        'prepare();\n\nwork();',
+        'value = 1;\nwork();',
+        'first = 1;\nsecond = 2;',
+        'async function run() {\n    await prepare();\n    await work();\n}',
+        'prepare();\n// Next operation\nwork();',
+    ])('allows optional blank lines between expression statements: %s', (source) => {
+        expect(verify(source)).toEqual([]);
+
+        expect(linter.verifyAndFix(source, config).output).toBe(source);
+    });
+
     it('separates typed declarations and calls inside callbacks', () => {
         const source = 'function run() {\n    const cancelled: string[] = [];\n    runs.forEach((run) => {\n        cancelled.push(run.id);\n        notify(run);\n    });\n    const count = cancelled.length;\n}';
-        const expected = 'function run() {\n    const cancelled: string[] = [];\n\n    runs.forEach((run) => {\n        cancelled.push(run.id);\n\n        notify(run);\n    });\n\n    const count = cancelled.length;\n}';
+        const expected = 'function run() {\n    const cancelled: string[] = [];\n\n    runs.forEach((run) => {\n        cancelled.push(run.id);\n        notify(run);\n    });\n\n    const count = cancelled.length;\n}';
         const tsConfig = [{ ...config[0], languageOptions: { parser } }];
 
-        expect(linter.verify(source, tsConfig).map((message) => message.ruleId)).toEqual([ruleId, ruleId, ruleId]);
+        expect(linter.verify(source, tsConfig).map((message) => message.ruleId)).toEqual([ruleId, ruleId]);
 
         const fixed = linter.verifyAndFix(source, tsConfig);
 
