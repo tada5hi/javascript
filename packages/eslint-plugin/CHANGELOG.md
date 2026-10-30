@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/tada5hi/javascript/compare/eslint-plugin-v1.1.0...eslint-plugin-v1.2.0) (2026-10-30)
+
+
+### Features
+
+* **eslint-config:** enforce spacing around expressions ([#964](https://github.com/tada5hi/javascript/issues/964)) ([e6fc87d](https://github.com/tada5hi/javascript/commit/e6fc87dfc10e777fee10e4294fedbc7b2da32feb))
+
 ## [1.1.0](https://github.com/tada5hi/javascript/compare/eslint-plugin-v1.0.0...eslint-plugin-v1.1.0) (2026-10-29)
 
 

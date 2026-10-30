@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.0](https://github.com/tada5hi/javascript/compare/eslint-config-v3.1.1...eslint-config-v3.2.0) (2026-10-30)
+
+
+### Features
+
+* **eslint-config:** enforce spacing around expressions ([#964](https://github.com/tada5hi/javascript/issues/964)) ([e6fc87d](https://github.com/tada5hi/javascript/commit/e6fc87dfc10e777fee10e4294fedbc7b2da32feb))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-plugin bumped from ^1.1.0 to ^1.2.0
+
 ## [3.1.1](https://github.com/tada5hi/javascript/compare/eslint-config-v3.1.0...eslint-config-v3.1.1) (2026-10-30)
 
 
