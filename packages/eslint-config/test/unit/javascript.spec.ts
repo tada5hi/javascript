@@ -96,6 +96,31 @@ describe('javascript rules', () => {
         expect(error).toBeDefined();
     });
 
+    it('should require multiline braces for all if statements', async () => {
+        const config = await getConfig();
+        const source = [
+            'function test(streamError, def) {',
+            '    if (streamError) throw streamError.error;',
+            '    if (def.toolsContext) assertToolsContext(def.name, def.tools ?? {}, def.toolsContext);',
+            '}',
+            '',
+        ].join('\n');
+        const fixed = linter.verifyAndFix(source, config, { filename: 'test.js' });
+
+        expect(fixed.output).toBe([
+            'function test(streamError, def) {',
+            '    if (streamError) {',
+            '        throw streamError.error;',
+            '    }',
+            '',
+            '    if (def.toolsContext) {',
+            '        assertToolsContext(def.name, def.tools ?? {}, def.toolsContext);',
+            '    }',
+            '}',
+            '',
+        ].join('\n'));
+    });
+
     it('should enforce object-curly-spacing', async () => {
         const config = await getConfig();
         const messages = linter.verify(
