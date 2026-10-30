@@ -14,7 +14,9 @@ describe('eslint-config factory', () => {
             typescript: false,
             vue: false, 
         });
+
         expect(Array.isArray(config)).toBe(true);
+
         expect(config.length).toBeGreaterThan(0);
     });
 
@@ -26,6 +28,7 @@ describe('eslint-config factory', () => {
         const hasTsPlugin = config.some(
             (c: any) => c.plugins && ('@typescript-eslint' in c.plugins),
         );
+
         expect(hasTsPlugin).toBe(true);
     });
 
@@ -37,6 +40,7 @@ describe('eslint-config factory', () => {
         const hasVuePlugin = config.some(
             (c: any) => c.plugins && ('vue' in c.plugins),
         );
+
         expect(hasVuePlugin).toBe(true);
     });
 
@@ -51,7 +55,9 @@ describe('eslint-config factory', () => {
         const hasVuePlugin = config.some(
             (c: any) => c.plugins && ('vue' in c.plugins),
         );
+
         expect(hasTsPlugin).toBe(true);
+
         expect(hasVuePlugin).toBe(true);
     });
 
@@ -65,7 +71,9 @@ describe('eslint-config factory', () => {
                 c.files.some((f: string) => f.includes('.vue')) &&
                 c.languageOptions?.parserOptions?.parser,
         );
+
         expect(vueFileConfig).toBeDefined();
+
         expect(vueFileConfig!.languageOptions!.parserOptions!.extraFileExtensions).toContain('.vue');
     });
 
@@ -77,6 +85,7 @@ describe('eslint-config factory', () => {
         const hasParserOptions = config.some(
             (c: any) => c.languageOptions?.parserOptions?.project === './tsconfig.json',
         );
+
         expect(hasParserOptions).toBe(true);
     });
 
@@ -89,6 +98,7 @@ describe('eslint-config factory', () => {
             { rules: { 'no-console': 'off' } },
         );
         const last = config[config.length - 1];
+
         expect((last as any).rules['no-console']).toBe('off');
     });
 });

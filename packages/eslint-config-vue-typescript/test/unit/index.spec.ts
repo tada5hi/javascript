@@ -4,7 +4,9 @@ import eslintConfigVueTypescript from '../../src/index.ts';
 describe('eslint-config-vue-typescript (deprecated wrapper)', () => {
     it('should return a valid flat config array', async () => {
         const config = await eslintConfigVueTypescript();
+
         expect(Array.isArray(config)).toBe(true);
+
         expect(config.length).toBeGreaterThan(0);
     });
 
@@ -13,6 +15,7 @@ describe('eslint-config-vue-typescript (deprecated wrapper)', () => {
         const hasVuePlugin = config.some(
             (c: any) => c.plugins && ('vue' in c.plugins),
         );
+
         expect(hasVuePlugin).toBe(true);
     });
 
@@ -21,6 +24,7 @@ describe('eslint-config-vue-typescript (deprecated wrapper)', () => {
         const hasTsPlugin = config.some(
             (c: any) => c.plugins && ('@typescript-eslint' in c.plugins),
         );
+
         expect(hasTsPlugin).toBe(true);
     });
 
@@ -31,7 +35,9 @@ describe('eslint-config-vue-typescript (deprecated wrapper)', () => {
                 c.files.some((f: string) => f.includes('.vue')) &&
                 c.languageOptions?.parserOptions?.parser,
         );
+
         expect(vueFileConfig).toBeDefined();
+
         expect(vueFileConfig!.languageOptions!.parserOptions!.extraFileExtensions).toContain('.vue');
     });
 
@@ -40,6 +46,7 @@ describe('eslint-config-vue-typescript (deprecated wrapper)', () => {
         const hasRule = config.some(
             (c: any) => c.rules && c.rules['vue/multi-word-component-names'] === 'off',
         );
+
         expect(hasRule).toBe(true);
     });
 
@@ -48,6 +55,7 @@ describe('eslint-config-vue-typescript (deprecated wrapper)', () => {
         const hasRule = config.some(
             (c: any) => c.rules && Array.isArray(c.rules['vue/html-indent']) && c.rules['vue/html-indent'][1] === 4,
         );
+
         expect(hasRule).toBe(true);
     });
 });

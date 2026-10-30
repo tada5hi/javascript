@@ -12,6 +12,7 @@ import plugin from '../../src/index.ts';
 import rule from '../../src/rules/lines-between-class-members.ts';
 
 RuleTester.describe = describe;
+
 RuleTester.it = it;
 
 const tester = new RuleTester({ languageOptions: { parser } });
@@ -57,6 +58,7 @@ it('supports ordinary JavaScript fields without a TypeScript parser', () => {
         plugins: { '@tada5hi': plugin },
         rules: { '@tada5hi/lines-between-class-members': ['error', ...options] },
     });
+
     expect(messages.map((message) => message.ruleId)).toEqual(['@tada5hi/lines-between-class-members']);
 });
 
@@ -65,5 +67,6 @@ it('enables property spacing in the standalone preset', () => {
         { files: ['**/*.ts'], languageOptions: { parser } },
         plugin.configs.conventions,
     ], { filename: 'src/example.ts' });
+
     expect(messages.map((message) => message.ruleId)).toEqual(['@tada5hi/lines-between-class-members']);
 });

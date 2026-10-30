@@ -70,8 +70,18 @@ export function stylisticConfig(): Linter.Config[] {
                     },
                     {
                         blankLine: 'always',
-                        prev: ['if', 'for', 'while', 'do', 'try', 'switch'],
+                        prev: ['if', 'for', 'while', 'do', 'try', 'switch', 'expression'],
                         next: '*',
+                    },
+                    {
+                        blankLine: 'always',
+                        prev: ['const', 'let', 'var'],
+                        next: 'expression',
+                    },
+                    {
+                        blankLine: 'any',
+                        prev: 'expression',
+                        next: 'expression',
                     },
                 ],
                 '@stylistic/object-curly-newline': ['error', {

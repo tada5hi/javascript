@@ -41,6 +41,7 @@ describe('unicorn rules', () => {
         expect(names.length).toBeGreaterThan(0);
 
         const unknown = names.filter((name) => !unicornPlugin.rules[name.replace('unicorn/', '')]);
+
         expect(unknown).toEqual([]);
     });
 
@@ -64,6 +65,7 @@ describe('unicorn rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === 'unicorn/no-instanceof-builtins');
+
         expect(error).toBeDefined();
     });
 
@@ -75,6 +77,7 @@ describe('unicorn rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === 'unicorn/no-array-fill-with-reference-type');
+
         expect(error).toBeDefined();
     });
 
@@ -86,6 +89,7 @@ describe('unicorn rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === 'unicorn/no-duplicate-logical-operands');
+
         expect(error).toBeDefined();
     });
 
@@ -97,6 +101,7 @@ describe('unicorn rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === 'unicorn/no-impossible-length-comparison');
+
         expect(error).toBeDefined();
     });
 
@@ -108,6 +113,7 @@ describe('unicorn rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === 'unicorn/no-useless-coercion');
+
         expect(error).toBeDefined();
     });
 
@@ -119,6 +125,7 @@ describe('unicorn rules', () => {
             { filename: 'test.js' },
         );
         const error = messages.find((m) => m.ruleId === 'unicorn/prefer-math-abs');
+
         expect(error).toBeDefined();
     });
 
@@ -159,6 +166,7 @@ describe('unicorn rules', () => {
         const config = await getConfig();
         const messages = linter.verify(code, config, { filename: 'test.js' });
         const error = messages.find((m) => m.ruleId === ruleId);
+
         expect(error).toBeDefined();
     });
 
@@ -173,6 +181,7 @@ describe('unicorn rules', () => {
         );
         const messages = linter.verify(code, config, { filename: 'test.js' });
         const error = messages.find((m) => m.ruleId === ruleId);
+
         expect(error).toBeDefined();
     });
 });

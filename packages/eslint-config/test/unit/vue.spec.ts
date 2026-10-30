@@ -17,6 +17,7 @@ describe('vue rules', () => {
         const hasVuePlugin = config.some(
             (c: any) => c.plugins && ('vue' in c.plugins),
         );
+
         expect(hasVuePlugin).toBe(true);
     });
 
@@ -28,6 +29,7 @@ describe('vue rules', () => {
         const hasBaseRules = config.some(
             (c: any) => c.rules && c.rules['@stylistic/quotes'],
         );
+
         expect(hasBaseRules).toBe(true);
     });
 
@@ -39,6 +41,7 @@ describe('vue rules', () => {
         const hasRule = config.some(
             (c: any) => c.rules && c.rules['vue/multi-word-component-names'] === 'off',
         );
+
         expect(hasRule).toBe(true);
     });
 
@@ -50,6 +53,7 @@ describe('vue rules', () => {
         const hasRule = config.some(
             (c: any) => c.rules && Array.isArray(c.rules['vue/html-indent']) && c.rules['vue/html-indent'][1] === 4,
         );
+
         expect(hasRule).toBe(true);
     });
 });
@@ -66,7 +70,9 @@ describe('vue + typescript rules', () => {
         const hasTsPlugin = config.some(
             (c: any) => c.plugins && ('@typescript-eslint' in c.plugins),
         );
+
         expect(hasVuePlugin).toBe(true);
+
         expect(hasTsPlugin).toBe(true);
     });
 
@@ -80,7 +86,9 @@ describe('vue + typescript rules', () => {
                 c.files.some((f: string) => f.includes('.vue')) &&
                 c.languageOptions?.parserOptions?.parser,
         );
+
         expect(vueFileConfig).toBeDefined();
+
         expect(vueFileConfig!.languageOptions!.parserOptions!.extraFileExtensions).toContain('.vue');
     });
 });
