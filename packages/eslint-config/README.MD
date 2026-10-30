@@ -98,7 +98,7 @@ export default eslintConfig({
 
 ### Statement Spacing
 
-Every `if`/`else` and loop body requires braces, even for a single statement (`curly: ['error', 'all']`).
+Every `if` condition, `else` branch, and loop body requires braces, even for a single statement (`curly: ['error', 'all']`).
 `@stylistic/brace-style` enforces `1tbs` with `allowSingleLine: false`: non-empty block bodies span multiple lines,
 with `else`, `catch`, and `finally` on the same line as the preceding closing brace. Both rules support `eslint --fix`:
 
