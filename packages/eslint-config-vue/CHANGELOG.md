@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.0](https://github.com/tada5hi/javascript/compare/eslint-config-vue-v2.2.6...eslint-config-vue-v2.3.0) (2026-10-30)
+
+
+### Features
+
+* **eslint-config:** enforce spacing around expressions ([#964](https://github.com/tada5hi/javascript/issues/964)) ([e6fc87d](https://github.com/tada5hi/javascript/commit/e6fc87dfc10e777fee10e4294fedbc7b2da32feb))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^3.1.1 to ^3.2.0
+
 ## [2.2.6](https://github.com/tada5hi/javascript/compare/eslint-config-vue-v2.2.5...eslint-config-vue-v2.2.6) (2026-10-30)
 
 

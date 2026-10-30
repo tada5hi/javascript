@@ -16,6 +16,20 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
   * dependencies
     * @tada5hi/eslint-config-typescript bumped from ^1.2.8 to ^1.2.9
 
+## [3.1.0](https://github.com/tada5hi/javascript/compare/eslint-config-vue-typescript-v3.0.2...eslint-config-vue-typescript-v3.1.0) (2026-10-30)
+
+
+### Features
+
+* **eslint-config:** enforce spacing around expressions ([#964](https://github.com/tada5hi/javascript/issues/964)) ([e6fc87d](https://github.com/tada5hi/javascript/commit/e6fc87dfc10e777fee10e4294fedbc7b2da32feb))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-config bumped from ^3.1.1 to ^3.2.0
+
 ## [3.0.2](https://github.com/tada5hi/javascript/compare/eslint-config-vue-typescript-v3.0.1...eslint-config-vue-typescript-v3.0.2) (2026-10-30)
 
 
