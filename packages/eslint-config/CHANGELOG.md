@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.1](https://github.com/tada5hi/javascript/compare/eslint-config-v3.1.0...eslint-config-v3.1.1) (2026-10-30)
+
+
+### Bug Fixes
+
+* **eslint-config:** clarify braced control flow ([#962](https://github.com/tada5hi/javascript/issues/962)) ([242d465](https://github.com/tada5hi/javascript/commit/242d465168c15f3a8c4432f35d3ac69513c064ca))
+
 ## [3.1.0](https://github.com/tada5hi/javascript/compare/eslint-config-v3.0.0...eslint-config-v3.1.0) (2026-10-29)
 
 
