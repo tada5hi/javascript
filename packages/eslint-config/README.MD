@@ -98,6 +98,20 @@ export default eslintConfig({
 
 ### Statement Spacing
 
+Every `if`/`else` and loop body requires braces, even for a single statement (`curly: ['error', 'all']`).
+`@stylistic/brace-style` enforces `1tbs` with `allowSingleLine: false`: non-empty block bodies span multiple lines,
+with `else`, `catch`, and `finally` on the same line as the preceding closing brace. Both rules support `eslint --fix`:
+
+```js
+if (streamError) {
+    throw streamError.error;
+}
+
+if (def.toolsContext) {
+    assertToolsContext(def.name, def.tools ?? {}, def.toolsContext);
+}
+```
+
 `@stylistic/padding-line-between-statements` requires blank lines before and after complete `if` chains,
 loops (`for`, `for…in`, `for…of`, `while`, `do…while`), `try` chains, and `switch` statements,
 at every nesting level. Every `return` also needs a blank line before it when another statement precedes it.

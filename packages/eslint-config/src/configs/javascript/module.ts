@@ -28,7 +28,7 @@ export function javascript(): Linter.Config[] {
                 'array-callback-return': ['error', { allowImplicit: true }],
                 'arrow-body-style': ['error', 'as-needed'],
                 'consistent-return': 'error',
-                'curly': ['error', 'multi-line'],
+                'curly': ['error', 'all'],
                 'default-case': 'off',
                 'default-case-last': 'error',
                 'default-param-last': 'error',

@@ -45,6 +45,7 @@ export function stylisticConfig(): Linter.Config[] {
                 '@stylistic/arrow-parens': ['error', 'always'],
                 '@stylistic/keyword-spacing': ['error', { before: true, after: true }],
                 '@stylistic/space-before-blocks': ['error', 'always'],
+                '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: false }],
                 '@stylistic/space-infix-ops': ['error'],
                 '@stylistic/semi-spacing': ['error', { before: false, after: true }],
                 '@stylistic/comma-style': ['error', 'last'],
