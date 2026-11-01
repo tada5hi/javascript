@@ -22,10 +22,23 @@ export const AGENT_DOCS_ROOT_FILES = [
     '**/AGENTS.md',
 ];
 
+/**
+ * Plans are working documents and gitignored by convention; ESLint does not
+ * read .gitignore, so they are ignored explicitly.
+ */
+export const AGENT_DOCS_IGNORES = [
+    '**/.agents/plans/**',
+];
+
 export function agentDocs(options: AgentDocsOptions = {}): Linter.Config[] {
     const files = options.files ?? AGENT_DOCS_FILES;
+    const ignores = options.ignores ?? AGENT_DOCS_IGNORES;
 
     return [
+        ...(ignores.length > 0 ? [{
+            name: 'tada5hi/agent-docs/ignores',
+            ignores,
+        }] : []),
         {
             name: 'tada5hi/agent-docs',
             files,

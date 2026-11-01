@@ -65,33 +65,93 @@ export async function eslintConfig(
 
     configs.push(...conventions(enableTypescript, enableVue));
 
+    const agentDocsOptions = isObject(options.agentDocs) ? options.agentDocs : {};
+
     if (options.agentDocs !== false) {
-        const agentDocsOptions = isObject(options.agentDocs) ? options.agentDocs : {};
+        configs.push(...agentDocs(agentDocsOptions));
+    }
+
+    // User configs come last, so they can override any built-in rule.
+    configs.push(...userConfigs);
+
+    if (options.agentDocs !== false) {
         const agentDocFiles = [
             ...(agentDocsOptions.files ?? AGENT_DOCS_FILES),
             ...(agentDocsOptions.rootFiles ?? AGENT_DOCS_ROOT_FILES),
         ];
 
         // A block without `files` applies to every linted file, and ESLint
-        // refuses a JavaScript rule on Markdown. Keep the built-in blocks off
-        // the agent docs only, so every other file is linted exactly as before;
-        // a global ignore (only `ignores`) stays global.
-        for (const [index, config] of configs.entries()) {
-            if (!config.files && !isGlobalIgnore(config)) {
-                // Plugin presets may be frozen: copy rather than mutate.
-                configs[index] = {
-                    ...config,
-                    ignores: [...(config.ignores ?? []), ...agentDocFiles],
-                };
+        // refuses a JavaScript rule on Markdown (or a rule whose plugin only a
+        // code block registers). Keep every such block, built-in or user, off
+        // the agent docs only, so every other file is linted exactly as
+        // before; a global ignore (only `ignores`) stays global, and the
+        // agent-docs blocks carry their own `files`.
+        // Rules of the agent docs themselves (`@tada5hi/agent-docs-*`,
+        // `markdown/*`) stay global, so a files-less override of them still
+        // reaches the agent docs; they keep the block's own `ignores`.
+        const output: Linter.Config[] = [];
+
+        for (const config of configs) {
+            if (config.files || isGlobalIgnore(config)) {
+                output.push(config);
+
+                continue;
+            }
+
+            const { docRules, otherRules } = partitionRules(config.rules);
+            const onlyDocRules = Object.keys(config).every((key) => key === 'name' || key === 'rules') &&
+                Object.keys(otherRules).length === 0;
+
+            if (onlyDocRules) {
+                output.push(config);
+
+                continue;
+            }
+
+            // Plugin presets may be frozen: copy rather than mutate.
+            output.push({
+                ...config,
+                ...(config.rules ? { rules: otherRules } : {}),
+                ignores: [...(config.ignores ?? []), ...agentDocFiles],
+            });
+
+            if (Object.keys(docRules).length > 0) {
+                output.push({
+                    ...(config.name ? { name: `${config.name}/agent-docs` } : {}),
+                    ...(config.basePath ? { basePath: config.basePath } : {}),
+                    ...(config.ignores ? { ignores: config.ignores } : {}),
+                    rules: docRules,
+                });
             }
         }
 
-        configs.push(...agentDocs(agentDocsOptions));
+        return output;
     }
 
-    configs.push(...userConfigs);
-
     return configs;
+}
+
+function isAgentDocRule(name: string): boolean {
+    return name.startsWith('@tada5hi/agent-docs-') || name.startsWith('markdown/');
+}
+
+function partitionRules(rules: Linter.Config['rules'] = {}) {
+    const docRules: NonNullable<Linter.Config['rules']> = {};
+    const otherRules: NonNullable<Linter.Config['rules']> = {};
+
+    for (const [name, value] of Object.entries(rules)) {
+        if (value === undefined) {
+            continue;
+        }
+
+        if (isAgentDocRule(name)) {
+            docRules[name] = value;
+        } else {
+            otherRules[name] = value;
+        }
+    }
+
+    return { docRules, otherRules };
 }
 
 function isGlobalIgnore(config: Linter.Config): boolean {
