@@ -285,8 +285,11 @@ A limit is only as strong as the review of the line that sets it: lower it as th
 raised limit like any other policy change. Under `eslint --cache` the import budget of `CLAUDE.md` is not
 re-checked when only an imported file changes; CI runs without a cache.
 
-Built-in config blocks without a `files` key exclude the agent-doc globs, so no JavaScript rule reaches an agent
-document; every other file is linted exactly as without the agent-docs checks. Global ignores stay global.
+Config blocks without a `files` key, built-in ones and the user configs passed to the factory alike, exclude the
+agent-doc globs, so no JavaScript rule, and no rule of a plugin that only a code block registers, reaches an agent
+document; every other file is linted exactly as without the agent-docs checks. Rules of the agent docs themselves
+(`@tada5hi/agent-docs-*`, `markdown/*`) are split out of such a block and stay global, so a files-less override such
+as `{ rules: { '@tada5hi/agent-docs-no-history': 'off' } }` still applies. Global ignores stay global.
 
 ### Options
 

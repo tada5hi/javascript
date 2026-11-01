@@ -95,6 +95,36 @@ describe('agent docs', () => {
         }
     });
 
+    it('should keep a files-less user block off the agent docs', async () => {
+        const config = await eslintConfig(
+            {
+                typescript: true,
+                vue: false,
+            },
+            { rules: { '@typescript-eslint/no-unused-vars': 'error' } },
+        );
+
+        const messages = new Linter({ cwd: '/repo' }).verify('# Guide\n', config, { filename: '/repo/AGENTS.md' });
+
+        expect(messages).toEqual([]);
+    });
+
+    it('should apply a files-less override of an agent-docs rule to the agent docs', async () => {
+        const config = await eslintConfig(
+            {
+                typescript: false,
+                vue: false,
+            },
+            { rules: { '@tada5hi/agent-docs-no-history': 'off', 'no-console': 'off' } },
+        );
+
+        const messages = new Linter({ cwd: '/repo' }).verify('It used to work.\n', config, { filename: '/repo/AGENTS.md' });
+
+        expect(messages).toEqual([]);
+        expect(config.at(-2)?.rules).toEqual({ 'no-console': 'off' });
+        expect(config.at(-1)?.rules).toEqual({ '@tada5hi/agent-docs-no-history': 'off' });
+    });
+
     it('should lint TypeScript under src without the typescript option', async () => {
         const messages = await lint('/repo/src/example.ts', 'export const a = 1;\n');
 
