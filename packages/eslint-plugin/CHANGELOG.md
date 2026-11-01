@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/tada5hi/javascript/compare/eslint-plugin-v1.2.0...eslint-plugin-v1.3.0) (2026-11-01)
+
+
+### Features
+
+* lint agent docs (size, history phrases, import budget) ([#966](https://github.com/tada5hi/javascript/issues/966)) ([9683c57](https://github.com/tada5hi/javascript/commit/9683c574dba010ebac7e850e736b42cd61b0e740))
+
 ## [1.2.0](https://github.com/tada5hi/javascript/compare/eslint-plugin-v1.1.0...eslint-plugin-v1.2.0) (2026-10-30)
 
 
