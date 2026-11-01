@@ -20,6 +20,13 @@ export type AgentDocsOptions = {
      */
     rootFiles?: string[],
     /**
+     * Globs ESLint ignores altogether (a global ignore), replacing the
+     * default. `[]` removes it, e.g. to lint plans through `files`.
+     *
+     * default: .agents/plans/**
+     */
+    ignores?: string[],
+    /**
      * Largest size of a single agent document, in bytes.
      *
      * default: 40000

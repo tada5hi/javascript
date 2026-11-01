@@ -32,12 +32,13 @@ export const AGENT_DOCS_IGNORES = [
 
 export function agentDocs(options: AgentDocsOptions = {}): Linter.Config[] {
     const files = options.files ?? AGENT_DOCS_FILES;
+    const ignores = options.ignores ?? AGENT_DOCS_IGNORES;
 
     return [
-        {
+        ...(ignores.length > 0 ? [{
             name: 'tada5hi/agent-docs/ignores',
-            ignores: AGENT_DOCS_IGNORES,
-        },
+            ignores,
+        }] : []),
         {
             name: 'tada5hi/agent-docs',
             files,

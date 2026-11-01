@@ -260,7 +260,10 @@ No global filename casing, enum casing, or member-ordering policy is inferred fr
 `CLAUDE.md`, `AGENTS.md`, `.agents/*.md` and `.agents/topics/**/*.md` are linted as Markdown
 (`@eslint/markdown`), with three rules that keep agent documentation from growing back after every task.
 Other Markdown files, such as a `README.md`, are not linted, and `.agents/plans/**` is ignored
-globally: plans are working documents and gitignored by convention, while ESLint does not read `.gitignore`. In a project without agent docs the globs
+globally: plans are working documents and gitignored by convention, while ESLint does not read `.gitignore`.
+`agentDocs.ignores` replaces that list, and `ignores: []` removes it, for example to lint plans by adding
+them to `files`. To exempt a file from only the agent-docs rules, switch them off for it in a user config:
+`{ files: ['.agents/topics/legacy.md'], rules: { '@tada5hi/agent-docs-max-size': 'off' } }`. In a project without agent docs the globs
 match nothing.
 
 | Rule | Enforcement | Scope |
@@ -297,7 +300,7 @@ as `{ rules: { '@tada5hi/agent-docs-no-history': 'off' } }` still applies. Globa
 |--------|------|---------|-------------|
 | `typescript` | `boolean \| TypeScriptOptions` | auto-detect | Enable TypeScript rules. Pass `{ project: './tsconfig.json' }` for type-aware linting, or `{ project: true }` for `projectService`. |
 | `vue` | `boolean \| VueOptions` | auto-detect | Enable Vue rules. When TypeScript is also enabled, the TS parser is automatically configured for `.vue` files. |
-| `agentDocs` | `boolean \| AgentDocsOptions` | `true` | Size and history checks for agent documents ([Agent Docs](#agent-docs)). `AgentDocsOptions`: `files`, `rootFiles`, `maxBytes`, `importMaxBytes`, `historyPatterns`. |
+| `agentDocs` | `boolean \| AgentDocsOptions` | `true` | Size and history checks for agent documents ([Agent Docs](#agent-docs)). `AgentDocsOptions`: `files`, `rootFiles`, `ignores`, `maxBytes`, `importMaxBytes`, `historyPatterns`. |
 
 The public option type names `FactoryOptions`, `TypeScriptOptions`, and `VueOptions` are unchanged, but are now type
 aliases rather than interfaces. They remain importable from the package entry point; declaration merging into these

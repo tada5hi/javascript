@@ -56,6 +56,31 @@ describe('agent docs', () => {
             .some((message) => message.ruleId?.startsWith('@tada5hi/agent-docs'))).toBe(false);
     });
 
+    it('should replace the ignores with agentDocs.ignores', async () => {
+        const config = await eslintConfig({
+            typescript: false,
+            vue: false,
+            agentDocs: { ignores: ['**/.agents/drafts/**'] },
+        });
+
+        expect(config).toContainEqual({ name: 'tada5hi/agent-docs/ignores', ignores: ['**/.agents/drafts/**'] });
+    });
+
+    it('should lint plans with ignores: [] and a matching files glob', async () => {
+        const config = await eslintConfig({
+            typescript: false,
+            vue: false,
+            agentDocs: {
+                ignores: [],
+                files: ['**/.agents/plans/*.md'],
+            },
+        });
+        const messages = new Linter({ cwd: '/repo' }).verify('It used to work.\n', config, { filename: '/repo/.agents/plans/001.md' });
+
+        expect(config.some((entry) => entry.name === 'tada5hi/agent-docs/ignores')).toBe(false);
+        expect(messages.map((message) => message.ruleId)).toEqual(['@tada5hi/agent-docs-no-history']);
+    });
+
     it('should pass options to the rules', async () => {
         const messages = await lint('/repo/.agents/structure.md', 'x'.repeat(50), {
             agentDocs: {
