@@ -7,6 +7,7 @@
 
 export {
     AGENT_DOCS_FILES,
+    AGENT_DOCS_IGNORES,
     AGENT_DOCS_ROOT_FILES,
     agentDocs,
 } from './module.ts';

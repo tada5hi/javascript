@@ -259,7 +259,8 @@ No global filename casing, enum casing, or member-ordering policy is inferred fr
 
 `CLAUDE.md`, `AGENTS.md`, `.agents/*.md` and `.agents/topics/**/*.md` are linted as Markdown
 (`@eslint/markdown`), with three rules that keep agent documentation from growing back after every task.
-Other Markdown files, such as a `README.md`, are not linted. In a project without agent docs the globs
+Other Markdown files, such as a `README.md`, are not linted, and `.agents/plans/**` is ignored
+globally: plans are working documents and gitignored by convention, while ESLint does not read `.gitignore`. In a project without agent docs the globs
 match nothing.
 
 | Rule | Enforcement | Scope |

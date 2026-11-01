@@ -44,6 +44,18 @@ describe('agent docs', () => {
         expect(messages).toEqual([]);
     });
 
+    it('should ignore plan files globally', async () => {
+        const config = await eslintConfig({
+            typescript: false,
+            vue: false,
+        });
+        const linter = new Linter({ cwd: '/repo' });
+
+        expect(config).toContainEqual({ name: 'tada5hi/agent-docs/ignores', ignores: ['**/.agents/plans/**'] });
+        expect(linter.verify('It used to work.\n', config, { filename: '/repo/.agents/plans/001.md' })
+            .some((message) => message.ruleId?.startsWith('@tada5hi/agent-docs'))).toBe(false);
+    });
+
     it('should pass options to the rules', async () => {
         const messages = await lint('/repo/.agents/structure.md', 'x'.repeat(50), {
             agentDocs: {
