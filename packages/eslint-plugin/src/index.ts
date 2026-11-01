@@ -6,6 +6,9 @@
  */
 
 import type { ESLint, Linter } from 'eslint';
+import agentDocsImportBudget from './rules/agent-docs-import-budget.ts';
+import agentDocsMaxSize from './rules/agent-docs-max-size.ts';
+import agentDocsNoHistory from './rules/agent-docs-no-history.ts';
 import linesBetweenClassMembers from './rules/lines-between-class-members.ts';
 import noCollectionCallInCondition from './rules/no-collection-call-in-condition.ts';
 import noReexportShims from './rules/no-reexport-shims.ts';
@@ -14,6 +17,9 @@ import typeDeclarationLocation from './rules/type-declaration-location.ts';
 
 // TypeScript AST visitors are compatible at runtime; expose ESLint's native plugin types to consumers.
 const rules = {
+    'agent-docs-import-budget': agentDocsImportBudget,
+    'agent-docs-max-size': agentDocsMaxSize,
+    'agent-docs-no-history': agentDocsNoHistory,
     'lines-between-class-members': linesBetweenClassMembers,
     'no-collection-call-in-condition': noCollectionCallInCondition,
     'type-declaration-location': typeDeclarationLocation,
