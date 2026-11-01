@@ -255,12 +255,45 @@ interfaces), behavior-vs-data semantics, dependency injection, type precision, o
 needs its own folder. These require architectural review rather than a reliable syntax-only lint check.
 No global filename casing, enum casing, or member-ordering policy is inferred from these sources.
 
+### Agent Docs
+
+`CLAUDE.md`, `AGENTS.md`, `.agents/*.md` and `.agents/topics/**/*.md` are linted as Markdown
+(`@eslint/markdown`), with three rules that keep agent documentation from growing back after every task.
+Other Markdown files, such as a `README.md`, are not linted. In a project without agent docs the globs
+match nothing.
+
+| Rule | Enforcement | Scope |
+|------|-------------|-------|
+| `@tada5hi/agent-docs-max-size` | One document stays under `maxBytes` (default 40000) | Every agent document |
+| `@tada5hi/agent-docs-no-history` | No phrase that narrates history: `used to` (not the passive "is used to"), `no longer`, `before #N`, `pinned by`, `plan NNN`, also when it wraps onto the next line | Every agent document, outside code spans, code blocks (fenced and indented) and HTML |
+| `@tada5hi/agent-docs-import-budget` | What the file loads into every session, its `@` imports followed up to five hops, stays under `importMaxBytes` (default 60000). An `@...md` import that does not resolve is an error, also inside an imported file, where it is reported on the root import that leads to it | `CLAUDE.md`, `AGENTS.md` |
+
+Detail that only matters for one subsystem belongs in `.agents/topics/<name>.md`, which `CLAUDE.md` does
+not import, so it costs nothing until a task reads it. Tune or disable the checks with the `agentDocs` option:
+
+```js
+export default eslintConfig({
+    agentDocs: {
+        maxBytes: 60000,
+        importMaxBytes: 180000,
+    },
+});
+```
+
+A limit is only as strong as the review of the line that sets it: lower it as the docs shrink, and treat a
+raised limit like any other policy change. Under `eslint --cache` the import budget of `CLAUDE.md` is not
+re-checked when only an imported file changes; CI runs without a cache.
+
+Built-in config blocks without a `files` key exclude the agent-doc globs, so no JavaScript rule reaches an agent
+document; every other file is linted exactly as without the agent-docs checks. Global ignores stay global.
+
 ### Options
 
 | Option | Type | Default | Description |
 |--------|------|---------|-------------|
 | `typescript` | `boolean \| TypeScriptOptions` | auto-detect | Enable TypeScript rules. Pass `{ project: './tsconfig.json' }` for type-aware linting, or `{ project: true }` for `projectService`. |
 | `vue` | `boolean \| VueOptions` | auto-detect | Enable Vue rules. When TypeScript is also enabled, the TS parser is automatically configured for `.vue` files. |
+| `agentDocs` | `boolean \| AgentDocsOptions` | `true` | Size and history checks for agent documents ([Agent Docs](#agent-docs)). `AgentDocsOptions`: `files`, `rootFiles`, `maxBytes`, `importMaxBytes`, `historyPatterns`. |
 
 The public option type names `FactoryOptions`, `TypeScriptOptions`, and `VueOptions` are unchanged, but are now type
 aliases rather than interfaces. They remain importable from the package entry point; declaration merging into these
@@ -304,6 +337,7 @@ The config always includes these rule sets:
 - **Stylistic** - `@stylistic/eslint-plugin` for indent (4 spaces), quotes (single), max line length (150)
 - **Imports** - `eslint-plugin-import-x` for import ordering, cycle detection, and more
 - **Unicorn** - `eslint-plugin-unicorn` for modern JS patterns (node: protocol, Array.isArray, etc.)
+- **Agent docs** - size, history-phrase and import-budget checks for `CLAUDE.md`, `AGENTS.md` and `.agents/` (`@eslint/markdown`)
 
 Conditionally adds:
 

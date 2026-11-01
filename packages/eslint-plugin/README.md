@@ -1,6 +1,6 @@
 # @tada5hi/eslint-plugin
 
-Syntax-only ESLint rules for the `@tada5hi` source conventions.
+ESLint rules for the `@tada5hi` source conventions and for agent documentation (`CLAUDE.md`, `AGENTS.md`, `.agents/`).
 
 ## Usage
 
@@ -64,7 +64,13 @@ if (hasActiveItems) {
 - **`no-reexport-shims`** — top-level export-from declarations are allowed only in `index` directory barrels, including `index.d.ts`, `index.d.mts`, and `index.d.cts`. Ambient module re-exports are not file barrels and are exempt. Their source must begin with `./` and normalize within that barrel directory's subtree. Named local exports are allowed.
 - **`no-root-barrel-import`** — internal relative static imports, dynamic imports, unshadowed CommonJS `require()` calls, TypeScript import-equals declarations, and TypeScript import types may not target the nearest `src` root or its explicit `index` file. Nested and sibling barrels remain allowed. For Windows absolute filenames (drive-letter or UNC paths), CommonJS `require()` and TypeScript import-equals requests also recognize backslash separators; ESM and POSIX requests are unchanged.
 
-The rules do not resolve files or use a TypeScript program. Only `lines-between-class-members` provides autofixes;
+- **`agent-docs-max-size`** — an agent document (`CLAUDE.md`, `AGENTS.md`, `.agents/**/*.md`) stays under `maxBytes` (default 40000).
+- **`agent-docs-no-history`** — no phrase that narrates history instead of stating the current rule. Default `patterns` (case-insensitive regular expressions, `\s+` between words so a phrase wrapped onto the next line still matches): `plan NNN`, `used to` (not after a form of "be" or "get", the passive voice), `before #N`, `no longer`, `pinned by`. A match touching a code span, a code block (fenced or indented) or HTML is skipped.
+- **`agent-docs-import-budget`** — a root document (`CLAUDE.md`, `AGENTS.md`) and everything its `@` imports load, followed breadth first relative to the importing file up to five hops like Claude Code does, each file counted once, stays under `maxBytes` (default 60000). Relative, absolute and non-ASCII paths are recognized. An `@...md` import that cannot be read is reported, also inside an imported file, where the report sits on the root import that leads to it and names both files; other `@` tokens such as `@scope/package` are ignored unless they name a file.
+
+The `agent-docs-*` rules are written for Markdown: code and HTML regions come from a CommonMark parse
+(`mdast-util-from-markdown`), and `@tada5hi/eslint-config` wires the rules to `@eslint/markdown`. Apart from the import
+budget, the rules do not resolve files or use a TypeScript program. Only `lines-between-class-members` provides autofixes;
 the other rules require manual changes. Filename-based checks are skipped when ESLint provides an unknown filename.
 
 ## Exceptions
@@ -80,6 +86,9 @@ individual policies, optionally adding `files` to limit an exception:
         '@tada5hi/type-declaration-location': 'off',
         '@tada5hi/no-reexport-shims': 'off',
         '@tada5hi/no-root-barrel-import': 'off',
+        '@tada5hi/agent-docs-max-size': ['error', { maxBytes: 60000 }],
+        '@tada5hi/agent-docs-no-history': 'off',
+        '@tada5hi/agent-docs-import-budget': ['error', { maxBytes: 180000 }],
     },
 }
 ```

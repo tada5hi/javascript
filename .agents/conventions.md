@@ -37,8 +37,8 @@ READMEs for exemptions and the standalone preset distinction.
 
 Treat newly enabled or stricter defaults as breaking lint-policy changes: downstream projects must migrate affected
 source or use explicit per-rule overrides. Do not keep a feature flag solely to avoid downstream migrations. Public
-`FactoryOptions`, `TypeScriptOptions`, and `VueOptions` names remain stable as type aliases; declaration merging is no
-longer supported. Put exported option declarations in `types.ts` and public re-exports in `index.ts`.
+`FactoryOptions`, `TypeScriptOptions`, and `VueOptions` names remain stable as type aliases, so declaration merging
+into them is not supported. Put exported option declarations in `types.ts` and public re-exports in `index.ts`.
 
 The policy is inferred from `tada5hi/skills`' init-agent-docs template and Authup/PrivateAIM Hub conventions.
 Do not infer class-only interface semantics: Hub explicitly permits data interfaces. Do not add generic

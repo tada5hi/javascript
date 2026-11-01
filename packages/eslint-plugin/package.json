@@ -1,7 +1,7 @@
 {
     "name": "@tada5hi/eslint-plugin",
     "version": "1.2.0",
-    "description": "ESLint rules for type locations and directory barrel boundaries",
+    "description": "ESLint rules for type locations, directory barrel boundaries and agent docs",
     "license": "Apache-2.0",
     "type": "module",
     "engines": {
@@ -47,6 +47,8 @@
         "access": "public"
     },
     "devDependencies": {
+        "@eslint/markdown": "^8.0.3",
+        "@types/mdast": "^4.0.4",
         "@types/node": "^24.0.0",
         "@typescript-eslint/parser": "^8.72.0",
         "@typescript-eslint/utils": "^8.72.0"
@@ -55,6 +57,7 @@
         "eslint": ">=10.4.0"
     },
     "dependencies": {
-        "@stylistic/eslint-plugin": "^5.10.0"
+        "@stylistic/eslint-plugin": "^5.10.0",
+        "mdast-util-from-markdown": "^2.1.0"
     }
 }
