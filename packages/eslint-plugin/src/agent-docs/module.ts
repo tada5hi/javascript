@@ -15,11 +15,13 @@ import type {
 
 /**
  * Phrases that narrate history or cite a local artifact instead of
- * stating a rule. Matched case-insensitively.
+ * stating a rule. Matched case-insensitively. "used to" after a form of
+ * "be" or "get" is the passive voice ("is used to validate"), which states
+ * a current fact, so it does not match.
  */
 export const AGENT_DOCS_HISTORY_PATTERNS: string[] = [
     String.raw`\bplan [0-9]{3}\b`,
-    String.raw`\bused to\b`,
+    String.raw`(?<!\b(?:is|are|am|be|been|being|was|were|get|gets|got|getting)\s+)\bused to\b`,
     String.raw`\bbefore #[0-9]`,
     String.raw`\bno longer\b`,
     String.raw`\bpinned by\b`,

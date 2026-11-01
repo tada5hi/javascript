@@ -99,6 +99,8 @@ tester.run('agent-docs-no-history', noHistory, {
     valid: [
         'The rule as it is now.',
         'An example: `used to`.',
+        'This helper is used to validate tokens, and keys are\nused to sign.',
+        'It can be used to compare.',
         '```\nit no longer works\n```',
         '<!-- see plan 042 -->',
         { code: 'it used to work', options: [{ patterns: ['\\bdeprecated\\b'] }] },
