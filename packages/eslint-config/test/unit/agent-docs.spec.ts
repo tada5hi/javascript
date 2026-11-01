@@ -56,6 +56,20 @@ describe('agent docs', () => {
             .some((message) => message.ruleId?.startsWith('@tada5hi/agent-docs'))).toBe(false);
     });
 
+    it('should not lint a plan file even when agentDocs.files matches it', async () => {
+        const config = await eslintConfig({
+            typescript: false,
+            vue: false,
+            agentDocs: { files: ['**/.agents/**/*.md'] },
+        });
+        const linter = new Linter({ cwd: '/repo' });
+        const ruleIdsOf = (filename: string) => ruleIds(linter.verify('It used to work.\n', config, { filename }))
+            .filter((id) => id !== null);
+
+        expect(ruleIdsOf('/repo/.agents/topics/oauth2.md')).toEqual(['@tada5hi/agent-docs-no-history']);
+        expect(ruleIdsOf('/repo/.agents/plans/001.md')).toEqual([]);
+    });
+
     it('should replace the ignores with agentDocs.ignores', async () => {
         const config = await eslintConfig({
             typescript: false,
@@ -148,6 +162,21 @@ describe('agent docs', () => {
         expect(messages).toEqual([]);
         expect(config.at(-2)?.rules).toEqual({ 'no-console': 'off' });
         expect(config.at(-1)?.rules).toEqual({ '@tada5hi/agent-docs-no-history': 'off' });
+    });
+
+    it('should keep the ignores of a files-less user block on its agent-docs rules', async () => {
+        const config = await eslintConfig(
+            {
+                typescript: false,
+                vue: false,
+            },
+            { ignores: ['**/.agents/topics/**'], rules: { '@tada5hi/agent-docs-no-history': 'off', 'no-console': 'off' } },
+        );
+        const linter = new Linter({ cwd: '/repo' });
+
+        expect(ruleIds(linter.verify('It used to work.\n', config, { filename: '/repo/.agents/topics/oauth2.md' })))
+            .toEqual(['@tada5hi/agent-docs-no-history']);
+        expect(linter.verify('It used to work.\n', config, { filename: '/repo/AGENTS.md' })).toEqual([]);
     });
 
     it('should lint TypeScript under src without the typescript option', async () => {

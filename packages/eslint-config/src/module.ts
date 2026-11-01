@@ -88,7 +88,7 @@ export async function eslintConfig(
         // agent-docs blocks carry their own `files`.
         // Rules of the agent docs themselves (`@tada5hi/agent-docs-*`,
         // `markdown/*`) stay global, so a files-less override of them still
-        // reaches the agent docs.
+        // reaches the agent docs; they keep the block's own `ignores`.
         const output: Linter.Config[] = [];
 
         for (const config of configs) {
@@ -118,6 +118,8 @@ export async function eslintConfig(
             if (Object.keys(docRules).length > 0) {
                 output.push({
                     ...(config.name ? { name: `${config.name}/agent-docs` } : {}),
+                    ...(config.basePath ? { basePath: config.basePath } : {}),
+                    ...(config.ignores ? { ignores: config.ignores } : {}),
                     rules: docRules,
                 });
             }
