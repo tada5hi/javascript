@@ -5,5 +5,9 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-export { agentDocs } from './module.ts';
+export {
+    AGENT_DOCS_FILES,
+    AGENT_DOCS_ROOT_FILES,
+    agentDocs,
+} from './module.ts';
 export type { AgentDocsOptions } from './types.ts';

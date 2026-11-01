@@ -265,8 +265,8 @@ match nothing.
 | Rule | Enforcement | Scope |
 |------|-------------|-------|
 | `@tada5hi/agent-docs-max-size` | One document stays under `maxBytes` (default 40000) | Every agent document |
-| `@tada5hi/agent-docs-no-history` | No phrase that narrates history: `used to`, `no longer`, `before #N`, `pinned by`, `plan NNN` | Every agent document, outside code spans, code blocks and HTML comments |
-| `@tada5hi/agent-docs-import-budget` | What the file loads into every session, its `@` imports followed up to five hops, stays under `importMaxBytes` (default 60000); an `@...md` import that does not resolve is an error | `CLAUDE.md`, `AGENTS.md` |
+| `@tada5hi/agent-docs-no-history` | No phrase that narrates history: `used to` (not the passive "is used to"), `no longer`, `before #N`, `pinned by`, `plan NNN`, also when it wraps onto the next line | Every agent document, outside code spans, code blocks (fenced and indented) and HTML |
+| `@tada5hi/agent-docs-import-budget` | What the file loads into every session, its `@` imports followed up to five hops, stays under `importMaxBytes` (default 60000). An `@...md` import that does not resolve is an error, also inside an imported file, where it is reported on the root import that leads to it | `CLAUDE.md`, `AGENTS.md` |
 
 Detail that only matters for one subsystem belongs in `.agents/topics/<name>.md`, which `CLAUDE.md` does
 not import, so it costs nothing until a task reads it. Tune or disable the checks with the `agentDocs` option:
@@ -284,8 +284,8 @@ A limit is only as strong as the review of the line that sets it: lower it as th
 raised limit like any other policy change. Under `eslint --cache` the import budget of `CLAUDE.md` is not
 re-checked when only an imported file changes; CI runs without a cache.
 
-Every built-in config block is scoped to the enabled code files (`js`, plus `ts` and `vue` when enabled), so a
-JavaScript rule never reaches a Markdown file, or a JSON or CSS file a user config adds.
+Built-in config blocks without a `files` key exclude the agent-doc globs, so no JavaScript rule reaches an agent
+document; every other file is linted exactly as without the agent-docs checks. Global ignores stay global.
 
 ### Options
 

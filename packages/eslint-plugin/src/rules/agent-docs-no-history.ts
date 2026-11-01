@@ -11,6 +11,7 @@ import {
     locFromIndex,
     maskMarkdown,
     onFile,
+    overlapsMasked,
 } from '../agent-docs/index.ts';
 
 const rule: Rule.RuleModule = {
@@ -36,15 +37,19 @@ const rule: Rule.RuleModule = {
         return onFile(() => {
             const masked = maskMarkdown(context.sourceCode.text);
 
-            for (const match of masked.matchAll(regex)) {
-                if (match[0].length === 0 || match.index === undefined) {
+            for (const match of masked.text.matchAll(regex)) {
+                const end = match.index + match[0].length;
+
+                // A match touching code or a comment is an example, or a
+                // custom pattern matching the spaces masking left behind.
+                if (match[0].length === 0 || overlapsMasked(masked, match.index, end)) {
                     continue;
                 }
 
                 context.report({
                     loc: {
                         start: locFromIndex(context, match.index),
-                        end: locFromIndex(context, match.index + match[0].length),
+                        end: locFromIndex(context, end),
                     },
                     messageId: 'history',
                     data: { phrase: match[0] },

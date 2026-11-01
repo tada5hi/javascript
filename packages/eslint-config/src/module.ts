@@ -18,7 +18,11 @@ import { stylisticConfig } from './configs/stylistic/index.ts';
 import { imports } from './configs/imports/index.ts';
 import { unicorn } from './configs/unicorn/index.ts';
 import { conventions } from './configs/conventions/index.ts';
-import { agentDocs } from './configs/agent-docs/index.ts';
+import {
+    AGENT_DOCS_FILES,
+    AGENT_DOCS_ROOT_FILES,
+    agentDocs,
+} from './configs/agent-docs/index.ts';
 import { isPackageExists } from './utils.ts';
 
 export async function eslintConfig(
@@ -61,26 +65,28 @@ export async function eslintConfig(
 
     configs.push(...conventions(enableTypescript, enableVue));
 
-    // A block without `files` applies to every linted file, other languages
-    // included, and ESLint refuses a JavaScript rule on Markdown. Scope the
-    // built-in blocks to code; a global ignore (only `ignores`) stays global.
-    // Only the enabled languages: a `.vue` glob in a project without the vue
-    // option would hand Vue files to the JavaScript parser.
-    const codeFiles = [
-        '**/*.{js,jsx,mjs,cjs}',
-        ...(enableTypescript ? ['**/*.{ts,tsx,mts,cts}'] : []),
-        ...(enableVue ? ['**/*.vue'] : []),
-    ];
-
-    for (const [index, config] of configs.entries()) {
-        if (!config.files && !isGlobalIgnore(config)) {
-            // Plugin presets may be frozen: copy rather than mutate.
-            configs[index] = { ...config, files: codeFiles };
-        }
-    }
-
     if (options.agentDocs !== false) {
-        configs.push(...agentDocs(isObject(options.agentDocs) ? options.agentDocs : {}));
+        const agentDocsOptions = isObject(options.agentDocs) ? options.agentDocs : {};
+        const agentDocFiles = [
+            ...(agentDocsOptions.files ?? AGENT_DOCS_FILES),
+            ...(agentDocsOptions.rootFiles ?? AGENT_DOCS_ROOT_FILES),
+        ];
+
+        // A block without `files` applies to every linted file, and ESLint
+        // refuses a JavaScript rule on Markdown. Keep the built-in blocks off
+        // the agent docs only, so every other file is linted exactly as before;
+        // a global ignore (only `ignores`) stays global.
+        for (const [index, config] of configs.entries()) {
+            if (!config.files && !isGlobalIgnore(config)) {
+                // Plugin presets may be frozen: copy rather than mutate.
+                configs[index] = {
+                    ...config,
+                    ignores: [...(config.ignores ?? []), ...agentDocFiles],
+                };
+            }
+        }
+
+        configs.push(...agentDocs(agentDocsOptions));
     }
 
     configs.push(...userConfigs);

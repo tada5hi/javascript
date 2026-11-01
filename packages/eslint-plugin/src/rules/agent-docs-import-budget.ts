@@ -5,7 +5,7 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import { basename } from 'node:path';
+import { basename, dirname, relative } from 'node:path';
 import type { Rule } from 'eslint';
 import {
     collectImportGraph,
@@ -27,6 +27,7 @@ const rule: Rule.RuleModule = {
         messages: {
             tooLarge: 'This file loads {{bytes}} bytes into every session, over the {{max}}-byte limit. Largest: {{largest}}. Move detail into topic files that are read on demand and not imported.',
             missing: 'The import "@{{path}}" does not resolve to a file.',
+            missingNested: '{{file}} imports "@{{path}}", which does not resolve to a file (reached through this import).',
         },
     },
     create(context) {
@@ -41,13 +42,18 @@ const rule: Rule.RuleModule = {
             const graph = collectImportGraph(filename, context.sourceCode.text);
 
             for (const entry of graph.missing) {
+                const nested = entry.file !== filename;
+
                 context.report({
                     loc: {
-                        start: locFromIndex(context, entry.index),
-                        end: locFromIndex(context, entry.index + entry.path.length + 1),
+                        start: locFromIndex(context, entry.rootIndex),
+                        end: locFromIndex(context, entry.rootIndex + entry.rootLength),
                     },
-                    messageId: 'missing',
-                    data: { path: entry.path },
+                    messageId: nested ? 'missingNested' : 'missing',
+                    data: {
+                        path: entry.path,
+                        file: relative(dirname(filename), entry.file),
+                    },
                 });
             }
 

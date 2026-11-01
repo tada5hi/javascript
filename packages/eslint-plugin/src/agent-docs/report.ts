@@ -27,8 +27,9 @@ export function locFromIndex(context: Rule.RuleContext, index: number): Position
 }
 
 /**
- * Run `check` once per file on the root node, whatever the language calls it
- * (`Program` for JavaScript, `root` for Markdown).
+ * Run `check` once per file on the root node: `root` for Markdown, which the
+ * rules are written for, and `Program` for JavaScript. Other languages name
+ * their root differently and are not supported.
  */
 export function onFile(check: () => void): Rule.RuleListener {
     let done = false;

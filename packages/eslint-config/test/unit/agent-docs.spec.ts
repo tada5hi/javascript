@@ -5,54 +5,54 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import { ESLint } from 'eslint';
+import { Linter } from 'eslint';
 import { describe, expect, it } from 'vitest';
 import eslintConfig from '../../src/index.ts';
+import { AGENT_DOCS_FILES } from '../../src/configs/agent-docs/index.ts';
 
-async function lintMarkdown(filePath: string, code: string, options: Parameters<typeof eslintConfig>[0] = {}) {
-    const eslint = new ESLint({
-        overrideConfigFile: true,
-        overrideConfig: await eslintConfig({
-            typescript: false,
-            vue: false,
-            ...options,
-        }),
+async function lint(filename: string, code: string, options: Parameters<typeof eslintConfig>[0] = {}) {
+    const config = await eslintConfig({
+        typescript: false,
+        vue: false,
+        ...options,
     });
 
-    const [result] = await eslint.lintText(code, { filePath });
+    return new Linter({ cwd: '/repo' }).verify(code, config, { filename });
+}
 
-    return result;
+function ruleIds(messages: Linter.LintMessage[]) {
+    return messages.map((message) => message.ruleId);
 }
 
 describe('agent docs', () => {
     it('should check agent documents by default', async () => {
-        const result = await lintMarkdown('AGENTS.md', '# Guide\n\nIt used to work.\n');
+        const messages = await lint('/repo/AGENTS.md', '# Guide\n\nIt used to work.\n');
 
-        expect(result?.messages.map((message) => message.ruleId)).toEqual(['@tada5hi/agent-docs-no-history']);
-        expect(result?.messages[0]).toMatchObject({ line: 3, column: 4 });
+        expect(ruleIds(messages)).toEqual(['@tada5hi/agent-docs-no-history']);
+        expect(messages[0]).toMatchObject({ line: 3, column: 4 });
     });
 
     it('should leave other markdown files alone', async () => {
-        const result = await lintMarkdown('README.md', 'It used to work.\n');
+        const messages = await lint('/repo/README.md', 'It used to work.\n');
 
-        expect(result?.messages).toEqual([expect.objectContaining({ message: expect.stringMatching(/ignored/i) })]);
+        expect(ruleIds(messages).filter((id) => id?.startsWith('@tada5hi/agent-docs'))).toEqual([]);
     });
 
     it('should not run code rules on agent documents', async () => {
-        const result = await lintMarkdown('.agents/topics/oauth2.md', '# Topic\n\nconst a = 1; var b = 2\n');
+        const messages = await lint('/repo/.agents/topics/oauth2.md', '# Topic\n\nconst a = 1; var b = 2\n');
 
-        expect(result?.messages).toEqual([]);
+        expect(messages).toEqual([]);
     });
 
     it('should pass options to the rules', async () => {
-        const result = await lintMarkdown('.agents/structure.md', 'x'.repeat(50), {
+        const messages = await lint('/repo/.agents/structure.md', 'x'.repeat(50), {
             agentDocs: {
                 maxBytes: 10,
                 historyPatterns: [],
             },
         });
 
-        expect(result?.messages.map((message) => message.ruleId)).toEqual(['@tada5hi/agent-docs-max-size']);
+        expect(ruleIds(messages)).toEqual(['@tada5hi/agent-docs-max-size']);
     });
 
     it('should be disabled with agentDocs: false', async () => {
@@ -65,7 +65,7 @@ describe('agent docs', () => {
         expect(config.some((entry) => entry.name?.startsWith('tada5hi/agent-docs'))).toBe(false);
     });
 
-    it('should scope every built-in block to files or keep it a global ignore', async () => {
+    it('should keep every built-in code block off the agent docs', async () => {
         const config = await eslintConfig({
             typescript: true,
             vue: true,
@@ -73,17 +73,29 @@ describe('agent docs', () => {
 
         for (const entry of config) {
             const globalIgnore = Object.keys(entry).every((key) => key === 'ignores' || key === 'name');
+            const agentDocBlock = entry.name?.startsWith('tada5hi/agent-docs');
 
-            expect(globalIgnore || Array.isArray(entry.files)).toBe(true);
+            if (globalIgnore || agentDocBlock || entry.files) {
+                continue;
+            }
+
+            expect(entry.ignores).toEqual(expect.arrayContaining(AGENT_DOCS_FILES));
         }
     });
 
-    it('should not match vue files unless vue is enabled', async () => {
+    it('should lint TypeScript under src without the typescript option', async () => {
+        const messages = await lint('/repo/src/example.ts', 'export const a = 1;\n');
+
+        expect(messages.filter((message) => message.fatal)).toEqual([]);
+    });
+
+    it('should not add a vue glob without the vue option', async () => {
         const config = await eslintConfig({
             typescript: false,
             vue: false,
         });
+        const globs = config.flatMap((entry) => entry.files ?? []).map(String);
 
-        expect(config.some((entry) => entry.files?.some((glob) => String(glob).includes('vue')))).toBe(false);
+        expect(globs.some((glob) => glob.includes('vue'))).toBe(false);
     });
 });
