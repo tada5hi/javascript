@@ -1,5 +1,3 @@
-<!-- NOTE: Keep this file and all corresponding files in the .agents directory updated as the project evolves. When making changes, adding new packages, or discovering important conventions, update the relevant sections. -->
-
 # JavaScript - Agent Guide
 
 This repository is a collection of shared developer tool configurations and custom ESLint rules published as npm packages under the `@tada5hi` scope.
@@ -36,7 +34,7 @@ All packages are libraries in `packages/` — there are no runnable applications
 | Package | Purpose |
 |---------|---------|
 | `@tada5hi/eslint-config` | Unified ESLint flat config (JS + optional TS/Vue and default convention rules via async factory) |
-| `@tada5hi/eslint-plugin` | Syntax-only rules for class-property spacing, condition readability, exported types, barrel ownership, and root imports |
+| `@tada5hi/eslint-plugin` | Syntax-only rules for class-property spacing, condition readability, exported types, barrel ownership, and root imports, plus size, history-phrase and import-budget checks for agent docs |
 | `@tada5hi/eslint-config-typescript` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |
 | `@tada5hi/eslint-config-vue` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |
 | `@tada5hi/eslint-config-vue-typescript` | Deprecated — thin wrapper over `@tada5hi/eslint-config` |
@@ -57,6 +55,14 @@ otherwise lint runs against the previously built config.
 - **[Architecture](.agents/architecture.md)** — Async factory, config-module composition, and optional-dependency loading
 - **[Testing](.agents/testing.md)** — Vitest setup, per-package configs, and the `Linter` API assertion pattern
 - **[Conventions](.agents/conventions.md)** — Coding style, tooling, unicorn rule set, release process, and best practices
+
+### Writing agent docs
+
+The guides above are loaded into every session. They say what a future task must know to avoid a silent breakage; they are not a changelog, a design record or a test index.
+
+- **Update docs only when an invariant or a cross-cutting rule changes.** A fix or feature that follows the existing rules needs no doc change. Edit the existing line; never add a section for a single fix.
+- **Describe what the code does now.** No `used to`, `no longer`, `before #N`; keep a rejected alternative as its verdict plus a one-line reason. Defect stories and spec lists belong in the commit or pull request.
+- `npm run lint` enforces size and history phrases through the `agentDocs` checks of `@tada5hi/eslint-config`.
 
 ## Commits, Issues & Pull Requests
 

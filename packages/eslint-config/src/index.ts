@@ -13,5 +13,6 @@ export type {
 } from './types.ts';
 export type { TypeScriptOptions } from './configs/typescript/index.ts';
 export type { VueOptions } from './configs/vue/index.ts';
+export type { AgentDocsOptions } from './configs/agent-docs/index.ts';
 
 export default eslintConfig;
