@@ -1,6 +1,6 @@
 {
     "name": "@tada5hi/eslint-plugin",
-    "version": "1.2.0",
+    "version": "1.3.0",
     "description": "ESLint rules for type locations, directory barrel boundaries and agent docs",
     "license": "Apache-2.0",
     "type": "module",

@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.0](https://github.com/tada5hi/javascript/compare/eslint-config-v3.2.0...eslint-config-v3.3.0) (2026-11-01)
+
+
+### Features
+
+* lint agent docs (size, history phrases, import budget) ([#966](https://github.com/tada5hi/javascript/issues/966)) ([9683c57](https://github.com/tada5hi/javascript/commit/9683c574dba010ebac7e850e736b42cd61b0e740))
+
+
+### Dependencies
+
+* The following workspace dependencies were updated
+  * dependencies
+    * @tada5hi/eslint-plugin bumped from ^1.2.0 to ^1.3.0
+
 ## [3.2.0](https://github.com/tada5hi/javascript/compare/eslint-config-v3.1.1...eslint-config-v3.2.0) (2026-10-30)
 
 
