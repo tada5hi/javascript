@@ -58,7 +58,7 @@ otherwise lint runs against the previously built config.
 
 ### Writing agent docs
 
-AGENTS.md is the loaded entry point. Read the linked guides when working on their topics. The guides describe contracts a future task must know to avoid a silent breakage; they are not a changelog, a design record or a test index.
+CLAUDE.md imports AGENTS.md and its explicitly listed core guides. Focused topic files are read on demand. The guides describe contracts a future task must know to avoid a silent breakage; they are not a changelog, a design record or a test index.
 
 - **Update docs only when an invariant or a cross-cutting rule changes.** A fix or feature that follows the existing rules needs no doc change. Edit the existing line; never add a section for a single fix.
 - **Describe what the code does now.** No `used to`, `no longer`, `before #N`; keep a rejected alternative as its verdict plus a one-line reason. Defect stories and spec lists belong in the commit or pull request.
