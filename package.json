@@ -21,9 +21,9 @@
     "devDependencies": {
         "eslint": "^10.14.0",
         "husky": "^9.1.7",
-        "nx": "^23.1.1",
+        "nx": "^24.0.3",
         "tsdown": "^0.23.7",
-        "typescript": "^6.0.3",
+        "typescript": "^7.0.2",
         "vitest": "^5.1.0",
         "monoship": "^2.2.1"
     },
