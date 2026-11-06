@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.2](https://github.com/tada5hi/javascript/compare/eslint-config-v3.3.1...eslint-config-v3.3.2) (2026-11-06)
+
+
+### Bug Fixes
+
+* **deps:** bump the minorandpatch group across 1 directory with 4 updates ([#972](https://github.com/tada5hi/javascript/issues/972)) ([58ae3a6](https://github.com/tada5hi/javascript/commit/58ae3a6a71194d45e229a56eb4d8f79f509d1136))
+
 ## [3.3.1](https://github.com/tada5hi/javascript/compare/eslint-config-v3.3.0...eslint-config-v3.3.1) (2026-11-01)
 
 
