@@ -5,8 +5,8 @@
  * view the LICENSE file that was distributed with this source code.
  */
 
-import parser from '@typescript-eslint/parser';
 import { Linter } from 'eslint';
+import { parser } from 'typescript-eslint';
 import { describe, expect, it } from 'vitest';
 import eslintConfig from '../../src/index.ts';
 import { stylisticConfig } from '../../src/configs/stylistic/index.ts';
